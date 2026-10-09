@@ -38,20 +38,6 @@ b{color:#fff}
 .brand-coin{width:30px;height:30px;filter:drop-shadow(0 0 10px rgba(255,198,90,.55));transition:filter .3s}
 .brand:hover .brand-coin{animation:toss .9s cubic-bezier(.3,.7,.3,1);filter:drop-shadow(0 0 16px rgba(255,198,90,.9))}
 @keyframes toss{0%{transform:translateY(0) rotateY(0)}45%{transform:translateY(-7px) rotateY(540deg)}100%{transform:translateY(0) rotateY(720deg)}}
-/* The hanko, the red seal that signs Ebisu's name in kanji. */
-.title-row{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,26px)}
-.hanko{flex:none;display:inline-flex;align-items:center;justify-content:center;writing-mode:vertical-rl;padding:.32em .22em;border-radius:.18em;
-  font:900 clamp(18px,3.2vw,40px)/1 'Noto Serif JP',serif;letter-spacing:.06em;color:#fff4ec;background:var(--shu);
-  box-shadow:inset 0 0 0 .09em rgba(255,240,230,.85),inset 0 0 0 .16em var(--shu),0 10px 30px -8px rgba(217,65,46,.8);transform:rotate(-4deg);
-  animation:stamp .7s cubic-bezier(.2,1.6,.4,1) .3s backwards}
-.hanko.small{font-size:13px;padding:.35em .25em;vertical-align:middle;margin-left:10px;animation:none;opacity:.85}
-@keyframes stamp{from{opacity:0;transform:rotate(-14deg) scale(1.8)}}
-/* Seigaiha: the waves, drawn by gradients alone. */
-.seigaiha{background-image:
-  radial-gradient(circle at 100% 150%,transparent 24%,var(--wave) 24% 28%,transparent 28% 36%,var(--wave) 36% 40%,transparent 40% 48%,var(--wave) 48% 52%,transparent 52%),
-  radial-gradient(circle at 0 150%,transparent 24%,var(--wave) 24% 28%,transparent 28% 36%,var(--wave) 36% 40%,transparent 40% 48%,var(--wave) 48% 52%,transparent 52%),
-  radial-gradient(circle at 50% 100%,transparent 10%,var(--wave) 10% 14%,transparent 14% 22%,var(--wave) 22% 26%,transparent 26% 34%,var(--wave) 34% 38%,transparent 38%);
-  background-size:80px 40px}
 .brand-name{font:900 19px/1 var(--serif);letter-spacing:.14em;color:var(--gold)}
 .brand-name small{display:block;margin-top:3px;font:600 9.5px var(--sans);letter-spacing:.32em;color:var(--dim)}
 .mainnav{display:flex;align-items:center;gap:2px;margin-left:14px;flex:1;min-width:0}
@@ -445,6 +431,55 @@ tbody tr:hover td{background:rgba(255,198,90,.07)}
 .sent p{margin:0;color:#d7cdbf;max-width:520px}
 .confetti{position:fixed;inset:0;pointer-events:none;z-index:90}
 
+/* ------------------------------------------------------------------ releases */
+.release-link .ver{margin-left:7px;padding:1px 7px;border-radius:999px;font:700 10.5px var(--mono);color:#1a0f02;background:var(--gold)}
+.rel-page{max-width:1080px;margin:0 auto;padding:34px 22px 30px;display:flex;flex-direction:column;gap:24px}
+.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font:800 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.badge.beta{color:#1a0f02;background:linear-gradient(135deg,#ffe29a,#ffb03a)}
+.badge.alpha,.badge.rc{color:#fff;background:var(--shu)}
+.badge.stable{color:#06210f;background:linear-gradient(135deg,#b8ffd9,#3ee08f)}
+.rel-latest{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 30px;align-items:center;padding:30px 34px;position:relative;overflow:hidden}
+.rel-latest::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,198,90,.25),transparent 70%);pointer-events:none}
+.rel-label{margin-left:10px;font:700 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.rel-version{margin:12px 0 2px;font:900 clamp(38px,6vw,64px)/1 var(--serif);letter-spacing:.02em;
+  background:linear-gradient(100deg,#ffe9a8,#ffc65a 45%,#fff6d8 60%,#ffb03a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rel-date{margin:0 0 14px;color:var(--dim)}
+.rel-reqs{display:flex;flex-wrap:wrap;gap:8px}
+.rel-reqs span{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--edge);background:rgba(255,255,255,.04)}
+.rel-dl{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.btn.big{font-size:18px;padding:17px 34px}
+.rel-dl small{color:var(--dim);font:500 12.5px var(--mono)}
+.sha{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--dim)}
+.sha code{font-size:11.5px}
+.sha button{border:1px solid var(--edge);background:rgba(255,255,255,.05);color:var(--text);border-radius:8px;padding:3px 9px;font-size:11.5px;cursor:pointer}
+.rel-warn{grid-column:1/-1;margin:0;padding:12px 16px;border-radius:12px;font-size:14px;color:#ffe7c2;background:rgba(255,176,58,.08);border:1px solid rgba(255,176,58,.3)}
+.rel-empty{margin:0;color:var(--dim);text-align:center}
+.rel-install{padding:24px 30px}
+.rel-install .step-title span{font-size:14px}
+.install{margin:12px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:8px;color:#ddd3c4}
+.rel-title{display:flex;align-items:center;gap:12px;margin:12px 0 0;font:700 28px var(--serif)}
+.rel-title span{color:var(--shu-l)}
+.timeline{position:relative;display:flex;flex-direction:column;gap:18px;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--gold),var(--shu),transparent)}
+.rel-item{position:relative}
+.rel-dot{position:absolute;left:-29px;top:22px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--gold);box-shadow:0 0 12px rgba(255,198,90,.6)}
+.rel-dot.stable{border-color:var(--ok)}
+.rel-card{padding:18px 22px}
+.rel-card header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.rel-card h3{margin:0;font:700 22px var(--serif);color:#fff3dc}
+.rel-card time{color:var(--dim);font-size:13.5px}
+.rel-get{margin-left:auto;font:600 13px var(--sans);text-decoration:none;padding:6px 12px;border-radius:10px;border:1px solid var(--edge-strong)}
+.rel-get:hover{background:rgba(255,198,90,.1)}
+.note-group{margin-top:14px}
+.note-group ul{margin:8px 0 0;padding-left:20px;color:#ddd3c4}
+.note-group li{margin:4px 0}
+.note-kind{display:inline-block;font:800 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;border-radius:999px;color:#0b0f1c}
+.note-kind.add{background:#6bffb4}.note-kind.change{background:#ffc65a}.note-kind.balance{background:#5cc8ff}.note-kind.fix{background:#ff7a5c}.note-kind.other{background:#b07cff}
+.rel-first{margin:12px 0 0;color:var(--dim);font-style:italic}
+.footer-actions{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:760px){.rel-latest{grid-template-columns:1fr;padding:24px 20px}.rel-get{margin-left:0}}
+
 /* ------------------------------------------------------------------ overlays */
 .search,.lightbox{position:fixed;inset:0;z-index:80;background:rgba(5,3,9,.78);backdrop-filter:blur(10px);display:grid;place-items:start center}
 .search[hidden],.lightbox[hidden]{display:none}
@@ -478,7 +513,6 @@ mark{background:rgba(255,198,90,.35);color:#fff;border-radius:3px;padding:0 2px}
   background-size:80px 40px}
 .footer-inner{max-width:1320px;margin:0 auto;padding:44px 24px 26px;display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:30px}
 .footer-mark{display:flex;align-items:center;font:900 30px var(--serif);letter-spacing:.2em;color:transparent;-webkit-text-stroke:1px var(--edge-strong)}
-.footer-mark .hanko{-webkit-text-stroke:0}
 .site-footer p{margin:8px 0 0;font-size:13px;color:var(--dim)}
 .site-footer h5{margin:0 0 10px;font:700 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 .site-footer ul{list-style:none;margin:0 0 18px;padding:0}

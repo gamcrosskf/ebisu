@@ -79,6 +79,11 @@
     play.addEventListener('click', () => { on = !on; play.textContent = on ? '❚❚' : '▶'; });
   });
 
+  // Copy buttons (the releases' checksums).
+  $$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = 'Copié ✓'; } catch (e) { b.textContent = 'Échec'; }
+    setTimeout(() => b.textContent = 'Copier', 1600); }));
+
   // Carousels.
   $$('.carousel').forEach(c => { const tr = $('.car-track', c);
     $('.car-prev', c).addEventListener('click', () => tr.scrollBy({left: -tr.clientWidth * .9, behavior: 'smooth'}));
