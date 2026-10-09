@@ -54,15 +54,26 @@
     $$('[data-ph-' + kind + ']').forEach(el => el.placeholder = el.getAttribute('data-ph-' + kind));
     $$('.when-crash').forEach(el => el.hidden = kind !== 'crash');
     $$('.when-bug').forEach(el => el.hidden = kind === 'crash');
+    // The log is asked for, not just welcome, when the game crashes.
+    if (kind === 'crash') logArea.setAttribute('aria-required', 'true'); else logArea.removeAttribute('aria-required');
     // The steps counted again, as some come and go.
     let n = 1;
-    $$('.step-title span').forEach(s => { if (shown(s)) s.textContent = n++; });
+    $$('.step-title .st-num').forEach(s => { if (shown(s)) s.textContent = n++; });
     $('#tips').innerHTML = '';
     (TIPS[kind] || []).forEach(t => { const li = document.createElement('li'); li.textContent = t; $('#tips').appendChild(li); });
-    $$('.field.invalid').forEach(f => f.classList.remove('invalid'));
+    $$('.field.invalid input, .field.invalid textarea').forEach(el => mark(el, ''));
     say('');
   }
-  form.addEventListener('change', e => { if (e.target.name === 'type') { adapt(); rest.animate?.([{opacity: 0, transform: 'translateY(10px)'}, {opacity: 1, transform: 'none'}], 350); } });
+
+  // An error is written under its field and tied to it (RGAA 11.10), not only drawn in red.
+  function mark(input, message) {
+    const field = input.closest('.field'), err = field && $('.err-msg', field);
+    if (field) field.classList.toggle('invalid', !!message);
+    if (message) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+    if (err) { err.textContent = message; err.hidden = !message; }
+  }
+  form.addEventListener('change', e => { if (e.target.name !== 'type') return; adapt();
+    if (!document.documentElement.classList.contains('still')) rest.animate?.([{opacity: 0, transform: 'translateY(10px)'}, {opacity: 1, transform: 'none'}], 350); });
 
   // The draft: kept as it is typed, given back on the next visit.
   const draft = store.get(DRAFT, null);
@@ -123,7 +134,7 @@
 
   // What the mail says: the kind, then every field shown, under its own label.
   const ticketId = () => 'RLQ-' + Date.now().toString(36).slice(-5).toUpperCase() + Math.random().toString(36).slice(2, 4).toUpperCase();
-  const cleanLabel = el => el.textContent.replace(/\(facultatif\)/, '').trim();
+  const cleanLabel = el => el.textContent.replace(/\((facultatif|obligatoire)\)/, '').trim();
   function report(id) {
     const r = {'Ticket': id, 'Genre': label('type')};
     $$('.group').forEach(g => { if (shown(g)) { const v = value(g.querySelector('input').name); if (v) r[g.dataset.name] = v; } });
@@ -144,19 +155,27 @@
   }
   const asText = r => Object.entries(r).map(([k, v]) => k === 'Log' ? `\n----- ${k} -----\n${v}` : `${k} : ${v}`).join('\n');
 
+  // Every rule, with what to write to meet it. The first field in error takes the focus.
+  const RULES = [
+    ['t-title', 'Titre', el => el.value.trim().length >= 4, 'Le titre est obligatoire : écrivez au moins 4 caractères.'],
+    ['t-desc', 'Description', el => el.value.trim().length >= 10, 'La description est obligatoire : écrivez au moins 10 caractères.'],
+    ['t-log', 'Log', el => value('type') !== 'crash' || el.value.trim().length >= 20,
+      'Pour un crash, le log est obligatoire : choisissez le fichier latest.log ou collez son contenu ici.'],
+    ['t-email', 'Mail', el => !el.value.trim() || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value.trim()),
+      'Cette adresse mail n\'est pas valide : elle doit ressembler à nom@exemple.fr.'],
+  ];
   function check() {
     const kind = value('type');
-    if (!kind) { say('Choisissez le genre de ticket.', 'err'); return false; }
-    let ok = true;
-    [['t-title', 4], ['t-desc', 10]].forEach(([id, n]) => {
-      const f = $('#' + id).closest('.field'), bad = $('#' + id).value.trim().length < n; f.classList.toggle('invalid', bad); if (bad) ok = false; });
-    if (!ok) { say('Il manque un titre ou une description.', 'err'); return false; }
-    if (kind === 'crash' && logArea.value.trim().length < 20) {
-      logArea.closest('.field').classList.add('invalid'); say('Pour un crash, joignez le log : sans lui, impossible de trouver la cause.', 'err'); return false; }
-    const email = $('#t-email').value.trim();
-    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { $('#t-email').closest('.field').classList.add('invalid'); say('Cette adresse ne semble pas valide.', 'err'); return false; }
-    return true;
+    if (!kind) { say('Choisissez d\'abord le genre de ticket.', 'err'); $('input[name=type]').focus(); return false; }
+    const bad = [];
+    RULES.forEach(([id, name, ok, message]) => { const el = $('#' + id), wrong = shown(el) && !ok(el); mark(el, wrong ? message : ''); if (wrong) bad.push([el, name]); });
+    if (!bad.length) return true;
+    say(bad.length === 1 ? 'Un champ est à corriger : ' + bad[0][1] + '.' : bad.length + ' champs sont à corriger : ' + bad.map(b => b[1]).join(', ') + '.', 'err');
+    bad[0][0].focus();
+    return false;
   }
+  // A field put right loses its error as it is typed.
+  form.addEventListener('input', e => { const rule = RULES.find(r => r[0] === e.target.id); if (rule && e.target.getAttribute('aria-invalid') && rule[2](e.target)) mark(e.target, ''); });
   function say(text, cls) { status.textContent = text; status.className = 'status ' + (cls || ''); }
 
   form.addEventListener('submit', async e => {
@@ -168,7 +187,7 @@
     const subject = `[Ebisu ${id}] ${r['Genre']}${qual ? ' (' + qual + ')' : ''} : ${$('#t-title').value.trim()}`;
     const payload = Object.assign({access_key: KEY, subject, from_name: 'Codex Ebisu' + (r['Pseudo'] !== '-' ? ' · ' + r['Pseudo'] : ''), botcheck: ''},
       email ? {replyto: email} : {}, r);
-    send.disabled = true; send.innerHTML = '<span class="spinner"></span> Envoi…'; say('');
+    send.disabled = true; send.innerHTML = '<span class="spinner" aria-hidden="true"></span> Envoi…'; say('Envoi du ticket…');
     try {
       // A form, not JSON: a "simple" request, which the browser sends without asking the service first.
       const data = new FormData();
@@ -178,11 +197,13 @@
       if (!res.ok || !json.success) throw new Error(json.message || ('HTTP ' + res.status));
       const sent = store.get(SENT, []); sent.unshift({id, title: $('#t-title').value.trim(), type: r['Genre'], at: new Date().toISOString()}); store.set(SENT, sent.slice(0, 20));
       store.del(DRAFT);
-      $('#sent-id').textContent = id; form.hidden = true; $('#sent').classList.add('on'); scrollTo({top: 0, behavior: 'smooth'}); confetti(); listSent();
+      $('#sent-id').textContent = id; form.hidden = true; $('#sent').classList.add('on'); confetti(); listSent();
+      // The focus follows the form to its answer, which a screen reader then reads.
+      $('#sent-title').focus();
     } catch (err) {
       say('L\'envoi a échoué (' + err.message + '). Réessayez, ou copiez le ticket.', 'err');
     } finally {
-      send.disabled = !KEY; send.innerHTML = '✉ Envoyer le ticket';
+      send.disabled = !KEY; send.innerHTML = '<span aria-hidden="true">✉ </span>Envoyer le ticket';
     }
   });
 
@@ -193,9 +214,10 @@
     catch (e) { say('Copie impossible ici.', 'err'); }
   });
   $('#again').addEventListener('click', () => {
-    form.reset(); logArea.value = ''; detected.classList.remove('on'); $('#drop b').textContent = 'Glissez latest.log ou un crash report ici';
-    $$('.field.invalid').forEach(f => f.classList.remove('invalid')); version = form.dataset.version || '';
+    form.reset(); logArea.value = ''; detected.classList.remove('on'); $('#drop b').textContent = 'Choisir le fichier latest.log ou un crash report';
+    version = form.dataset.version || '';
     $('#sent').classList.remove('on'); form.hidden = false; adapt(); say('');
+    $('input[name=type]').focus();
   });
 
   // The tickets sent from this browser.
@@ -210,7 +232,7 @@
 
   // A burst of gold when it is sent.
   function confetti() {
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (document.documentElement.classList.contains('still')) return;
     const c = document.createElement('canvas'); c.className = 'confetti'; document.body.appendChild(c);
     const x = c.getContext('2d'); c.width = innerWidth; c.height = innerHeight;
     const colors = ['#ffc65a', '#ffe29a', '#ff4f7b', '#6bffb4', '#5cc8ff', '#b07cff'];
