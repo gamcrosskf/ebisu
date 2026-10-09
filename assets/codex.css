@@ -322,6 +322,9 @@ tbody tr:hover td{background:rgba(255,198,90,.07)}
 .shot{margin:0;border-radius:14px;overflow:hidden;background:#07050b;border:1px solid var(--edge);position:relative}
 .shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .5s}
 .shot img.contain{object-fit:contain;background:radial-gradient(circle,#24324a,#0b0f18)}
+.gallery.cards{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.gallery.cards .shot{border-radius:12px;background:transparent}
+.gallery.cards .shot img{aspect-ratio:2/3}
 .shot:hover img{transform:scale(1.07);filter:saturate(1.15)}
 /* The caption is always there, not only under the mouse (RGAA 10.13). */
 .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 9px;font-size:12.5px;font-weight:600;color:#fff;pointer-events:none;
