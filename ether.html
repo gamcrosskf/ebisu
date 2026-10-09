@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L&#x27;Astrelume · Codex de Reliquary</title>
+<meta name="description" content="Un monde continu et sombre, sous une nuit qui ne finit jamais. Neuf biomes, sa propre pierre, sa propre flore, quatre monstres, et le seul minerai qui donne des fragments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/codex.css">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div id="progress"></div>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="brand-gem"></span><span class="brand-name">RELIQUARY<small>Le Codex</small></span></a><nav class="mainnav" aria-label="Chapitres"><a class="navlink" href="index.html">Accueil</a><div class="dd"><button class="navlink" aria-haspopup="true">Bases<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>✦</span>Les bases</div><a class="dd-item" href="boucle.html"><span class="thumb" style="background-image:url('img/shots/02_invocation_x10.webp')"></span><span><small>Vision</small><b>La boucle de jeu</b></span></a><a class="dd-item" href="totems.html"><span class="thumb pix" style="background-image:url('img/tex/block/summon_circle.png')"></span><span><small>Départ</small><b>Totems animaux</b></span></a><a class="dd-item" href="monnaie.html"><span class="thumb pix" style="background-image:url('img/tex/block/ether_ore.png')"></span><span><small>Économie</small><b>Fragments &amp; Sceaux</b></span></a><a class="dd-item" href="invocation.html"><span class="thumb" style="background-image:url('img/shots/01_invocation_legendaire.webp')"></span><span><small>Gacha</small><b>Autel d'invocation</b></span></a><a class="dd-item" href="boosters.html"><span class="thumb" style="background-image:url('img/shots/04_booster_ouverture.webp')"></span><span><small>Gacha libre</small><b>Boosters</b></span></a><a class="dd-item" href="reliquaire.html"><span class="thumb" style="background-image:url('img/shots/reliquaire_10000.webp')"></span><span><small>Rangement</small><b>Reliquaire</b></span></a><a class="dd-item" href="autel.html"><span class="thumb" style="background-image:url('img/shots/table_de_revelation.webp')"></span><span><small>Ouverture</small><b>Table de Révélation</b></span></a><a class="dd-item" href="raretes.html"><span class="thumb" style="background-image:url('img/shots/03_invocation_divin.webp')"></span><span><small>Identité visuelle</small><b>Raretés</b></span></a></div></div><div class="dd"><button class="navlink" aria-haspopup="true">Reliques<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>◈</span>Les reliques</div><a class="dd-item" href="familles.html"><span class="thumb" style="background-image:url('img/shots/arsenal/arsenal_complet_sans_texte.webp')"></span><span><small>Progression</small><b>Familles &amp; pouvoirs</b></span></a><a class="dd-item" href="dieux.html"><span class="thumb" style="background-image:url('img/shots/arsenal/armes_des_dieux.webp')"></span><span><small>Divin</small><b>Les dieux</b></span></a><a class="dd-item" href="slots.html"><span class="thumb pix" style="background-image:url('img/tex/block/summon_marble.png')"></span><span><small>Équipement</small><b>Slots d'équipement</b></span></a><a class="dd-item" href="codex.html"><span class="thumb pix" style="background-image:url('img/tex/item/bound_chronicle.png')"></span><span><small>Collection</small><b>Codex</b></span></a><a class="dd-item" href="touches.html"><span class="thumb pix" style="background-image:url('img/tex/block/glyph_lamp.png')"></span><span><small>Référence</small><b>Touches (configurables)</b></span></a></div></div><div class="dd"><button class="navlink current" aria-haspopup="true">Mondes<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>☄</span>Les mondes des dieux</div><a class="dd-item" href="mars.html"><span class="thumb" style="background-image:url('img/shots/mars_olympus.webp')"></span><span><small>Planète</small><b>Mars, la planète d'Arès</b></span></a><a class="dd-item" href="jupiter.html"><span class="thumb" style="background-image:url('img/shots/09_jupiter.webp')"></span><span><small>Planète</small><b>Jupiter, le royaume du ciel</b></span></a><a class="dd-item" href="pluton.html"><span class="thumb" style="background-image:url('img/shots/planetes/pluton_02_le_palais_sur_son_ile.webp')"></span><span><small>Planète</small><b>Pluton, le royaume d'Hadès</b></span></a><a class="dd-item" href="neptune.html"><span class="thumb" style="background-image:url('img/shots/planetes/neptune_01_le_dome_d_atlantide_depuis_la_mer.webp')"></span><span><small>Planète</small><b>Neptune, le royaume de Poséidon</b></span></a><a class="dd-item" href="saturne.html"><span class="thumb" style="background-image:url('img/shots/planetes/saturne_01_saturne_et_l_hexagone.webp')"></span><span><small>Planète</small><b>Saturne, le royaume de Kronos</b></span></a><a class="dd-item" href="venus.html"><span class="thumb" style="background-image:url('img/shots/planetes/venus_01_la_conque_vue_de_trois_quarts.webp')"></span><span><small>Planète</small><b>Vénus, le jardin d'Aphrodite</b></span></a><a class="dd-item current" href="ether.html"><span class="thumb pix" style="background-image:url('img/tex/block/ether_portal.png')"></span><span><small>Dimension</small><b>L'Astrelume</b></span></a></div></div><div class="dd"><button class="navlink" aria-haspopup="true">Créations<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>⚒</span>Les créations</div><a class="dd-item" href="creations.html"><span class="thumb pix" style="background-image:url('img/tex/block/evening_star_cage.png')"></span><span><small>Les Arcanes</small><b>Les dix créations</b></span></a><a class="dd-item" href="creuset.html"><span class="thumb" style="background-image:url('img/shots/creuset_reforge.webp')"></span><span><small>Création</small><b>Le Creuset des Âmes</b></span></a><a class="dd-item" href="casino.html"><span class="thumb" style="background-image:url('img/shots/06_machine_a_sous_jackpot.webp')"></span><span><small>Jeux</small><b>La Table du Destin</b></span></a><a class="dd-item" href="volley.html"><span class="thumb pix" style="background-image:url('img/tex/item/volley_ball.png')"></span><span><small>Jeux</small><b>Le terrain de volley</b></span></a><a class="dd-item" href="rafale.html"><span class="thumb" style="background-image:url('img/shots/10_rafale.webp')"></span><span><small>Création</small><b>Le Rafale</b></span></a><a class="dd-item" href="crafts.html"><span class="thumb pix" style="background-image:url('img/tex/block/summon_runes.png')"></span><span><small>Référence</small><b>Tous les artisanats</b></span></a></div></div><div class="dd right"><button class="navlink" aria-haspopup="true">Overworld<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>❦</span>L&#x27;Overworld</div><a class="dd-item" href="contrees.html"><span class="thumb" style="background-image:url('img/places/sky_isles.png')"></span><span><small>Overworld</small><b>Les Contrées</b></span></a><a class="dd-item" href="lieux.html"><span class="thumb" style="background-image:url('img/places/caravanserai.png')"></span><span><small>Exploration</small><b>Lieux & chemins</b></span></a><a class="dd-item" href="merveilles.html"><span class="thumb" style="background-image:url('img/places/world_tree.png')"></span><span><small>Dix merveilles</small><b>Les Merveilles</b></span></a><a class="dd-item" href="epreuves.html"><span class="thumb" style="background-image:url('img/places/arena.png')"></span><span><small>Défis rares</small><b>Les Épreuves</b></span></a><a class="dd-item" href="chronique.html"><span class="thumb" style="background-image:url('img/chronicle/book.webp')"></span><span><small>Collection</small><b>La Chronique des pèlerins</b></span></a><a class="dd-item" href="villages.html"><span class="thumb" style="background-image:url('img/places/village.png')"></span><span><small>Pèlerins</small><b>Villages & quêtes</b></span></a></div></div><div class="dd right"><button class="navlink" aria-haspopup="true">Référence<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>▤</span>Référence</div><a class="dd-item" href="blocs.html"><span class="thumb pix" style="background-image:url('img/tex/block/ether_stone.png')"></span><span><small>Référence</small><b>Les blocs de l'Astrelume</b></span></a></div></div></nav><div class="nav-tools"><button class="search-btn" data-search aria-label="Rechercher">⌕ <span class="label">Rechercher</span> <kbd>Ctrl K</kbd></button><a class="ticket-btn" href="ticket.html"><span class="ping"></span>🎫 <span class="label">Ticket</span></a><button class="burger" aria-label="Menu">☰</button></div></div></header><nav class="drawer" aria-label="Menu"><a href="index.html">Accueil</a><h4><span>✦</span>Les bases</h4><a href="boucle.html">La boucle de jeu</a><a href="totems.html">Totems animaux</a><a href="monnaie.html">Fragments &amp; Sceaux</a><a href="invocation.html">Autel d'invocation</a><a href="boosters.html">Boosters</a><a href="reliquaire.html">Reliquaire</a><a href="autel.html">Table de Révélation</a><a href="raretes.html">Raretés</a><h4><span>◈</span>Les reliques</h4><a href="familles.html">Familles &amp; pouvoirs</a><a href="dieux.html">Les dieux</a><a href="slots.html">Slots d'équipement</a><a href="codex.html">Codex</a><a href="touches.html">Touches (configurables)</a><h4><span>☄</span>Les mondes des dieux</h4><a href="mars.html">Mars, la planète d'Arès</a><a href="jupiter.html">Jupiter, le royaume du ciel</a><a href="pluton.html">Pluton, le royaume d'Hadès</a><a href="neptune.html">Neptune, le royaume de Poséidon</a><a href="saturne.html">Saturne, le royaume de Kronos</a><a href="venus.html">Vénus, le jardin d'Aphrodite</a><a href="ether.html" class="current">L'Astrelume</a><h4><span>⚒</span>Les créations</h4><a href="creations.html">Les dix créations</a><a href="creuset.html">Le Creuset des Âmes</a><a href="casino.html">La Table du Destin</a><a href="volley.html">Le terrain de volley</a><a href="rafale.html">Le Rafale</a><a href="crafts.html">Tous les artisanats</a><h4><span>❦</span>L&#x27;Overworld</h4><a href="contrees.html">Les Contrées</a><a href="lieux.html">Lieux & chemins</a><a href="merveilles.html">Les Merveilles</a><a href="epreuves.html">Les Épreuves</a><a href="chronique.html">La Chronique des pèlerins</a><a href="villages.html">Villages & quêtes</a><h4><span>▤</span>Référence</h4><a href="blocs.html">Les blocs de l'Astrelume</a><a href="#" data-search>⌕ Rechercher</a><a class="ticket-btn" href="ticket.html">🎫 Envoyer un ticket</a></nav>
+<div class="page-body">
+<div class="page"><aside class="sidenav"><h4><span>☄</span>Les mondes des dieux</h4><a href="mars.html"><span class="num">1</span>Mars, la planète d'Arès</a><a href="jupiter.html"><span class="num">2</span>Jupiter, le royaume du ciel</a><a href="pluton.html"><span class="num">3</span>Pluton, le royaume d'Hadès</a><a href="neptune.html"><span class="num">4</span>Neptune, le royaume de Poséidon</a><a href="saturne.html"><span class="num">5</span>Saturne, le royaume de Kronos</a><a href="venus.html"><span class="num">6</span>Vénus, le jardin d'Aphrodite</a><a href="ether.html" class="current"><span class="num">7</span>L'Astrelume</a><div class="other"><a href="boucle.html">✦ Les bases</a><a href="familles.html">◈ Les reliques</a><a href="creations.html">⚒ Les créations</a><a href="contrees.html">❦ L&#x27;Overworld</a><a href="blocs.html">▤ Référence</a><a href="ticket.html">🎫 Envoyer un ticket</a></div></aside><main><nav class="crumbs"><a href="index.html">Accueil</a><i>›</i><a href="mars.html">Les mondes des dieux</a><i>›</i><span>L'Astrelume</span></nav><div class="part-chips"><a href="mars.html">Mars, la planète d'Arès</a><a href="jupiter.html">Jupiter, le royaume du ciel</a><a href="pluton.html">Pluton, le royaume d'Hadès</a><a href="neptune.html">Neptune, le royaume de Poséidon</a><a href="saturne.html">Saturne, le royaume de Kronos</a><a href="venus.html">Vénus, le jardin d'Aphrodite</a><a href="ether.html" class="current">L'Astrelume</a></div><article class="chapter" data-theme="ether"><header class="chap-head"><div class="chap-text"><p class="section-eyebrow">Dimension</p><h1>L'Astrelume</h1></div></header><div class="chap-body">
+        <p class="lede">Un monde continu et sombre, sous une nuit qui ne finit jamais. Neuf biomes, sa propre pierre, sa propre flore, quatre monstres, et le seul minerai qui donne des fragments.</p>
+        <h3 id="y-entrer">Y entrer</h3>
+        <p>Dix <b>Cadres d'Astrelume</b> montés en portail, allumés avec un <b>fragment</b> à la main. Vous arrivez au-dessus des mêmes coordonnées, sur le sol le plus proche ; un portail de retour se construit devant vous.</p>
+        <h3 id="un-monde-en-paliers">Un monde en paliers</h3>
+        <p>L'Astrelume ne roule pas comme l'Overworld, il <b>marche</b>. Le sol se cale sur quatre altitudes nettes &mdash; environ <b>Y&nbsp;68</b>, <b>84</b>, <b>100</b> et <b>120</b> &mdash; séparées par des murs francs plutôt que par des pentes. On ne monte pas, on escalade.</p>
+        <p>Un second bruit perce ces plateaux de <b>cuvettes</b> à bords abrupts, qui descendent à <b>Y&nbsp;45</b> et se remplissent de l'eau noire : environ <b>un sixième</b> de la dimension. Il n'y a ni océan, ni rivière, ni la moindre vallée creusée par un fleuve.</p>
+        <p>Les biomes suivent les marches. Le palier sur lequel vous vous trouvez décide de ce qui peut pousser, et deux champs plus rapides en mélangent deux ou trois à l'intérieur de chaque palier : vous changez de biome tous les <b>cent à cent-cinquante blocs</b>, jamais par bandes climatiques. Franchir un mur change presque toujours le paysage.</p>
+        <h3 id="la-nuit-permanente">La nuit permanente</h3>
+        <p>L'Astrelume n'a <b>aucune lumière du ciel</b>, exactement comme le Nether : ce n'est pas une teinte sombre posée sur un monde éclairé, c'est l'absence pure et simple de la couche de lumière céleste. À ciel ouvert comme au fond d'une grotte, la valeur vaut <b>0</b>. Il n'y a donc ni jour, ni nuit, ni météo hors des Cimes de Givre, et les seuls points lumineux du monde sont ceux que la flore, le minerai et vos torches y mettent.</p>
+        <p>Le ciel garde ses aurores : c'est un réglage séparé de l'éclairage. Une trace d'ambiance (<b>0,08</b>) évite le noir absolu dans les recoins. Et parce que la nuit est inscrite dans les données de lumière plutôt que dans un filtre d'affichage, <b>les packs de shaders la respectent</b>.</p>
+        <p>Les monstres y apparaissent donc <b>partout et en permanence</b>. Le seuil est la lumière de <b>bloc</b>&nbsp;: au-dessus de <b>7</b>, plus rien n'apparaît. C'est la ligne entre la flore et les lampes — un champignon luisant (6), une pointe d'éclat (5) ou un voile (4) n'empêchent rien, tandis qu'une torche (14), une éclosion luisante (15) ou une lampe de glacier (12) dégagent vraiment un campement.</p>
+        <p>Et parce que la dimension n'a aucune lumière du ciel, le quota de monstres de Minecraft se répartirait sur toute la colonne, de la bedrock à Y&nbsp;200&nbsp;: beaucoup de monstres vivants, très peu à portée de vue. Une <b>passe supplémentaire</b> en maintient donc jusqu'à <b>26</b> dans un rayon de <b>48&nbsp;blocs</b> autour de vous, et s'arrête dès que le compte y est. Elle obéit aux mêmes règles que le reste — lumière, biome, taille de groupe, Phare de Garde comprise.</p>
+        <p>Vous ne pouvez pas y dormir, ni y poser de point de réapparition.</p>
+        <h3 id="les-neuf-biomes">Les neuf biomes</h3>
+        <div class="tablewrap"><table><thead><tr><th>Biome</th><th>Ce que vous y trouvez</th></tr></thead><tbody>
+        <tr><td><b>Prairies d'Aurore</b></td><td>Vallons ouverts, herbe menthe, lucioles. Le biome le plus praticable.</td></tr>
+        <tr><td><b>Canopée de Lumine</b></td><td>Forêt bioluminescente : arbres géants, bulbes dans les branches, lianes lumineuses.</td></tr>
+        <tr><td><b>Jardins d'Améthyste</b></td><td>Champ de cristal, calcite et sable violet, géodes.</td></tr>
+        <tr><td><b>Val du Crépuscule</b></td><td>Val rose, arbres du Crépuscule, braises au sol.</td></tr>
+        <tr><td><b>Dunes de Poussière d'Étoiles</b></td><td>Croûte pâle hérissée de colonnes blanchies et de pointes d'éclat ; la seule lumière sort du sol, en fulgurite.</td></tr>
+        <tr><td><b>Cimes de Givre</b></td><td>Hauteurs gelées, forêts d'aiguilles de glace, lampes de glacier, neige qui tombe vraiment.</td></tr>
+        <tr><td><b>Bas-fonds Scintillants</b></td><td>Les cuvettes noyées : éperons couverts de voile des marées et lits d'amas de perles. Rien de vanilla n'y pousse.</td></tr>
+        <tr><td><b>Grotte Luminescente</b></td><td>Biome souterrain. Mousse, lanternes, lianes : c'est là que la dimension est la plus belle.</td></tr>
+        <tr><td><b>Cavernes de Cristal</b></td><td>L'autre souterrain : calcite, cristaux, violet profond.</td></tr>
+        </tbody></table></div>
+        <h3 id="les-quatre-monstres">Les quatre monstres</h3>
+        <p>Les trois premiers sont partout et arrivent par paquets de deux à quatre. Le quatrième est l'exception.</p>
+        <div class="tablewrap"><table><thead><tr><th>Monstre</th><th>PV</th><th>Dégâts</th><th>Armure</th><th>Butin de relique</th><th>Comportement</th></tr></thead><tbody>
+        <tr><td><b>Revenant d'Astrelume</b></td><td class="stat-value">44</td><td class="stat-value">9</td><td class="stat-value">6</td><td class="stat-value">75&nbsp;% &rarr; 2 à 4</td><td>Lent, lourd, encaisse. Frappe trois fois plus fort qu'un zombie.</td></tr>
+        <tr><td><b>Archer des Cimes</b></td><td class="stat-value">30</td><td class="stat-value">6 (flèche)</td><td class="stat-value">3</td><td class="stat-value">75&nbsp;% &rarr; 2 à 4</td><td>Tire deux fois plus vite qu'un squelette, et bien plus fort.</td></tr>
+        <tr><td><b>Rôdeur du Vide</b></td><td class="stat-value">40</td><td class="stat-value">8</td><td class="stat-value">4</td><td class="stat-value">75&nbsp;% &rarr; 2 à 4</td><td>Vole, vous suit à 64 blocs, pique depuis le ciel.</td></tr>
+        <tr><td><b>Gardien de Cendres</b></td><td class="stat-value">120</td><td class="stat-value">10 + épée</td><td class="stat-value">12</td><td class="stat-value">1 sceau</td><td>Toujours seul, toujours loin du précédent. Inflige Wither.</td></tr>
+        <tr><td><b>Tyran de la Tour</b></td><td class="stat-value">600</td><td class="stat-value">22 → 30</td><td class="stat-value">18</td><td class="stat-value">&mdash;</td><td>Uniquement au 100<sup>e</sup> étage de la Tour. S'enrage à mi-vie.</td></tr>
+        </tbody></table></div>
+        <p class="recipe-caption">Trois kills sur quatre donnent <b>2 à 4 fragments</b>, et le Butin pousse la fourchette à <b>3 à 5</b> sans jamais la dépasser&nbsp;: un niveau de plus vous rapproche du haut de la fourchette, il ne l'ouvre pas.</p>
+        <p class="recipe-caption">Le Gardien de Cendres, lui, ne lâche aucun fragment. Il donne <b>un Sceau d'invocation entier</b>, toujours exactement un, et le Butin n'y change rien&nbsp;: c'est neuf fragments d'artisanat économisés d'un coup. Il n'apparaît jamais à deux, refuse quatre apparitions sur cinq, et son budget de densité interdit un second gardien à proximité&nbsp;: en croiser un est un événement, et il paie comme tel.</p>
+        <h3 id="ce-qui-se-trouve-en-surface">Ce qui se trouve en surface</h3>
+        <p class="lede">La dimension est sombre et le brouillard est court&nbsp;: sans rep&egrave;res elle
+        serait illisible. Tout ce qui suit sert autant &agrave; s'orienter qu'&agrave; fouiller.</p>
+        <div class="tablewrap"><table><thead><tr><th>Structure</th><th>Fr&eacute;quence</th>
+        <th>Ce que c'est</th></tr></thead><tbody>
+        <tr><td><b>Tour de l'Enfer</b></td><td class="stat-value">~1 / 3000 chunks</td><td>Quatre pylones noirs autour d'un seuil, et rien d'autre&nbsp;: les <b>cent &eacute;tages</b> n'existent pas tant que personne n'a touch&eacute; la pierre. Ils apparaissent alors un par un, dans une ar&egrave;ne instanci&eacute;e par groupe. Un <b>sceau par &eacute;tage</b> plus des fragments, un <b>booster tous les dix</b>, et un <b>palier</b> tous les dix &eacute;tages o&ugrave; l'on choisit&nbsp;: repartir avec tout, ou descendre plus bas. Au centi&egrave;me, le <b>Tyran de la Tour</b>. Voir la section qui lui est consacr&eacute;e.</td></tr>
+        <tr><td><b>Citadelle de Cendres</b></td><td class="stat-value">~1 / 600 chunks</td><td><b>25&times;25&times;25</b>, cinq &eacute;tages, et chacun est un <b>labyrinthe</b> tir&eacute; au sort&nbsp;: l'escalier vers le niveau suivant est caché dans une case que le labyrinthe choisit, donc on ne la traverse pas, on la fouille. Quatre &agrave; six monstres par &eacute;tage et un <b>Gardien de Cendres</b> sur chacun des deux derniers. Les coffres sont dans les <b>culs-de-sac</b>. Toute la citadelle contient <b>20 &agrave; 25 sceaux</b> au total, pas un de plus, et <b>2 ou 3 coffres</b> seulement portent un booster&nbsp;; le reste n'est que fragments et sceaux. Elle exige un terrain vraiment plat.</td></tr>
+        <tr><td><b>Maison d'Astrelume</b></td><td class="stat-value">~1 / 200 chunks</td><td>Une pi&egrave;ce mur&eacute;e avec une porte, des fen&ecirc;tres encore allum&eacute;es et une lanterne sur un petit clocheton &mdash; c'est ce point lumineux qui la trahit de loin. Le coffre paie un prix fixe&nbsp;: <b>un sceau</b> et <b>3 &agrave; 10 fragments</b>, &agrave; chaque fois, plus du butin ordinaire. <b>Aucun booster.</b> Deux monstres y sont enferm&eacute;s et ne dispara&icirc;tront pas&nbsp;: le butin se m&eacute;rite.</td></tr>
+        <tr><td><b>Monolithe d'Astrelume</b></td><td class="stat-value">~1 / 24 chunks</td><td>Une dalle de pierre du Vide de 14 &agrave; 24 blocs, <b>suspendue en l'air</b> au-dessus d'un socle, une veine de lumi&egrave;re sur toute sa hauteur. Le brouillard se ferme &agrave; 96 blocs&nbsp;: c'est cette ligne lumineuse que vous voyez en premier dans le noir, et c'est vers elle qu'on marche.</td></tr>
+        <tr><td><b>Crat&egrave;re de Cristal</b></td><td class="stat-value">~1 / 20 chunks</td><td>Une cuvette de 5 &agrave; 9 blocs de rayon creus&eacute;e dans le sol, doubl&eacute;e de calcite, avec une lanterne et de vrais amas de cristal au fond &mdash; qui continuent de pousser.</td></tr>
+        <tr><td><b>Colonnade Bris&eacute;e</b></td><td class="stat-value">~1 / 2 chunks (prairies), ~1 / 10 chunks ailleurs</td><td>Une file de colonnes cass&eacute;es &agrave; des hauteurs diff&eacute;rentes, certaines couch&eacute;es. C'est ce qui emp&ecirc;che le terrain ouvert de ressembler &agrave; un champ vide.</td></tr>
+        <tr><td><b>Tombeau de Cendres</b></td><td class="stat-value">~1 / 300 chunks</td><td>Une chambre enterr&eacute;e dont seul le toit d&eacute;passe, avec un escalier effondr&eacute; pour y descendre. <b>Trois Gardiens de Cendres</b> y sont enferm&eacute;s, et le coffre du fond est <b>scell&eacute;</b>&nbsp;: il n'y a pas de cl&eacute;, le verrou est le combat. Quand le dernier tombe, le sceau c&egrave;de et le coffre donne <b>2 sceaux d'invocation</b> et <b>7 &agrave; 18 fragments</b>. Aucun booster. Le bloc scell&eacute; est incassable&nbsp;: creuser autour ne sert &agrave; rien.</td></tr>
+        <tr><td><b>Ruine c&eacute;leste</b></td><td class="stat-value">~1 / 60 chunks</td><td>Un sanctuaire &agrave; ciel ouvert&nbsp;: dallage, colonnes bris&eacute;es, lanternes, et un coffre pos&eacute; sur un cadre d'Astrelume.</td></tr>
+        <tr><td><b>Fl&egrave;ches et ob&eacute;lisques</b></td><td class="stat-value">fr&eacute;quent</td><td>Aiguilles de cristal, de givre ou de gr&egrave;s selon le biome. Pas de butin, mais un rep&egrave;re.</td></tr>
+        </tbody></table></div>
+
+        <h3 id="apparition-des-monstres">Apparition des monstres</h3>
+        <p>Les monstres apparaissent partout, tout le temps, tant que la lumi&egrave;re de bloc reste
+        &agrave; 7 ou moins. <b>Aucun monstre de l'Overworld n'appara&icirc;t ici</b>&nbsp;: pas de zombie,
+        pas de squelette, pas de noyé. Les quatre ci-dessous sont les seuls.</p>
+        <div class="tablewrap"><table><thead><tr><th>Monstre</th><th>Poids</th><th>Par groupe</th>
+        <th>Part des apparitions</th><th>Butin de relique</th></tr></thead><tbody>
+        <tr><td><b>Revenant d'Astrelume</b></td><td class="stat-value">70</td><td class="stat-value">4 &agrave; 7</td><td class="stat-value">49&nbsp;%</td><td class="stat-value">75&nbsp;% &rarr; 2 &agrave; 4 (3 &agrave; 5 au Butin)</td></tr>
+        <tr><td><b>Archer des Cimes</b></td><td class="stat-value">60</td><td class="stat-value">3 &agrave; 5</td><td class="stat-value">42&nbsp;%</td><td class="stat-value">75&nbsp;% &rarr; 2 &agrave; 4 (3 &agrave; 5 au Butin)</td></tr>
+        <tr><td><b>Rôdeur du Vide</b></td><td class="stat-value">10</td><td class="stat-value">1 &agrave; 2</td><td class="stat-value">7&nbsp;%</td><td class="stat-value">75&nbsp;% &rarr; 2 &agrave; 4 (3 &agrave; 5 au Butin)</td></tr>
+        <tr><td><b>Gardien de Cendres</b></td><td class="stat-value">3</td><td class="stat-value">1</td><td class="stat-value">2.1&nbsp;% &rarr; <b>1.0&nbsp;%</b></td><td class="stat-value">1 sceau</td></tr>
+        </tbody></table></div>
+        <p class="recipe-caption">Le poids d&eacute;cide <em>lequel</em> appara&icirc;t, pas combien&nbsp;:
+        c'est la taille des groupes qui peuple la dimension. Le R&ocirc;deur du Vide appara&icirc;t
+        un peu plus souvent que son poids ne le dit&nbsp;: il vole, donc il est valide dans
+        <em>tout</em> bloc d'air, l&agrave; o&ugrave; les trois autres exigent un sol sous leurs pieds.
+        Son poids est baiss&eacute; en cons&eacute;quence. Le Gardien passe par un second filtre qui
+        refuse une apparition sur deux, ce qui le ram&egrave;ne &agrave; environ <b>1&nbsp;%</b>, et un budget
+        de densit&eacute; interdit qu'un second appara&icirc;sse pr&egrave;s du premier. Ces poids sont ceux de
+        base&nbsp;; certains biomes les ajustent.</p>
+
+        <h3 id="le-minerai-d-astrelume">Le minerai d'Astrelume</h3>
+        <p>Des filons de <b>2 &agrave; 4 blocs</b>, entre <b>Y&nbsp;-56</b> et <b>Y&nbsp;60</b>. Il n'y a pas de
+        couche unique &agrave; viser&nbsp;: la chance monte <b>continuellement avec la profondeur</b>, et elle
+        monte vite. Creuser en surface ne donne presque rien, descendre au fond paie.</p>
+        <p>Comme pour le diamant, un bloc de filon qui donnerait sur une cavit&eacute; est &eacute;cart&eacute;
+        une fois sur deux&nbsp;: les filons se cachent surtout dans la roche pleine.</p>
+        <div class="tablewrap"><table><thead><tr><th>Profondeur</th><th>Filons / chunk</th>
+        <th>En clair</th></tr></thead><tbody>
+        <tr><td class="mono">Y&nbsp;-56 &agrave; -41</td><td class="stat-value">2.00</td><td><b>2.0 filons</b> par chunk</td></tr>
+        <tr><td class="mono">Y&nbsp;-40 &agrave; -25</td><td class="stat-value">1.24</td><td><b>1.2 filons</b> par chunk</td></tr>
+        <tr><td class="mono">Y&nbsp;-24 &agrave; -9</td><td class="stat-value">0.71</td><td>1 filon tous les 1 chunks</td></tr>
+        <tr><td class="mono">Y&nbsp;-8 &agrave; 7</td><td class="stat-value">0.34</td><td>1 filon tous les 3 chunks</td></tr>
+        <tr><td class="mono">Y&nbsp;8 &agrave; 23</td><td class="stat-value">0.12</td><td>1 filon tous les 8 chunks</td></tr>
+        <tr><td class="mono">Y&nbsp;24 &agrave; 39</td><td class="stat-value">0.04</td><td>1 filon tous les 27 chunks</td></tr>
+        <tr><td class="mono">Y&nbsp;40 &agrave; 60</td><td class="stat-value">0.01</td><td>1 filon tous les 124 chunks</td></tr>
+        </tbody></table></div>
+        <p>Chaque bloc de filon donne <b>1 &agrave; 3 fragments</b>, et <b>2 &agrave; 4</b> avec la
+        Fortune&nbsp;: l'enchantement rel&egrave;ve la fourchette enti&egrave;re, plancher compris,
+        plut&ocirc;t que d'ajouter une queue. Un filon de quatre blocs bien enchant&eacute; vaut donc
+        presque deux sceaux.</p>
+        <p class="recipe-caption">Soit environ <b>4.5 filons par chunk</b> sur toute la colonne. Les
+        chiffres par chunk supposent une roche perc&eacute;e de grottes&nbsp;; le taux par bloc de roche, lui,
+        est exact.</p>
+
+        <h3 id="la-tour-de-l-enfer">La Tour de l'Enfer</h3>
+        <p class="lede">Un chunk sur 3000, et la seule chose de la dimension qui ne se fouille pas&nbsp;:
+        elle se <b>gravit</b>.</p>
+        <p>Au sol il n'y a qu'un seuil entre quatre pylones. Les <b>cent &eacute;tages</b> n'existent
+        pas tant que personne n'y a touch&eacute;&nbsp;: une tour r&eacute;ellement haute de six cents
+        blocs ne tiendrait pas dans un monde qui en fait trois cent quatre-vingt-quatre, et deux
+        groupes ne pourraient pas y monter en m&ecirc;me temps. Chaque étage est donc b&acirc;ti
+        &agrave; la demande dans une <b>ar&egrave;ne instanci&eacute;e</b>, une par groupe, tr&egrave;s
+        haut au-dessus du monde.</p>
+        <p>L'ar&egrave;ne est un cube de barri&egrave;res&nbsp;: <b>invisibles</b>, donc vous voyez
+        l'Astrelume autour de vous et les autres vous voient vous battre, et <b>incassables</b>, donc on
+        n'en sort pas &agrave; la pioche. Le sol lui-m&ecirc;me ne se mine pas.</p>
+
+        <div class="tablewrap"><table><thead><tr><th>Ce qui se passe</th><th>Quand</th><th>Ce que ça donne</th></tr></thead><tbody>
+        <tr><td>Étage nettoyé</td><td class="stat-value">chaque étage</td><td><b>1 sceau</b> jusqu'au 50<sup>e</sup>, <b>2 sceaux</b> ensuite, + 4 à 9 fragments (davantage en profondeur)</td></tr>
+        <tr><td>Palier</td><td class="stat-value">tous les 10</td><td>+ <b>1 booster</b>, un récap, et le choix</td></tr>
+        <tr><td>Le Tyran</td><td class="stat-value">étage 100</td><td>tout le butin, et la tour est finie</td></tr>
+        </tbody></table></div>
+
+        <p><b>Les monstres de la Tour ne lâchent rien.</b> Ni butin, ni équipement : seulement leur expérience. Tout ce que vaut une tour passe par la cagnotte — <b>150 sceaux</b> pour les cent étages (50 dans la première moitié, 100 dans la seconde), les fragments, et un booster par palier.</p>
+
+        <h3 id="le-butin-ne-vous-appartient-pas-encore">Le butin ne vous appartient pas encore</h3>
+        <p>Tout ce que vous gagnez s'accumule dans une <b>cagnotte</b>, et pas dans votre inventaire.
+        Elle ne devient r&eacute;elle qu'&agrave; un palier. C'est toute la tension du b&acirc;timent&nbsp;:
+        &agrave; chaque dixi&egrave;me étage, deux socles.</p>
+        <ul>
+          <li><b>Socle vert</b> &mdash; vous repartez avec absolument tout. Les autres joueurs, eux,
+          pourront toujours entrer dans cette tour&nbsp;; le verrou est nominatif.</li>
+          <li><b>Socle orange</b> &mdash; dix étages de plus. La cagnotte reste en jeu.</li>
+        </ul>
+        <p><b>Une tour, c'est une seule tentative.</b> Elle est consomm&eacute;e pour vous &mdash; et
+        pour tout votre groupe &mdash; d&egrave;s que vous franchissez le seuil, pas au moment o&ugrave;
+        vous en ressortez. Quelle que soit la fin de l'ascension, vous n'y reviendrez jamais.</p>
+        <p><b>Mourir co&ucirc;te tout.</b> La cagnotte, la progression, et <b>l'int&eacute;gralit&eacute;
+        de votre inventaire</b> &mdash; armure et main gauche comprises. Rien ne tombe au sol&nbsp;:
+        tout est d&eacute;truit. Vous r&eacute;apparaissez les mains vides, et la tour ne se rouvrira
+        pas. Seules vos <b>reliques &eacute;quip&eacute;es</b> survivent&nbsp;; elles ne sont pas dans
+        l'inventaire et la mort ne les a jamais touch&eacute;es.</p>
+        <p>Il n'y a donc aucune fa&ccedil;on de ressortir gagnant d'une tour autrement qu'en en
+        <b>ressortant par un palier</b>.</p>
+        <p class="recipe-caption">Le verrou est pris &agrave; l'entr&eacute;e pour une raison pr&eacute;cise&nbsp;: une tour qu'on pourrait retenter jusqu'&agrave; ce qu'elle se passe bien ne serait plus une ascension, mais une ferme. Mort, d&eacute;connexion prolong&eacute;e ou red&eacute;marrage du serveur&nbsp;: dans les trois cas la tentative est consomm&eacute;e, et la cagnotte avec elle.</p>
+
+        <h3 id="ce-que-la-tour-coupe">Ce que la Tour coupe</h3>
+        <ul>
+          <li><b>Les téléportations.</b> Pendant une ascension, le retour au lit du Vide, le Clou de l'Oubli et les Pierres de Passage sont refusés : s'échapper garderait l'inventaire que la mort est censée prendre. On ne peut pas non plus se téléporter dans une arène depuis l'extérieur.</li>
+          <li><b>Le Cœur du Néant.</b> Il ne vous sauve pas dans la Tour : son sauvetage est un retour au lit, donc une fuite.</li>
+          <li><b>Les dieux.</b> Le slot divin se tait dès le seuil franchi, passif comme pouvoir, et se rallume à la sortie.</li>
+        </ul>
+        <p>Tout le reste fonctionne : les bonus de famille, les autres légendaires, et votre totem — le coup mortel refusé par Aethelgard compris.</p>
+
+        <h3 id="ce-que-la-tour-coupe-2">Ce que la Tour coupe</h3>
+        <ul>
+          <li><b>Les téléportations.</b> Pendant une ascension, le retour au lit du Vide, le Clou de l'Oubli et les Pierres de Passage sont refusés : s'échapper garderait l'inventaire que la mort est censée prendre. On ne peut pas non plus se téléporter dans une arène depuis l'extérieur.</li>
+          <li><b>Le Cœur du Néant.</b> Il ne vous sauve pas dans la Tour : son sauvetage est un retour au lit, donc une fuite.</li>
+          <li><b>Les dieux.</b> Le slot divin se tait dès le seuil franchi : ni passif, ni acte divin, et vous retrouvez votre propre skin. Tout se rallume à la sortie.</li>
+        </ul>
+        <p>Tout le reste fonctionne : les bonus de famille, les autres légendaires, et votre totem — le coup mortel refusé par Aethelgard compris.</p>
+
+        <h3 id="en-groupe">En groupe</h3>
+        <p>Il n'y a pas d'invitation&nbsp;: quiconque se trouve &agrave; moins de <b>16 blocs</b> du seuil
+        au moment o&ugrave; vous le touchez entre avec vous. Le groupe partage la cagnotte, et le groupe
+        perd la tour ensemble. Quatre joueurs qui montent vingt étages puis repartent ont tous les
+        quatre fini avec <em>cette</em> tour&nbsp;; celui qui la trouvera plus tard la reprendra
+        &agrave; l'étage&nbsp;1, intacte.</p>
+
+        <p class="recipe-caption">Les monstres durcissent avec l'étage&nbsp;: environ +1,5&nbsp;% de
+        vie et +1,2&nbsp;% de d&eacute;g&acirc;ts par étage, des Gardiens de Cendres &agrave; partir du
+        dixi&egrave;me et de plus en plus nombreux ensuite. Une ascension en cours n'est pas
+        sauvegard&eacute;e&nbsp;: un red&eacute;marrage du serveur l'annule et rouvre la tour, exactement
+        comme une mort.</p></div></article><nav class="pager"><a class="prev" href="venus.html"><i class="bg" style="background-image:url('img/shots/planetes/venus_01_la_conque_vue_de_trois_quarts.webp')"></i><small>← Précédent</small><b>Vénus, le jardin d'Aphrodite</b><span>Les mondes des dieux</span></a><a class="next" href="creations.html"><i class="bg" style="background-image:url('img/tex/block/evening_star_cage.png')"></i><small>Suivant →</small><b>Les dix créations</b><span>Les créations</span></a></nav></main><aside class="onpage"><h4>Sur cette page</h4><a href="#y-entrer">Y entrer</a><a href="#un-monde-en-paliers">Un monde en paliers</a><a href="#la-nuit-permanente">La nuit permanente</a><a href="#les-neuf-biomes">Les neuf biomes</a><a href="#les-quatre-monstres">Les quatre monstres</a><a href="#ce-qui-se-trouve-en-surface">Ce qui se trouve en surface</a><a href="#apparition-des-monstres">Apparition des monstres</a><a href="#le-minerai-d-astrelume">Le minerai d&#x27;Astrelume</a><a href="#la-tour-de-l-enfer">La Tour de l&#x27;Enfer</a><a href="#le-butin-ne-vous-appartient-pas-encore">Le butin ne vous appartient pas encore</a><a href="#ce-que-la-tour-coupe">Ce que la Tour coupe</a><a href="#ce-que-la-tour-coupe-2">Ce que la Tour coupe</a><a href="#en-groupe">En groupe</a></aside></div>
+</div>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-mark">RELIQUARY</div><p>Le guide du joueur du mod Reliquary, pour Minecraft 26.3 (Fabric). Tout le contenu visuel est dessiné par du code.</p><p><a class="btn" href="ticket.html">🎫 Envoyer un ticket</a></p></div><div><h5>✦ Les bases</h5><ul><li><a href="boucle.html">La boucle de jeu</a></li><li><a href="totems.html">Totems animaux</a></li><li><a href="monnaie.html">Fragments &amp; Sceaux</a></li><li><a href="invocation.html">Autel d'invocation</a></li><li><a href="boosters.html">Boosters</a></li><li><a href="reliquaire.html">Reliquaire</a></li><li><a href="autel.html">Table de Révélation</a></li><li><a href="raretes.html">Raretés</a></li></ul><h5>◈ Les reliques</h5><ul><li><a href="familles.html">Familles &amp; pouvoirs</a></li><li><a href="dieux.html">Les dieux</a></li><li><a href="slots.html">Slots d'équipement</a></li><li><a href="codex.html">Codex</a></li><li><a href="touches.html">Touches (configurables)</a></li></ul></div><div><h5>☄ Les mondes des dieux</h5><ul><li><a href="mars.html">Mars, la planète d'Arès</a></li><li><a href="jupiter.html">Jupiter, le royaume du ciel</a></li><li><a href="pluton.html">Pluton, le royaume d'Hadès</a></li><li><a href="neptune.html">Neptune, le royaume de Poséidon</a></li><li><a href="saturne.html">Saturne, le royaume de Kronos</a></li><li><a href="venus.html">Vénus, le jardin d'Aphrodite</a></li><li><a href="ether.html">L'Astrelume</a></li></ul><h5>⚒ Les créations</h5><ul><li><a href="creations.html">Les dix créations</a></li><li><a href="creuset.html">Le Creuset des Âmes</a></li><li><a href="casino.html">La Table du Destin</a></li><li><a href="volley.html">Le terrain de volley</a></li><li><a href="rafale.html">Le Rafale</a></li><li><a href="crafts.html">Tous les artisanats</a></li></ul></div><div><h5>❦ L&#x27;Overworld</h5><ul><li><a href="contrees.html">Les Contrées</a></li><li><a href="lieux.html">Lieux & chemins</a></li><li><a href="merveilles.html">Les Merveilles</a></li><li><a href="epreuves.html">Les Épreuves</a></li><li><a href="chronique.html">La Chronique des pèlerins</a></li><li><a href="villages.html">Villages & quêtes</a></li></ul><h5>▤ Référence</h5><ul><li><a href="blocs.html">Les blocs de l'Astrelume</a></li></ul></div></div><div class="footer-bottom"><span>Reliquary 1.0.0 · Minecraft 26.3</span><span><kbd>Ctrl K</kbd> rechercher · <kbd>Alt</kbd> + <kbd>←</kbd> <kbd>→</kbd> chapitre précédent ou suivant</span></div></footer>
+<div class="search" id="search" hidden>
+  <div class="search-box">
+    <input id="search-input" type="search" placeholder="Une relique, un dieu, une merveille, une commande…" autocomplete="off">
+    <ol id="search-results"></ol>
+    <p class="search-help"><kbd>↑</kbd><kbd>↓</kbd> choisir · <kbd>Entrée</kbd> aller · <kbd>Échap</kbd> fermer</p>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" aria-label="Fermer">×</button><button class="lb-prev" aria-label="Précédente">‹</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-next" aria-label="Suivante">›</button>
+</div>
+<a class="to-top" href="#" aria-label="Haut de page">↑</a>
+<script src="assets/search-index.js"></script>
+<script src="assets/codex.js"></script>
+
+</body>
+</html>

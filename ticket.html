@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Envoyer un ticket · Codex de Reliquary</title>
+<meta name="description" content="Un bug, un crash, une idée pour Reliquary ? Envoyez un ticket : il arrive directement par mail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/codex.css">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div id="progress"></div>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="brand-gem"></span><span class="brand-name">RELIQUARY<small>Le Codex</small></span></a><nav class="mainnav" aria-label="Chapitres"><a class="navlink" href="index.html">Accueil</a><div class="dd"><button class="navlink" aria-haspopup="true">Bases<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>✦</span>Les bases</div><a class="dd-item" href="boucle.html"><span class="thumb" style="background-image:url('img/shots/02_invocation_x10.webp')"></span><span><small>Vision</small><b>La boucle de jeu</b></span></a><a class="dd-item" href="totems.html"><span class="thumb pix" style="background-image:url('img/tex/block/summon_circle.png')"></span><span><small>Départ</small><b>Totems animaux</b></span></a><a class="dd-item" href="monnaie.html"><span class="thumb pix" style="background-image:url('img/tex/block/ether_ore.png')"></span><span><small>Économie</small><b>Fragments &amp; Sceaux</b></span></a><a class="dd-item" href="invocation.html"><span class="thumb" style="background-image:url('img/shots/01_invocation_legendaire.webp')"></span><span><small>Gacha</small><b>Autel d'invocation</b></span></a><a class="dd-item" href="boosters.html"><span class="thumb" style="background-image:url('img/shots/04_booster_ouverture.webp')"></span><span><small>Gacha libre</small><b>Boosters</b></span></a><a class="dd-item" href="reliquaire.html"><span class="thumb" style="background-image:url('img/shots/reliquaire_10000.webp')"></span><span><small>Rangement</small><b>Reliquaire</b></span></a><a class="dd-item" href="autel.html"><span class="thumb" style="background-image:url('img/shots/table_de_revelation.webp')"></span><span><small>Ouverture</small><b>Table de Révélation</b></span></a><a class="dd-item" href="raretes.html"><span class="thumb" style="background-image:url('img/shots/03_invocation_divin.webp')"></span><span><small>Identité visuelle</small><b>Raretés</b></span></a></div></div><div class="dd"><button class="navlink" aria-haspopup="true">Reliques<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>◈</span>Les reliques</div><a class="dd-item" href="familles.html"><span class="thumb" style="background-image:url('img/shots/arsenal/arsenal_complet_sans_texte.webp')"></span><span><small>Progression</small><b>Familles &amp; pouvoirs</b></span></a><a class="dd-item" href="dieux.html"><span class="thumb" style="background-image:url('img/shots/arsenal/armes_des_dieux.webp')"></span><span><small>Divin</small><b>Les dieux</b></span></a><a class="dd-item" href="slots.html"><span class="thumb pix" style="background-image:url('img/tex/block/summon_marble.png')"></span><span><small>Équipement</small><b>Slots d'équipement</b></span></a><a class="dd-item" href="codex.html"><span class="thumb pix" style="background-image:url('img/tex/item/bound_chronicle.png')"></span><span><small>Collection</small><b>Codex</b></span></a><a class="dd-item" href="touches.html"><span class="thumb pix" style="background-image:url('img/tex/block/glyph_lamp.png')"></span><span><small>Référence</small><b>Touches (configurables)</b></span></a></div></div><div class="dd"><button class="navlink" aria-haspopup="true">Mondes<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>☄</span>Les mondes des dieux</div><a class="dd-item" href="mars.html"><span class="thumb" style="background-image:url('img/shots/mars_olympus.webp')"></span><span><small>Planète</small><b>Mars, la planète d'Arès</b></span></a><a class="dd-item" href="jupiter.html"><span class="thumb" style="background-image:url('img/shots/09_jupiter.webp')"></span><span><small>Planète</small><b>Jupiter, le royaume du ciel</b></span></a><a class="dd-item" href="pluton.html"><span class="thumb" style="background-image:url('img/shots/planetes/pluton_02_le_palais_sur_son_ile.webp')"></span><span><small>Planète</small><b>Pluton, le royaume d'Hadès</b></span></a><a class="dd-item" href="neptune.html"><span class="thumb" style="background-image:url('img/shots/planetes/neptune_01_le_dome_d_atlantide_depuis_la_mer.webp')"></span><span><small>Planète</small><b>Neptune, le royaume de Poséidon</b></span></a><a class="dd-item" href="saturne.html"><span class="thumb" style="background-image:url('img/shots/planetes/saturne_01_saturne_et_l_hexagone.webp')"></span><span><small>Planète</small><b>Saturne, le royaume de Kronos</b></span></a><a class="dd-item" href="venus.html"><span class="thumb" style="background-image:url('img/shots/planetes/venus_01_la_conque_vue_de_trois_quarts.webp')"></span><span><small>Planète</small><b>Vénus, le jardin d'Aphrodite</b></span></a><a class="dd-item" href="ether.html"><span class="thumb pix" style="background-image:url('img/tex/block/ether_portal.png')"></span><span><small>Dimension</small><b>L'Astrelume</b></span></a></div></div><div class="dd"><button class="navlink" aria-haspopup="true">Créations<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>⚒</span>Les créations</div><a class="dd-item" href="creations.html"><span class="thumb pix" style="background-image:url('img/tex/block/evening_star_cage.png')"></span><span><small>Les Arcanes</small><b>Les dix créations</b></span></a><a class="dd-item" href="creuset.html"><span class="thumb" style="background-image:url('img/shots/creuset_reforge.webp')"></span><span><small>Création</small><b>Le Creuset des Âmes</b></span></a><a class="dd-item" href="casino.html"><span class="thumb" style="background-image:url('img/shots/06_machine_a_sous_jackpot.webp')"></span><span><small>Jeux</small><b>La Table du Destin</b></span></a><a class="dd-item" href="volley.html"><span class="thumb pix" style="background-image:url('img/tex/item/volley_ball.png')"></span><span><small>Jeux</small><b>Le terrain de volley</b></span></a><a class="dd-item" href="rafale.html"><span class="thumb" style="background-image:url('img/shots/10_rafale.webp')"></span><span><small>Création</small><b>Le Rafale</b></span></a><a class="dd-item" href="crafts.html"><span class="thumb pix" style="background-image:url('img/tex/block/summon_runes.png')"></span><span><small>Référence</small><b>Tous les artisanats</b></span></a></div></div><div class="dd right"><button class="navlink" aria-haspopup="true">Overworld<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>❦</span>L&#x27;Overworld</div><a class="dd-item" href="contrees.html"><span class="thumb" style="background-image:url('img/places/sky_isles.png')"></span><span><small>Overworld</small><b>Les Contrées</b></span></a><a class="dd-item" href="lieux.html"><span class="thumb" style="background-image:url('img/places/caravanserai.png')"></span><span><small>Exploration</small><b>Lieux & chemins</b></span></a><a class="dd-item" href="merveilles.html"><span class="thumb" style="background-image:url('img/places/world_tree.png')"></span><span><small>Dix merveilles</small><b>Les Merveilles</b></span></a><a class="dd-item" href="epreuves.html"><span class="thumb" style="background-image:url('img/places/arena.png')"></span><span><small>Défis rares</small><b>Les Épreuves</b></span></a><a class="dd-item" href="chronique.html"><span class="thumb" style="background-image:url('img/chronicle/book.webp')"></span><span><small>Collection</small><b>La Chronique des pèlerins</b></span></a><a class="dd-item" href="villages.html"><span class="thumb" style="background-image:url('img/places/village.png')"></span><span><small>Pèlerins</small><b>Villages & quêtes</b></span></a></div></div><div class="dd right"><button class="navlink" aria-haspopup="true">Référence<span class="caret">▾</span></button><div class="dd-menu"><div class="dd-head"><span>▤</span>Référence</div><a class="dd-item" href="blocs.html"><span class="thumb pix" style="background-image:url('img/tex/block/ether_stone.png')"></span><span><small>Référence</small><b>Les blocs de l'Astrelume</b></span></a></div></div></nav><div class="nav-tools"><button class="search-btn" data-search aria-label="Rechercher">⌕ <span class="label">Rechercher</span> <kbd>Ctrl K</kbd></button><a class="ticket-btn current" href="ticket.html"><span class="ping"></span>🎫 <span class="label">Ticket</span></a><button class="burger" aria-label="Menu">☰</button></div></div></header><nav class="drawer" aria-label="Menu"><a href="index.html">Accueil</a><h4><span>✦</span>Les bases</h4><a href="boucle.html">La boucle de jeu</a><a href="totems.html">Totems animaux</a><a href="monnaie.html">Fragments &amp; Sceaux</a><a href="invocation.html">Autel d'invocation</a><a href="boosters.html">Boosters</a><a href="reliquaire.html">Reliquaire</a><a href="autel.html">Table de Révélation</a><a href="raretes.html">Raretés</a><h4><span>◈</span>Les reliques</h4><a href="familles.html">Familles &amp; pouvoirs</a><a href="dieux.html">Les dieux</a><a href="slots.html">Slots d'équipement</a><a href="codex.html">Codex</a><a href="touches.html">Touches (configurables)</a><h4><span>☄</span>Les mondes des dieux</h4><a href="mars.html">Mars, la planète d'Arès</a><a href="jupiter.html">Jupiter, le royaume du ciel</a><a href="pluton.html">Pluton, le royaume d'Hadès</a><a href="neptune.html">Neptune, le royaume de Poséidon</a><a href="saturne.html">Saturne, le royaume de Kronos</a><a href="venus.html">Vénus, le jardin d'Aphrodite</a><a href="ether.html">L'Astrelume</a><h4><span>⚒</span>Les créations</h4><a href="creations.html">Les dix créations</a><a href="creuset.html">Le Creuset des Âmes</a><a href="casino.html">La Table du Destin</a><a href="volley.html">Le terrain de volley</a><a href="rafale.html">Le Rafale</a><a href="crafts.html">Tous les artisanats</a><h4><span>❦</span>L&#x27;Overworld</h4><a href="contrees.html">Les Contrées</a><a href="lieux.html">Lieux & chemins</a><a href="merveilles.html">Les Merveilles</a><a href="epreuves.html">Les Épreuves</a><a href="chronique.html">La Chronique des pèlerins</a><a href="villages.html">Villages & quêtes</a><h4><span>▤</span>Référence</h4><a href="blocs.html">Les blocs de l'Astrelume</a><a href="#" data-search>⌕ Rechercher</a><a class="ticket-btn" href="ticket.html">🎫 Envoyer un ticket</a></nav>
+<div class="page-body">
+<div class="ticket-page">
+  <header class="ticket-head"><div class="bug">🎫</div><div><p class="section-eyebrow">Bugs, idées, retours</p><h1>Envoyer un ticket</h1>
+    <p>Un bug, un crash, une idée de fonctionnalité, un équilibrage à revoir ? Choisissez le genre de ticket : le formulaire s'adapte.
+    Il part directement par mail au développeur, avec un numéro pour le suivre.</p></div></header>
+
+  <div class="panel">
+    <form id="ticket" class="ticket-form" data-key="c99a7cd1-7673-4859-b016-2b5dff773728" data-version="1.0.0" novalidate>
+      <div class="config-warn" hidden>Le formulaire n'est pas encore relié à une boîte mail : ajoutez une clé Web3Forms dans
+        <code>tools/docs/codex_config.json</code> puis relancez <code>build_codex.py</code>. En attendant, « Copier le ticket » fonctionne.</div>
+
+      <h2 class="step-title"><span>1</span>Quel genre de ticket ?</h2>
+      <div class="types">
+        <div class="choice type" style="--c:#ff6b7f"><input type="radio" name="type" id="ty-bug" value="bug"><label for="ty-bug"><span class="ic">🐛</span><b>Bug</b><small>Quelque chose ne marche pas comme prévu</small></label></div>
+        <div class="choice type" style="--c:#ff4f7b"><input type="radio" name="type" id="ty-crash" value="crash"><label for="ty-crash"><span class="ic">💥</span><b>Crash</b><small>Le jeu se ferme ou refuse de se lancer</small></label></div>
+        <div class="choice type" style="--c:#6bffb4"><input type="radio" name="type" id="ty-idee" value="idee"><label for="ty-idee"><span class="ic">💡</span><b>Idée</b><small>Une fonctionnalité, un ajout, une envie</small></label></div>
+        <div class="choice type" style="--c:#ffc65a"><input type="radio" name="type" id="ty-bal" value="equilibrage"><label for="ty-bal"><span class="ic">⚖️</span><b>Équilibrage</b><small>Trop fort, trop faible, trop rare…</small></label></div>
+        <div class="choice type" style="--c:#5cc8ff"><input type="radio" name="type" id="ty-vis" value="visuel"><label for="ty-vis"><span class="ic">🎨</span><b>Visuel &amp; textes</b><small>Texture, modèle, menu, traduction</small></label></div>
+        <div class="choice type" style="--c:#b07cff"><input type="radio" name="type" id="ty-autre" value="autre"><label for="ty-autre"><span class="ic">💬</span><b>Autre</b><small>Une question, un message</small></label></div>
+      </div>
+      <p class="pick-first" id="pick-first">↑ Choisissez le genre de ticket : la suite du formulaire s'adapte.</p>
+
+      <div class="ticket-rest" id="rest" hidden>
+        <section data-for="bug idee equilibrage visuel">
+          <h2 class="step-title"><span></span>Où, dans le mod ?</h2>
+          <div class="choices group" data-name="Où">
+            <div class="choice"><input type="radio" name="where" id="wh-1" value="Les bases"><label for="wh-1">✦ Les bases</label></div>
+            <div class="choice"><input type="radio" name="where" id="wh-2" value="Les reliques"><label for="wh-2">◈ Les reliques</label></div>
+            <div class="choice"><input type="radio" name="where" id="wh-3" value="Les mondes des dieux"><label for="wh-3">☄ Les mondes des dieux</label></div>
+            <div class="choice"><input type="radio" name="where" id="wh-4" value="Les créations"><label for="wh-4">⚒ Les créations</label></div>
+            <div class="choice"><input type="radio" name="where" id="wh-5" value="L'Overworld"><label for="wh-5">❦ L'Overworld</label></div>
+            <div class="choice"><input type="radio" name="where" id="wh-6" value="Menus et interface"><label for="wh-6">▤ Menus &amp; interface</label></div>
+            <div class="choice"><input type="radio" name="where" id="wh-7" value="Je ne sais pas" checked><label for="wh-7">? Je ne sais pas</label></div>
+          </div>
+        </section>
+
+        <section data-for="crash">
+          <h2 class="step-title"><span></span>Quand le jeu plante-t-il ?</h2>
+          <div class="choices group" data-name="Moment">
+            <div class="choice" style="--c:#ff4f7b"><input type="radio" name="moment" id="mo-1" value="Au lancement"><label for="mo-1">🚀 Au lancement</label></div>
+            <div class="choice" style="--c:#ff4f7b"><input type="radio" name="moment" id="mo-2" value="En chargeant un monde"><label for="mo-2">🌍 En chargeant un monde</label></div>
+            <div class="choice" style="--c:#ff4f7b"><input type="radio" name="moment" id="mo-3" value="En jouant" checked><label for="mo-3">⛏ En jouant</label></div>
+            <div class="choice" style="--c:#ff4f7b"><input type="radio" name="moment" id="mo-4" value="En quittant"><label for="mo-4">🚪 En quittant</label></div>
+          </div>
+        </section>
+
+        <section data-for="equilibrage">
+          <h2 class="step-title"><span></span>Qu'est-ce qui cloche ?</h2>
+          <div class="choices group" data-name="Problème">
+            <div class="choice" style="--c:#ff6b7f"><input type="radio" name="balance" id="ba-1" value="Trop fort" checked><label for="ba-1">⬆ Trop fort</label></div>
+            <div class="choice" style="--c:#5cc8ff"><input type="radio" name="balance" id="ba-2" value="Trop faible"><label for="ba-2">⬇ Trop faible</label></div>
+            <div class="choice" style="--c:#ffc65a"><input type="radio" name="balance" id="ba-3" value="Trop cher"><label for="ba-3">💰 Trop cher</label></div>
+            <div class="choice" style="--c:#b07cff"><input type="radio" name="balance" id="ba-4" value="Trop rare"><label for="ba-4">🎲 Trop rare</label></div>
+            <div class="choice" style="--c:#6bffb4"><input type="radio" name="balance" id="ba-5" value="Trop commun"><label for="ba-5">♻ Trop commun</label></div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="step-title"><span></span><i data-text-bug="Que se passe-t-il ?" data-text-crash="Que faisiez-vous ?" data-text-idee="Votre idée"
+            data-text-equilibrage="Les détails" data-text-visuel="Ce qui ne va pas" data-text-autre="Votre message"></i></h2>
+          <div class="fields">
+            <div class="field full"><label for="t-title">Titre</label>
+              <input id="t-title" maxlength="120" data-ph-bug="Ex. : la Tour des Vents me renvoie au bassin en plein saut"
+                data-ph-crash="Ex. : crash en ouvrant la Table du Destin" data-ph-idee="Ex. : une planète pour Mercure"
+                data-ph-equilibrage="Ex. : le Grappin est trop fort en combat" data-ph-visuel="Ex. : la texture du permafrost est étirée"
+                data-ph-autre="Ex. : comment débloquer le slot divin ?"></div>
+            <div class="field full"><label for="t-desc" data-text-bug="Ce qui se passe, et ce que vous attendiez" data-text-crash="Ce que vous faisiez quand le jeu a planté"
+                data-text-idee="Décrivez votre idée" data-text-equilibrage="Ce qui ne va pas, avec des chiffres si vous en avez"
+                data-text-visuel="Ce qui ne s'affiche pas bien, et où" data-text-autre="Votre message">Description</label>
+              <textarea id="t-desc" data-max="4000" maxlength="4000" data-ph-bug="Ce que vous faisiez, ce qui s'est passé, ce qui aurait dû se passer."
+                data-ph-crash="Ex. : je venais de poser une relique dans le Creuset quand le jeu s'est fermé."
+                data-ph-idee="Comment ça marcherait en jeu ? Plus c'est précis, mieux c'est."
+                data-ph-equilibrage="Ex. : il tue un Cyclope en trois coups, alors que l'épée du dieu en demande dix."
+                data-ph-visuel="Quel bloc, quel objet, quel menu ? Un lien vers une capture aide beaucoup."
+                data-ph-autre="Votre question ou votre message."></textarea><span class="counter"></span></div>
+            <div class="field full" data-for="idee"><label for="t-why">Ce que ça apporterait au jeu <em>(facultatif)</em></label>
+              <textarea id="t-why" data-max="2000" maxlength="2000" placeholder="Pourquoi ce serait fun, à qui ça servirait…"></textarea><span class="counter"></span></div>
+            <div class="field full" data-for="equilibrage"><label for="t-fix">Ce que vous proposeriez <em>(facultatif)</em></label>
+              <input id="t-fix" maxlength="300" placeholder="Ex. : 20 % de dégâts en moins, ou un temps de recharge"></div>
+            <div class="field full" data-for="bug crash"><label for="t-steps">Pour le reproduire <em>(facultatif)</em></label>
+              <textarea id="t-steps" data-max="2000" maxlength="2000" placeholder="1. Créer un monde&#10;2. …"></textarea><span class="counter"></span></div>
+            <div class="field full" data-for="bug visuel"><label for="t-shot">Lien vers une capture d'écran <em>(facultatif)</em></label>
+              <input id="t-shot" type="url" maxlength="400" placeholder="https://… (Imgur, Discord, Google Drive…)"></div>
+          </div>
+        </section>
+
+        <section data-for="bug visuel">
+          <h2 class="step-title"><span></span>À quel point ça gêne ?</h2>
+          <div class="choices group" data-name="Gravité">
+            <div class="choice" style="--c:#6bffb4"><input type="radio" name="severity" id="sv-1" value="Mineur"><label for="sv-1">Mineur</label></div>
+            <div class="choice" style="--c:#ffc65a"><input type="radio" name="severity" id="sv-2" value="Gênant" checked><label for="sv-2">Gênant</label></div>
+            <div class="choice" style="--c:#ff4f7b"><input type="radio" name="severity" id="sv-3" value="Bloquant"><label for="sv-3">Bloquant</label></div>
+          </div>
+        </section>
+
+        <section data-for="idee">
+          <h2 class="step-title"><span></span>Elle compte à quel point pour vous ?</h2>
+          <div class="choices group" data-name="Importance">
+            <div class="choice" style="--c:#5cc8ff"><input type="radio" name="importance" id="im-1" value="Un petit plus"><label for="im-1">✨ Un petit plus</label></div>
+            <div class="choice" style="--c:#ffc65a"><input type="radio" name="importance" id="im-2" value="Ce serait top" checked><label for="im-2">🔥 Ce serait top</label></div>
+            <div class="choice" style="--c:#ff4f7b"><input type="radio" name="importance" id="im-3" value="Indispensable"><label for="im-3">💎 Indispensable</label></div>
+          </div>
+        </section>
+
+        <section data-for="bug crash">
+          <h2 class="step-title"><span></span>Le log <em class="when-crash">(indispensable pour un crash)</em><em class="when-bug">(facultatif)</em></h2>
+          <div class="dropzone" id="drop" tabindex="0" role="button"><span class="ic">📄</span><b>Glissez latest.log ou un crash report ici</b>
+            <small>ou cliquez pour le choisir · la fin du fichier est gardée (30 000 caractères)</small></div>
+          <input type="file" id="t-file" accept=".log,.txt,text/plain" hidden>
+          <div class="detected" id="detected"><h5>Ce que le log dit</h5><code id="detected-text"></code>
+            <p id="detected-note" class="help" hidden></p></div>
+          <div class="field full"><label for="t-log">Ou collez-le ici</label><textarea id="t-log" class="log" spellcheck="false" placeholder="[12:00:00] [Render thread/ERROR] …"></textarea></div>
+        </section>
+
+        <section>
+          <h2 class="step-title"><span></span>Vous</h2>
+          <div class="fields">
+            <div class="field"><label for="t-name">Pseudo <em>(facultatif)</em></label><input id="t-name" maxlength="40" autocomplete="nickname"></div>
+            <div class="field"><label for="t-email">Mail pour vous répondre <em>(facultatif)</em></label><input id="t-email" type="email" maxlength="120" autocomplete="email">
+              <span class="help">Seulement pour vous répondre au sujet de ce ticket.</span></div>
+          </div>
+        </section>
+        <label class="hp" aria-hidden="true">Ne pas cocher <input type="checkbox" id="t-hp" tabindex="-1"></label>
+
+        <div class="send-row"><button class="btn gold" id="send" type="submit">✉ Envoyer le ticket</button>
+          <button class="btn" id="copy" type="button">Copier le ticket</button><span class="status" id="status" role="status"></span></div>
+      </div>
+    </form>
+    <div class="sent" id="sent"><div class="check">✓</div><h2>Ticket envoyé !</h2><div class="tid" id="sent-id"></div>
+      <p>Merci ! Il est arrivé dans la boîte mail du développeur. Gardez ce numéro : il sert à retrouver votre ticket.</p>
+      <div class="cta"><button class="btn gold" id="again" type="button">Envoyer un autre ticket</button><a class="btn" href="index.html">Retour au Codex</a></div></div>
+  </div>
+
+  <aside class="ticket-side">
+    <div class="panel side-card"><h4 id="tips-title">Un bon ticket</h4><ol id="tips">
+      <li>Un titre qui dit l'essentiel.</li><li>Une seule chose par ticket.</li><li>Des détails : où, quand, comment.</li></ol></div>
+    <div class="panel side-card" data-for="bug crash"><h4>Où trouver le log</h4><p>Dans le dossier du jeu (Windows : <kbd>Win</kbd>+<kbd>R</kbd>, <code>%appdata%\.minecraft</code>) :</p>
+      <span class="path">logs\latest.log</span><p>et, après un crash :</p><span class="path">crash-reports\crash-….txt</span></div>
+    <div class="panel side-card"><h4>Mes tickets</h4><ul class="my-tickets" id="my-tickets"></ul></div>
+  </aside>
+</div>
+
+</div>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-mark">RELIQUARY</div><p>Le guide du joueur du mod Reliquary, pour Minecraft 26.3 (Fabric). Tout le contenu visuel est dessiné par du code.</p><p><a class="btn" href="ticket.html">🎫 Envoyer un ticket</a></p></div><div><h5>✦ Les bases</h5><ul><li><a href="boucle.html">La boucle de jeu</a></li><li><a href="totems.html">Totems animaux</a></li><li><a href="monnaie.html">Fragments &amp; Sceaux</a></li><li><a href="invocation.html">Autel d'invocation</a></li><li><a href="boosters.html">Boosters</a></li><li><a href="reliquaire.html">Reliquaire</a></li><li><a href="autel.html">Table de Révélation</a></li><li><a href="raretes.html">Raretés</a></li></ul><h5>◈ Les reliques</h5><ul><li><a href="familles.html">Familles &amp; pouvoirs</a></li><li><a href="dieux.html">Les dieux</a></li><li><a href="slots.html">Slots d'équipement</a></li><li><a href="codex.html">Codex</a></li><li><a href="touches.html">Touches (configurables)</a></li></ul></div><div><h5>☄ Les mondes des dieux</h5><ul><li><a href="mars.html">Mars, la planète d'Arès</a></li><li><a href="jupiter.html">Jupiter, le royaume du ciel</a></li><li><a href="pluton.html">Pluton, le royaume d'Hadès</a></li><li><a href="neptune.html">Neptune, le royaume de Poséidon</a></li><li><a href="saturne.html">Saturne, le royaume de Kronos</a></li><li><a href="venus.html">Vénus, le jardin d'Aphrodite</a></li><li><a href="ether.html">L'Astrelume</a></li></ul><h5>⚒ Les créations</h5><ul><li><a href="creations.html">Les dix créations</a></li><li><a href="creuset.html">Le Creuset des Âmes</a></li><li><a href="casino.html">La Table du Destin</a></li><li><a href="volley.html">Le terrain de volley</a></li><li><a href="rafale.html">Le Rafale</a></li><li><a href="crafts.html">Tous les artisanats</a></li></ul></div><div><h5>❦ L&#x27;Overworld</h5><ul><li><a href="contrees.html">Les Contrées</a></li><li><a href="lieux.html">Lieux & chemins</a></li><li><a href="merveilles.html">Les Merveilles</a></li><li><a href="epreuves.html">Les Épreuves</a></li><li><a href="chronique.html">La Chronique des pèlerins</a></li><li><a href="villages.html">Villages & quêtes</a></li></ul><h5>▤ Référence</h5><ul><li><a href="blocs.html">Les blocs de l'Astrelume</a></li></ul></div></div><div class="footer-bottom"><span>Reliquary 1.0.0 · Minecraft 26.3</span><span><kbd>Ctrl K</kbd> rechercher · <kbd>Alt</kbd> + <kbd>←</kbd> <kbd>→</kbd> chapitre précédent ou suivant</span></div></footer>
+<div class="search" id="search" hidden>
+  <div class="search-box">
+    <input id="search-input" type="search" placeholder="Une relique, un dieu, une merveille, une commande…" autocomplete="off">
+    <ol id="search-results"></ol>
+    <p class="search-help"><kbd>↑</kbd><kbd>↓</kbd> choisir · <kbd>Entrée</kbd> aller · <kbd>Échap</kbd> fermer</p>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" aria-label="Fermer">×</button><button class="lb-prev" aria-label="Précédente">‹</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-next" aria-label="Suivante">›</button>
+</div>
+<a class="to-top" href="#" aria-label="Haut de page">↑</a>
+<script src="assets/search-index.js"></script>
+<script src="assets/codex.js"></script>
+<script src="assets/ticket.js"></script>
+</body>
+</html>
