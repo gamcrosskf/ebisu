@@ -10,7 +10,7 @@
   if (!form) return;
   const KEY = form.dataset.key || '';
   const LOG_MAX = 30000;
-  const DRAFT = 'reliquary.ticket.draft', SENT = 'reliquary.ticket.sent';
+  const DRAFT = 'ebisu.ticket.draft', SENT = 'ebisu.ticket.sent';
   const store = {
     get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* private window: nothing kept */ } },
@@ -113,7 +113,7 @@
       if (/^(Caused by: |[\w.$]*(Exception|Error)(: |$))|Mixin .*failed|InvalidMixinException|MixinApplyError/.test(l) && !seen.has(l)) { seen.add(l); lines.push(l); }
     }
     for (const k of KNOWN) if (k.re.test(text)) notes.push(k.note);
-    const mod = text.match(/^\s*-\s+reliquary\s+(\S+)/m);
+    const mod = text.match(/^\s*-\s+ebisu\s+(\S+)/m);
     if (mod) version = mod[1];
     detected.classList.toggle('on', lines.length > 0 || notes.length > 0);
     $('#detected-text').textContent = lines.join('\n');
@@ -165,8 +165,8 @@
     if ($('#t-hp').checked) return; // a robot ticked the hidden box
     const id = ticketId(), r = report(id), email = $('#t-email').value.trim();
     const qual = r['Gravité'] || r['Importance'] || r['Moment'] || r['Problème'];
-    const subject = `[Reliquary ${id}] ${r['Genre']}${qual ? ' (' + qual + ')' : ''} : ${$('#t-title').value.trim()}`;
-    const payload = Object.assign({access_key: KEY, subject, from_name: 'Codex Reliquary' + (r['Pseudo'] !== '-' ? ' · ' + r['Pseudo'] : ''), botcheck: ''},
+    const subject = `[Ebisu ${id}] ${r['Genre']}${qual ? ' (' + qual + ')' : ''} : ${$('#t-title').value.trim()}`;
+    const payload = Object.assign({access_key: KEY, subject, from_name: 'Codex Ebisu' + (r['Pseudo'] !== '-' ? ' · ' + r['Pseudo'] : ''), botcheck: ''},
       email ? {replyto: email} : {}, r);
     send.disabled = true; send.innerHTML = '<span class="spinner"></span> Envoi…'; say('');
     try {

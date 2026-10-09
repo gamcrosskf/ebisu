@@ -1,4 +1,4 @@
-// The Codex of Reliquary: what every page does (stars, menus, search over the whole site, flipbooks,
+// The Codex of Ebisu: what every page does (stars, menus, search over the whole site, flipbooks,
 // carousels, lightbox, the progress bar and the "on this page" list).
 (() => {
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];

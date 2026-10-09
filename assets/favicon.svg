@@ -1,20 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <radialGradient id="glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#ffc65a" stop-opacity=".5"/>
+      <stop offset="0" stop-color="#ffc65a" stop-opacity=".45"/>
       <stop offset="1" stop-color="#ffc65a" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1b8"/>
+      <stop offset=".5" stop-color="#ffc24a"/>
+      <stop offset="1" stop-color="#b8701a"/>
+    </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#1c1428"/>
-  <circle cx="32" cy="32" r="30" fill="url(#glow)"/>
-  <!-- four facets round the centre, lit from the top left -->
-  <path d="M32 6 L32 32 L6 32 Z" fill="#fff0b8"/>
-  <path d="M32 6 L58 32 L32 32 Z" fill="#ffc65a"/>
-  <path d="M58 32 L32 58 L32 32 Z" fill="#b8701a"/>
-  <path d="M6 32 L32 32 L32 58 Z" fill="#e8972e"/>
-  <!-- the table, and a glint -->
-  <path d="M32 21 L43 32 L32 43 L21 32 Z" fill="#ffd77a" fill-opacity=".85"/>
-  <path d="M32 21 L43 32 L32 32 Z" fill="#ffe9a8" fill-opacity=".7"/>
-  <path d="M17 26 L24 19" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-opacity=".9"/>
-  <path d="M32 6 L58 32 L32 58 L6 32 Z" fill="none" stroke="#fff6d8" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- night blue tile -->
+  <rect width="64" height="64" rx="14" fill="#121a30"/>
+  <circle cx="32" cy="32" r="31" fill="url(#glow)"/>
+  <!-- the vermilion ring, like a shrine's -->
+  <circle cx="32" cy="32" r="27" fill="#d9412e"/>
+  <!-- the gold coin with its square hole -->
+  <circle cx="32" cy="32" r="22.5" fill="url(#gold)"/>
+  <circle cx="32" cy="32" r="18.5" fill="none" stroke="#a8650f" stroke-opacity=".55" stroke-width="1.6"/>
+  <rect x="25" y="25" width="14" height="14" rx="1.5" fill="#121a30"/>
+  <rect x="25" y="25" width="14" height="14" rx="1.5" fill="none" stroke="#8a520c" stroke-width="1.6"/>
+  <!-- a glint -->
+  <path d="M17.5 27 A15 15 0 0 1 27 17.5" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-opacity=".85"/>
 </svg>
