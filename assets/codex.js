@@ -39,6 +39,20 @@
     return playing;
   });
 
+  // The home's wall of pictures: its button pauses the sliding (RGAA 13.8); the choice is kept from page to page.
+  const wallBtn = $('.wall-pause');
+  if (wallBtn) {
+    const setStill = v => { still = v; root.classList.toggle('still', v); wallBtn.setAttribute('aria-pressed', String(v));
+      $('.wp-ic', wallBtn).textContent = v ? '▶' : '❚❚'; books.forEach(playing => playing(!v)); };
+    setStill(still);
+    wallBtn.addEventListener('click', () => { setStill(!still); try { localStorage.setItem('ebisu.still', still ? '1' : '0'); } catch (e) { /* nothing kept */ } });
+    // The wall leans a little toward the mouse; never while paused.
+    const hero = $('.hero-wall');
+    hero.addEventListener('pointermove', e => { if (still || e.pointerType !== 'mouse') return; const r = hero.getBoundingClientRect();
+      hero.style.setProperty('--mx', ((e.clientX - r.left) / r.width - .5).toFixed(3)); hero.style.setProperty('--my', ((e.clientY - r.top) / r.height - .5).toFixed(3)); });
+    hero.addEventListener('pointerleave', () => { hero.style.setProperty('--mx', 0); hero.style.setProperty('--my', 0); });
+  }
+
   // Chronicle pages: a button turns each one over.
   $$('.pc-flip').forEach(b => b.addEventListener('click', () => { const v = b.getAttribute('aria-pressed') !== 'true';
     b.setAttribute('aria-pressed', String(v)); b.closest('.page-card').classList.toggle('flipped', v); }));

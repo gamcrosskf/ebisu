@@ -97,15 +97,39 @@ b{color:var(--head)}
 .drawer .ticket-btn{display:inline-flex;margin:16px 4px 0}
 
 /* ------------------------------------------------------------------ home */
-.home-hero{max-width:1240px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center}
+/* The hero: a wall of the game's pictures sliding behind a veil, the text on the dark side of it. */
+.hero-wall{position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--edge);background:var(--bg)}
+.wall{position:absolute;top:50%;left:50%;z-index:-2;width:180%;display:flex;flex-direction:column;gap:18px;pointer-events:none;
+  transform:translate(-42%,-50%) perspective(1800px) rotateX(calc(24deg + var(--my,0) * 3deg)) rotateY(calc(-16deg + var(--mx,0) * 5deg)) rotateZ(-9deg);
+  filter:saturate(1.08) brightness(.92);transition:transform 1.2s cubic-bezier(.2,.7,.2,1);animation:wall-in 1.6s cubic-bezier(.2,.7,.2,1) backwards}
+.wall-row{display:flex;width:max-content;animation:wall-left 95s linear infinite}
+.wall-row:nth-child(2){animation-name:wall-right;animation-duration:120s}
+.wall-row:nth-child(3){animation-duration:80s}
+.wall-row:nth-child(4){animation-name:wall-right;animation-duration:105s}
+/* A margin, not a gap: the row is then exactly twice one round, and half of it loops without a jump. */
+.wall-row img{display:block;width:300px;height:auto;aspect-ratio:16/10;margin-right:18px;border-radius:10px;object-fit:cover;
+  outline:1px solid rgba(255,255,255,.07);outline-offset:-1px;box-shadow:0 24px 50px -24px rgba(0,0,0,.9)}
+@keyframes wall-left{to{transform:translateX(-50%)}}
+@keyframes wall-right{from{transform:translateX(-50%)}to{transform:none}}
+@keyframes wall-in{from{opacity:0;transform:translate(-42%,-46%) perspective(1800px) rotateX(30deg) rotateY(-16deg) rotateZ(-9deg) scale(1.08)}}
+/* Opaque where the text stands, open on the right where the pictures show (RGAA 3.2 holds on any picture). */
+.hero-veil{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,var(--bg) 0%,rgba(15,17,20,.97) 30%,rgba(15,17,20,.9) 46%,rgba(15,17,20,.45) 68%,rgba(15,17,20,.12) 100%),
+  linear-gradient(180deg,rgba(15,17,20,.55) 0%,transparent 22%,transparent 72%,var(--bg) 100%)}
+.home-hero{max-width:1240px;min-height:clamp(540px,76vh,720px);margin:0 auto;padding:72px 24px 120px;display:flex;align-items:center}
+.home-text{max-width:600px}
+.home-text>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.home-text>:nth-child(2){animation-delay:.08s}.home-text>:nth-child(3){animation-delay:.16s}.home-text>:nth-child(4){animation-delay:.24s}.home-text>:nth-child(5){animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+.wall-pause{position:absolute;right:24px;top:20px;display:flex;align-items:center;gap:8px;min-height:34px;padding:0 12px;border-radius:8px;cursor:pointer;
+  font:500 13px var(--sans);color:var(--text);background:rgba(15,17,20,.82);border:1px solid var(--edge-strong);backdrop-filter:blur(6px)}
+.wall-pause:hover{background:var(--panel-2)}
+.wp-ic{font-size:10px;color:var(--gold)}
 .hero-kicker{margin:0 0 12px;font:600 13px var(--sans);letter-spacing:.04em;color:var(--gold)}
-.home-hero h1{margin:0;font:800 clamp(46px,6vw,76px)/1 var(--sans);letter-spacing:-.035em;color:var(--head)}
+.home-hero h1{margin:0;font:800 clamp(52px,7vw,92px)/1 var(--sans);letter-spacing:-.04em;color:var(--head)}
 .tagline{margin:20px 0 28px;max-width:560px;font-size:17px;line-height:1.65;color:var(--text-2)}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
 .hero-meta{margin:18px 0 0;font-size:13.5px;color:var(--dim)}
-.hero-pic{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--edge);background:var(--panel)}
-.hero-pic img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
-.hero-pic figcaption{padding:9px 14px;font-size:13px;color:var(--dim);border-top:1px solid var(--edge)}
 .btn{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px;border-radius:8px;font:600 14.5px var(--sans);color:var(--text);text-decoration:none;cursor:pointer;
   border:1px solid var(--edge-strong);background:var(--panel);transition:background .15s,border-color .15s}
 .btn:hover{background:var(--panel-2);border-color:#4a505b}
@@ -113,8 +137,8 @@ b{color:var(--head)}
 .btn.gold:hover{background:#f2c070;border-color:#f2c070}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 /* The mod in numbers: one strip, thin rules between. */
-.stat-band{max-width:1240px;margin:0 auto;padding:0 24px}
-.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));background:var(--bg2);border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.stat-band{position:relative;z-index:2;max-width:1240px;margin:-56px auto 0;padding:0 24px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));background:rgba(19,22,26,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 24px 60px -30px rgba(0,0,0,.9);border:1px solid var(--edge);border-radius:12px;overflow:hidden}
 .stat-tile{padding:16px 18px;box-shadow:1px 0 0 var(--edge),0 1px 0 var(--edge)}
 .stat-tile b{display:block;font:700 26px/1.15 var(--sans);letter-spacing:-.02em;color:var(--head);font-variant-numeric:tabular-nums}
 .stat-tile span{font-size:13.5px;color:var(--dim)}
@@ -611,7 +635,8 @@ mark{background:rgba(255,198,90,.35);color:#fff;border-radius:3px;padding:0 2px}
 
 /* ------------------------------------------------------------------ motion */
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
-.still *,.still *::before,.still *::after{animation:none !important}
+.still *:not(.wall-row),.still *::before,.still *::after{animation:none !important}
+.still .wall-row{animation-play-state:paused !important}
 html.still{scroll-behavior:auto}
 
 /* ------------------------------------------------------------------ text pages (plan, accessibility) */
@@ -646,7 +671,10 @@ html.still{scroll-behavior:auto}
   .mainnav{display:none}
   .burger{display:grid;place-items:center}
   .parts-grid{grid-template-columns:1fr 1fr}
-  .home-hero{grid-template-columns:1fr;gap:32px;padding-top:40px}
+  .home-hero{min-height:0;padding-top:56px;padding-bottom:132px}
+  .wall-pause{top:auto;bottom:72px;left:24px;right:auto}
+  .hero-veil{background:linear-gradient(180deg,rgba(15,17,20,.8),rgba(15,17,20,.9) 40%,rgba(15,17,20,.92) 80%,var(--bg))}
+  .wall-row img{width:220px}
   .latest{grid-template-columns:1fr}
   .latest img{min-height:0;aspect-ratio:16/8;border-right:0;border-bottom:1px solid var(--edge)}
   .search-btn{min-width:0}
