@@ -1,59 +1,12 @@
-// The Codex of Ebisu: what every page does (stars, menus, search over the whole site, flipbooks,
+// The Codex of Ebisu: what every page does (menus, search over the whole site, flipbooks,
 // carousels, lightbox, the progress bar and the "on this page" list).
 // Accessible (RGAA 4.1): every control works from the keyboard and says its state, the search and
-// the lightbox are dialogs that keep the focus and give it back, and everything that moves can be
-// paused from the top bar (the choice is kept, and follows the system's "reduce motion" at first).
+// the lightbox are dialogs that keep the focus and give it back, and the only things that move, the
+// flipbooks, each have their pause (and stay still when the system asks to reduce motion).
 (() => {
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const root = document.documentElement;
-  const MOTION = 'ebisu.still';
   let still = root.classList.contains('still');
-
-  // Stars: a slow field, some twinkling, now and then a shooting one. Paused, they stay where they are.
-  const cv = $('#stars');
-  let drawing = false, startStars = () => {};
-  if (cv) {
-    const cx = cv.getContext('2d');
-    let W, H, stars = [], shooting = [], mx = 0, my = 0;
-    const resize = () => { W = cv.width = innerWidth * devicePixelRatio; H = cv.height = innerHeight * devicePixelRatio;
-      stars = Array.from({length: Math.min(240, (innerWidth * innerHeight) / 5500)}, () => ({x: Math.random() * W, y: Math.random() * H,
-        r: (Math.random() * 1.3 + .2) * devicePixelRatio, p: Math.random() * 6.28, s: .4 + Math.random() * 1.2, d: Math.random() * .6 + .2}));
-      if (!drawing) draw(0); };
-    addEventListener('mousemove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; });
-    const draw = t => {
-      cx.clearRect(0, 0, W, H);
-      for (const s of stars) {
-        const a = .35 + .65 * Math.abs(Math.sin(t / 1000 * s.s + s.p));
-        cx.fillStyle = `rgba(255,${230 + (s.p * 4 | 0)},${200 + (s.p * 8 | 0)},${a})`;
-        cx.beginPath(); cx.arc(s.x + mx * 30 * s.d * devicePixelRatio, s.y + my * 30 * s.d * devicePixelRatio, s.r, 0, 6.28); cx.fill();
-      }
-      if (!still && Math.random() < .005) shooting.push({x: Math.random() * W, y: Math.random() * H * .5, l: 1});
-      shooting = shooting.filter(s => (s.l -= .018) > 0);
-      for (const s of shooting) {
-        const g = cx.createLinearGradient(s.x, s.y, s.x - 160, s.y - 60);
-        g.addColorStop(0, `rgba(255,236,190,${s.l})`); g.addColorStop(1, 'rgba(255,236,190,0)');
-        cx.strokeStyle = g; cx.lineWidth = 2 * devicePixelRatio; cx.beginPath(); cx.moveTo(s.x, s.y); cx.lineTo(s.x - 160, s.y - 60); cx.stroke();
-        s.x += 14 * devicePixelRatio; s.y += 5 * devicePixelRatio;
-      }
-      drawing = !still;
-      if (drawing) requestAnimationFrame(draw);
-    };
-    resize(); addEventListener('resize', resize);
-    startStars = () => { if (!drawing) { drawing = true; requestAnimationFrame(draw); } };
-    if (!still) startStars();
-  }
-
-  // The home page's slideshow and counters.
-  const slides = $$('.slide'); let si = 0;
-  if (slides.length > 1) setInterval(() => { if (still) return; slides[si].classList.remove('on'); si = (si + 1) % slides.length; slides[si].classList.add('on'); }, 7000);
-  const countUp = el => { if (still) return; const n = +el.dataset.count, t0 = performance.now();
-    const step = t => { const k = Math.min(1, (t - t0) / 1400); el.textContent = Math.round(n * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step); };
-
-  // Reveal on scroll.
-  const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.classList.add('in');
-    if (e.target.dataset.count) countUp(e.target); io.unobserve(e.target); }), {rootMargin: '0px 0px -8% 0px'});
-  $$('.reveal, [data-count]').forEach(el => io.observe(el));
 
   // Progress bar and back to top.
   const top = $('.to-top'), bar = $('#progress');
@@ -85,18 +38,6 @@
     play.addEventListener('click', () => playing(!on));
     return playing;
   });
-
-  // The pause of everything that moves (RGAA 13.8).
-  const motionBtn = $('.motion-btn');
-  const setStill = v => {
-    still = v; root.classList.toggle('still', v);
-    if (motionBtn) { motionBtn.setAttribute('aria-pressed', String(v)); $('.motion-ic', motionBtn).textContent = v ? '▶' : '❚❚';
-      motionBtn.title = 'Mettre en pause les animations' + (v ? ' (en pause)' : ''); }
-    books.forEach(playing => playing(!v));
-    if (!v) startStars();
-  };
-  setStill(still);
-  motionBtn?.addEventListener('click', () => { setStill(!still); try { localStorage.setItem(MOTION, still ? '1' : '0'); } catch (e) { /* nothing kept */ } });
 
   // Chronicle pages: a button turns each one over.
   $$('.pc-flip').forEach(b => b.addEventListener('click', () => { const v = b.getAttribute('aria-pressed') !== 'true';
