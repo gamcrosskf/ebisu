@@ -141,6 +141,16 @@
     $('.car-prev', c).addEventListener('click', () => tr.scrollBy({left: -tr.clientWidth * .9, behavior: still ? 'auto' : 'smooth'}));
     $('.car-next', c).addEventListener('click', () => tr.scrollBy({left: tr.clientWidth * .9, behavior: still ? 'auto' : 'smooth'})); });
 
+  // Releases: one button folds or unfolds every version.
+  const all = $('.rel-all');
+  if (all) all.addEventListener('click', () => {
+    const open = all.dataset.open !== '1';
+    $$('.rel-card').forEach(d => { d.open = open; });
+    all.dataset.open = open ? '1' : '0';
+    all.textContent = open ? 'Tout replier' : 'Tout déplier';
+  });
+  // A link to a version opens its card.
+  $$('.rel-nav a').forEach(a => a.addEventListener('click', () => { const d = $(a.getAttribute('href') + ' details'); if (d) d.open = true; }));
   // Lightbox over every picture that can be zoomed.
   const zooms = $$('a.zoom'), lb = $('#lightbox'), lbImg = $('#lb-img'), lbCap = $('#lb-cap'); let zi = 0;
   const show = k => { zi = (k + zooms.length) % zooms.length; const a = zooms[zi]; lbImg.src = a.getAttribute('href');
