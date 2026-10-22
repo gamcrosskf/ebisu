@@ -661,11 +661,19 @@ html.still{scroll-behavior:auto}
 }
 
 /* ------------------------------------------------------------------ smaller screens */
+/* The top bar keeps to one line: the links tighten, then the menu folds into the burger before anything can run
+   under the tools. */
 @media (max-width:1320px){
   .page{grid-template-columns:230px minmax(0,1fr)}
   .onpage{display:none}
-  .mainnav .navlink{padding:8px 9px;font-size:13.5px}
+  .mainnav{margin-left:10px}
+  .mainnav .navlink{padding:8px 8px;font-size:13.5px}
   .search-btn .label,.search-btn kbd{display:none}
+  .search-btn{min-width:0}
+}
+@media (max-width:1240px){
+  .mainnav{display:none}
+  .burger{display:grid;place-items:center}
 }
 @media (max-width:1120px){
   .mainnav{display:none}
