@@ -315,6 +315,7 @@ tbody tr:hover td{background:rgba(255,255,255,.025)}
 .gallery.strip-1 .shot:first-child,.gallery.strip-2 .shot:first-child{grid-row:auto}
 .gallery.strip-1 .shot:first-child img,.gallery.strip-2 .shot:first-child img{height:auto;aspect-ratio:16/9}
 .gallery.strip-3{grid-template-columns:2fr 1fr}
+.gallery.wide{grid-template-columns:1fr}.gallery.wide .shot img{aspect-ratio:auto;height:auto;object-fit:contain;background:#0f1114}
 @media (max-width:760px){.gallery.strip{grid-template-columns:1fr 1fr}.gallery.strip .shot:first-child{grid-column:1/-1;grid-row:auto}}
 /* The rest of a chapter's pictures, folded at the end of the page. */
 .more-shots{margin:34px 0 6px;border:1px solid var(--edge);border-radius:var(--radius);background:var(--panel);overflow:hidden}
