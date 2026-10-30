@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tous les objets · Codex d&#x27;Ebisu</title>
+<script>(function(d){d.className='js';try{var s=localStorage.getItem('ebisu.still');if(s==='1'||(s===null&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' still'}catch(e){}})(document.documentElement)</script>
+<meta name="description" content="Chaque objet et bloc du mod, et comment l&#x27;obtenir : sa recette, les créatures qui le laissent et leurs chances, les coffres où il se trouve ou le monde où il pousse. C&#x27;est aussi ce que dit son infobul">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg?v=d16bb2d0f8" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png?v=9d5a459409" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=468db2f6b5">
+<meta name="theme-color" content="#0f1114">
+<link rel="stylesheet" href="assets/codex.css?v=ea6e36aafa">
+</head>
+<body>
+<ul class="skip plain" id="haut" aria-label="Accès rapide"><li><a href="#contenu">Aller au contenu</a></li><li><a href="#recherche" data-search>Aller à la recherche</a></li></ul>
+<div id="progress" aria-hidden="true"></div>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html" aria-label="Ebisu, le Codex : accueil"><img class="brand-coin" src="assets/emblem.svg?v=9cfdeaee69" alt=""><span class="brand-name">Ebisu<small>Codex</small></span></a><nav class="mainnav" id="menu" aria-label="Menu principal"><ul class="plain"><li class="dd"><button type="button" class="navlink" aria-expanded="false" aria-controls="menu-0">Bases<span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-0"><p class="dd-head">Les bases</p><ul class="plain dd-list"><li><a class="dd-item" href="boucle.html"><span class="thumb" style="background-image:url('img/shots/02_invocation_x10.webp')" aria-hidden="true"></span><span><small>Vision</small><b>La boucle de jeu</b></span></a></li><li><a class="dd-item" href="totems.html"><span class="thumb" style="background-image:url('img/totems/banniere_totems.webp')" aria-hidden="true"></span><span><small>Départ</small><b>Totems animaux</b></span></a></li><li><a class="dd-item" href="monnaie.html"><span class="thumb pix" style="background-image:url('img/tex/block/ether_ore.png')" aria-hidden="true"></span><span><small>Économie</small><b>Fragments &amp; Sceaux</b></span></a></li><li><a class="dd-item" href="invocation.html"><span class="thumb" style="background-image:url('img/shots/01_invocation_legendaire.webp')" aria-hidden="true"></span><span><small>Gacha</small><b>Autel d'invocation</b></span></a></li><li><a class="dd-item" href="boosters.html"><span class="thumb" style="background-image:url('img/shots/04_booster_ouverture.webp')" aria-hidden="true"></span><span><small>Gacha libre</small><b>Boosters</b></span></a></li><li><a class="dd-item" href="reliquaire.html"><span class="thumb" style="background-image:url('img/shots/reliquaire_10000.webp')" aria-hidden="true"></span><span><small>Rangement</small><b>Reliquaire</b></span></a></li><li><a class="dd-item" href="autel.html"><span class="thumb" style="background-image:url('img/shots/table_de_revelation.webp')" aria-hidden="true"></span><span><small>Ouverture</small><b>Table de Révélation</b></span></a></li><li><a class="dd-item" href="raretes.html"><span class="thumb" style="background-image:url('img/shots/03_invocation_divin.webp')" aria-hidden="true"></span><span><small>Identité visuelle</small><b>Raretés</b></span></a></li></ul></div></li><li class="dd"><button type="button" class="navlink" aria-expanded="false" aria-controls="menu-1">Reliques<span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-1"><p class="dd-head">Les reliques</p><ul class="plain dd-list"><li><a class="dd-item" href="familles.html"><span class="thumb" style="background-image:url('img/shots/arsenal/arsenal_complet_sans_texte.webp')" aria-hidden="true"></span><span><small>Progression</small><b>Familles &amp; pouvoirs</b></span></a></li><li><a class="dd-item" href="dieux.html"><span class="thumb" style="background-image:url('img/shots/arsenal/armes_des_dieux.webp')" aria-hidden="true"></span><span><small>Divin</small><b>Les dieux</b></span></a></li><li><a class="dd-item" href="slots.html"><span class="thumb pix" style="background-image:url('img/tex/block/summon_marble.png')" aria-hidden="true"></span><span><small>Équipement</small><b>Slots d'équipement</b></span></a></li><li><a class="dd-item" href="codex.html"><span class="thumb pix" style="background-image:url('img/tex/item/bound_chronicle.png')" aria-hidden="true"></span><span><small>Collection</small><b>Codex</b></span></a></li><li><a class="dd-item" href="touches.html"><span class="thumb pix" style="background-image:url('img/tex/block/glyph_lamp.png')" aria-hidden="true"></span><span><small>Référence</small><b>Touches (configurables)</b></span></a></li><li><a class="dd-item" href="commandes.html"><span class="thumb pix" style="background-image:url('img/tex/item/bound_chronicle.png')" aria-hidden="true"></span><span><small>Référence</small><b>Toutes les commandes</b></span></a></li></ul></div></li><li class="dd"><button type="button" class="navlink" aria-expanded="false" aria-controls="menu-2">Ascension<span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-2"><p class="dd-head">L&#x27;Ascension</p><ul class="plain dd-list"><li><a class="dd-item" href="ascension.html"><span class="thumb" style="background-image:url('img/shots/ascension/ecran_complet.webp')" aria-hidden="true"></span><span><small>L'Ascension</small><b>L'Ascension : trois arbres, neuf ultimes</b></span></a></li><li><a class="dd-item" href="asc-arme.html"><span class="thumb" style="background-image:url('img/shots/ascension/nouvelles_armes.webp')" aria-hidden="true"></span><span><small>L'Ascension</small><b>L'Arbre de l'Arme</b></span></a></li><li><a class="dd-item" href="asc-armure.html"><span class="thumb" style="background-image:url('img/shots/ascension/armures_ultimes.webp')" aria-hidden="true"></span><span><small>L'Ascension</small><b>L'Arbre de l'Armure</b></span></a></li><li><a class="dd-item" href="asc-esprit.html"><span class="thumb" style="background-image:url('img/shots/ascension/coeurs_ultimes.webp')" aria-hidden="true"></span><span><small>L'Ascension</small><b>L'Arbre de l'Esprit</b></span></a></li></ul></div></li><li class="dd"><button type="button" class="navlink current" aria-expanded="false" aria-controls="menu-3">Familiers<span class="sr-only"> (partie actuelle)</span><span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-3"><p class="dd-head">Les familiers</p><ul class="plain dd-list"><li><a class="dd-item" href="compagnons.html"><span class="thumb" style="background-image:url('img/shots/compagnons/menagerie.webp')" aria-hidden="true"></span><span><small>Familiers</small><b>Les familiers</b></span></a></li><li><a class="dd-item" href="bestiaire.html"><span class="thumb" style="background-image:url('img/icons/ebisu_soul_orb.png')" aria-hidden="true"></span><span><small>Familiers</small><b>Le Bestiaire</b></span></a></li><li><a class="dd-item" href="chasse.html"><span class="thumb" style="background-image:url('img/shots/chasse/classeur.webp')" aria-hidden="true"></span><span><small>Familiers · depuis la 0.36</small><b>La Chasse</b></span></a></li><li><a class="dd-item current" aria-current="page" href="objets.html"><span class="thumb" aria-hidden="true">❂</span><span><small>Référence</small><b>Tous les objets</b></span></a></li></ul></div></li><li class="dd"><button type="button" class="navlink" aria-expanded="false" aria-controls="menu-4">Crossover<span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-4"><p class="dd-head">Crossover</p><ul class="plain dd-list"><li><a class="dd-item" href="chainsaw.html"><span class="thumb" style="background-image:url('img/chainsaw/banniere.webp')" aria-hidden="true"></span><span><small>Crossover · bannière spéciale</small><b>Chainsaw Man</b></span></a></li></ul></div></li><li class="dd"><button type="button" class="navlink" aria-expanded="false" aria-controls="menu-5">Mondes<span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-5"><p class="dd-head">Les mondes des dieux</p><ul class="plain dd-list"><li><a class="dd-item" href="mars.html"><span class="thumb" style="background-image:url('img/shots/mars_olympus.webp')" aria-hidden="true"></span><span><small>Planète</small><b>Mars, la planète d'Arès</b></span></a></li><li><a class="dd-item" href="jupiter.html"><span class="thumb" style="background-image:url('img/shots/09_jupiter.webp')" aria-hidden="true"></span><span><small>Planète</small><b>Jupiter, le royaume du ciel</b></span></a></li><li><a class="dd-item" href="pluton.html"><span class="thumb" style="background-image:url('img/shots/planetes/pluton_02_le_palais_sur_son_ile.webp')" aria-hidden="true"></span><span><small>Planète</small><b>Pluton, le royaume d'Hadès</b></span></a></li><li><a class="dd-item" href="neptune.html"><span class="thumb" style="background-image:url('img/shots/planetes/neptune_01_le_dome_d_atlantide_depuis_la_mer.webp')" aria-hidden="true"></span><span><small>Planète</small><b>Neptune, le royaume de Poséidon</b></span></a></li><li><a class="dd-item" href="saturne.html"><span class="thumb" style="background-image:url('img/shots/planetes/saturne_01_saturne_et_l_hexagone.webp')" aria-hidden="true"></span><span><small>Planète</small><b>Saturne, le royaume de Kronos</b></span></a></li><li><a class="dd-item" href="venus.html"><span class="thumb" style="background-image:url('img/shots/planetes/venus_01_la_conque_vue_de_trois_quarts.webp')" aria-hidden="true"></span><span><small>Planète</small><b>Vénus, le jardin d'Aphrodite</b></span></a></li><li><a class="dd-item" href="mercure.html"><span class="thumb" style="background-image:url('img/shots/planetes/mercure_01_le_caducee_et_l_agora.webp')" aria-hidden="true"></span><span><small>Planète</small><b>Mercure, le monde du Messager</b></span></a></li><li><a class="dd-item" href="uranus.html"><span class="thumb" style="background-image:url('img/shots/planetes/uranus_01_l_arche_d_ouranos_et_les_anneaux.webp')" aria-hidden="true"></span><span><small>Planète</small><b>Uranus, le monde couché</b></span></a></li><li><a class="dd-item" href="ether.html"><span class="thumb" style="background-image:url('img/shots/creatures/astrelume_les_quatre.webp')" aria-hidden="true"></span><span><small>Dimension</small><b>L'Astrelume</b></span></a></li></ul></div></li><li class="dd"><button type="button" class="navlink" aria-expanded="false" aria-controls="menu-6">Créations<span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-6"><p class="dd-head">Les créations</p><ul class="plain dd-list"><li><a class="dd-item" href="creations.html"><span class="thumb pix" style="background-image:url('img/tex/block/evening_star_cage.png')" aria-hidden="true"></span><span><small>Les Arcanes</small><b>Les treize créations</b></span></a></li><li><a class="dd-item" href="creuset.html"><span class="thumb" style="background-image:url('img/shots/creuset_reforge.webp')" aria-hidden="true"></span><span><small>Création</small><b>Le Creuset des Âmes</b></span></a></li><li><a class="dd-item" href="casino.html"><span class="thumb" style="background-image:url('img/shots/06_machine_a_sous_jackpot.webp')" aria-hidden="true"></span><span><small>Jeux</small><b>La Table du Destin</b></span></a></li><li><a class="dd-item" href="volley.html"><span class="thumb" style="background-image:url('img/shots/volley/terrain_replie.webp')" aria-hidden="true"></span><span><small>Jeux</small><b>Le terrain de volley</b></span></a></li><li><a class="dd-item" href="rafale.html"><span class="thumb" style="background-image:url('img/shots/10_rafale.webp')" aria-hidden="true"></span><span><small>Création</small><b>Le Rafale</b></span></a></li><li><a class="dd-item" href="tente.html"><span class="thumb" style="background-image:url('img/shots/tente/tente_dehors.webp')" aria-hidden="true"></span><span><small>Création</small><b>La Tente enchantée</b></span></a></li><li><a class="dd-item" href="crafts.html"><span class="thumb pix" style="background-image:url('img/tex/block/summon_runes.png')" aria-hidden="true"></span><span><small>Référence</small><b>Tous les artisanats</b></span></a></li></ul></div></li><li class="dd right"><button type="button" class="navlink" aria-expanded="false" aria-controls="menu-7">Overworld<span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-7"><p class="dd-head">L&#x27;Overworld</p><ul class="plain dd-list"><li><a class="dd-item" href="contrees.html"><span class="thumb" style="background-image:url('img/places/sky_isles.png')" aria-hidden="true"></span><span><small>Overworld</small><b>Les Contrées</b></span></a></li><li><a class="dd-item" href="fleurs.html"><span class="thumb" style="background-image:url('img/shots/fleurs/champs_mille_fleurs.webp')" aria-hidden="true"></span><span><small>Nouvelle contrée</small><b>Les Champs Mille-Fleurs</b></span></a></li><li><a class="dd-item" href="lieux.html"><span class="thumb" style="background-image:url('img/places/caravanserai.png')" aria-hidden="true"></span><span><small>Exploration</small><b>Lieux & chemins</b></span></a></li><li><a class="dd-item" href="merveilles.html"><span class="thumb" style="background-image:url('img/places/world_tree.png')" aria-hidden="true"></span><span><small>Dix merveilles</small><b>Les Merveilles</b></span></a></li><li><a class="dd-item" href="epreuves.html"><span class="thumb" style="background-image:url('img/places/arena.png')" aria-hidden="true"></span><span><small>Défis rares</small><b>Les Épreuves</b></span></a></li><li><a class="dd-item" href="chronique.html"><span class="thumb" style="background-image:url('img/chronicle/book.webp')" aria-hidden="true"></span><span><small>Collection</small><b>La Chronique des pèlerins</b></span></a></li><li><a class="dd-item" href="villages.html"><span class="thumb" style="background-image:url('img/places/village.png')" aria-hidden="true"></span><span><small>Pèlerins</small><b>Villages & quêtes</b></span></a></li></ul></div></li><li class="dd right"><button type="button" class="navlink" aria-expanded="false" aria-controls="menu-8">Référence<span class="caret" aria-hidden="true">▾</span></button><div class="dd-menu" id="menu-8"><p class="dd-head">Référence</p><ul class="plain dd-list"><li><a class="dd-item" href="blocs.html"><span class="thumb pix" style="background-image:url('img/tex/block/ether_stone.png')" aria-hidden="true"></span><span><small>Référence</small><b>Les blocs de l'Astrelume</b></span></a></li></ul></div></li><li><a class="navlink release-link" href="releases.html">Releases</a></li></ul></nav><div class="nav-tools"><button type="button" class="search-btn" data-search aria-haspopup="dialog" aria-label="Rechercher"><span class="sym" aria-hidden="true">⌕</span> <span class="label">Rechercher</span> <kbd aria-hidden="true">Ctrl K</kbd></button><a class="ticket-btn" href="ticket.html" aria-label="Envoyer un ticket"><svg class="ic-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg> <span class="label">Ticket</span></a><button type="button" class="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span aria-hidden="true">☰</span></button></div></div></header><nav class="drawer" id="drawer" aria-label="Menu principal"><ul class="plain"><li><a href="index.html">Accueil</a></li></ul><p class="nav-title">Les bases</p><ul class="plain"><li><a href="boucle.html">La boucle de jeu</a></li><li><a href="totems.html">Totems animaux</a></li><li><a href="monnaie.html">Fragments &amp; Sceaux</a></li><li><a href="invocation.html">Autel d'invocation</a></li><li><a href="boosters.html">Boosters</a></li><li><a href="reliquaire.html">Reliquaire</a></li><li><a href="autel.html">Table de Révélation</a></li><li><a href="raretes.html">Raretés</a></li></ul><p class="nav-title">Les reliques</p><ul class="plain"><li><a href="familles.html">Familles &amp; pouvoirs</a></li><li><a href="dieux.html">Les dieux</a></li><li><a href="slots.html">Slots d'équipement</a></li><li><a href="codex.html">Codex</a></li><li><a href="touches.html">Touches (configurables)</a></li><li><a href="commandes.html">Toutes les commandes</a></li></ul><p class="nav-title">L&#x27;Ascension</p><ul class="plain"><li><a href="ascension.html">L'Ascension : trois arbres, neuf ultimes</a></li><li><a href="asc-arme.html">L'Arbre de l'Arme</a></li><li><a href="asc-armure.html">L'Arbre de l'Armure</a></li><li><a href="asc-esprit.html">L'Arbre de l'Esprit</a></li></ul><p class="nav-title">Les familiers</p><ul class="plain"><li><a href="compagnons.html">Les familiers</a></li><li><a href="bestiaire.html">Le Bestiaire</a></li><li><a href="chasse.html">La Chasse</a></li><li><a href="objets.html" class="current" aria-current="page">Tous les objets</a></li></ul><p class="nav-title">Crossover</p><ul class="plain"><li><a href="chainsaw.html">Chainsaw Man</a></li></ul><p class="nav-title">Les mondes des dieux</p><ul class="plain"><li><a href="mars.html">Mars, la planète d'Arès</a></li><li><a href="jupiter.html">Jupiter, le royaume du ciel</a></li><li><a href="pluton.html">Pluton, le royaume d'Hadès</a></li><li><a href="neptune.html">Neptune, le royaume de Poséidon</a></li><li><a href="saturne.html">Saturne, le royaume de Kronos</a></li><li><a href="venus.html">Vénus, le jardin d'Aphrodite</a></li><li><a href="mercure.html">Mercure, le monde du Messager</a></li><li><a href="uranus.html">Uranus, le monde couché</a></li><li><a href="ether.html">L'Astrelume</a></li></ul><p class="nav-title">Les créations</p><ul class="plain"><li><a href="creations.html">Les treize créations</a></li><li><a href="creuset.html">Le Creuset des Âmes</a></li><li><a href="casino.html">La Table du Destin</a></li><li><a href="volley.html">Le terrain de volley</a></li><li><a href="rafale.html">Le Rafale</a></li><li><a href="tente.html">La Tente enchantée</a></li><li><a href="crafts.html">Tous les artisanats</a></li></ul><p class="nav-title">L&#x27;Overworld</p><ul class="plain"><li><a href="contrees.html">Les Contrées</a></li><li><a href="fleurs.html">Les Champs Mille-Fleurs</a></li><li><a href="lieux.html">Lieux & chemins</a></li><li><a href="merveilles.html">Les Merveilles</a></li><li><a href="epreuves.html">Les Épreuves</a></li><li><a href="chronique.html">La Chronique des pèlerins</a></li><li><a href="villages.html">Villages & quêtes</a></li></ul><p class="nav-title">Référence</p><ul class="plain"><li><a href="blocs.html">Les blocs de l'Astrelume</a></li></ul><p class="nav-title">Téléchargements</p><ul class="plain"><li><a href="releases.html">Releases · 0.37.0-beta</a></li></ul><ul class="plain drawer-tools"><li><button type="button" class="drawer-search" data-search aria-haspopup="dialog"><span class="sym" aria-hidden="true">⌕</span> Rechercher</button></li><li><a class="ticket-btn" href="ticket.html"><svg class="ic-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg> Envoyer un ticket</a></li></ul></nav>
+<div class="page-body">
+<div class="page"><nav class="sidenav" aria-label="Chapitres : Les familiers"><p class="nav-title">Les familiers</p><ol class="plain"><li><a href="compagnons.html"><span class="num" aria-hidden="true">1</span>Les familiers</a></li><li><a href="bestiaire.html"><span class="num" aria-hidden="true">2</span>Le Bestiaire</a></li><li><a href="chasse.html"><span class="num" aria-hidden="true">3</span>La Chasse</a></li><li><a href="objets.html" class="current" aria-current="page"><span class="num" aria-hidden="true">4</span>Tous les objets</a></li></ol><ul class="plain other" aria-label="Autres parties"><li><a href="boucle.html">Les bases</a></li><li><a href="familles.html">Les reliques</a></li><li><a href="ascension.html">L&#x27;Ascension</a></li><li><a href="chainsaw.html">Crossover</a></li><li><a href="mars.html">Les mondes des dieux</a></li><li><a href="creations.html">Les créations</a></li><li><a href="contrees.html">L&#x27;Overworld</a></li><li><a href="blocs.html">Référence</a></li><li><a href="ticket.html"><svg class="ic-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg> Envoyer un ticket</a></li></ul></nav><main id="contenu" tabindex="-1"><nav class="crumbs" aria-label="Fil d'Ariane"><ol class="plain"><li><a href="index.html">Accueil</a></li><li><a href="compagnons.html">Les familiers</a></li><li><span aria-current="page">Tous les objets</span></li></ol></nav><nav class="part-chips" aria-label="Chapitres : Les familiers"><ul class="plain"><li><a href="compagnons.html">Les familiers</a></li><li><a href="bestiaire.html">Le Bestiaire</a></li><li><a href="chasse.html">La Chasse</a></li><li><a href="objets.html" class="current" aria-current="page">Tous les objets</a></li></ul></nav><article class="chapter"><header class="chap-head"><div class="chap-text"><p class="section-eyebrow">Référence</p><h1>Tous les objets</h1></div></header><div class="chap-body">
+        <p class="lede">Chaque objet et bloc du mod, et comment l'obtenir : sa recette, les créatures qui le laissent et leurs chances, les
+        coffres où il se trouve ou le monde où il pousse. C'est aussi ce que dit son infobulle en jeu.</p>
+        <p><input id="objets-filtre" type="search" placeholder="Chercher un objet…" style="width:100%;max-width:420px;padding:8px 10px;font:inherit"
+        oninput="var q=this.value.toLowerCase();document.querySelectorAll('#objets tbody tr').forEach(function(r){r.style.display=r.textContent.toLowerCase().indexOf(q)<0?'none':''})"></p>
+        <!-- objets:start -->
+        <h2 id="la-chasse-et-les-rituels-81" class="sec">La Chasse et les rituels <span class="dim">(81)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>1 écho de n'importe quelle créature (à sortir du classeur)</b></td><td>Toute créature du Bestiaire tuée par vous ou votre familier laisse son écho, à chaque fois, 10 si elle est dorée. Pas celles des générateurs.</td></tr>
+            <tr><td><b>Aiguillon</b></td><td>À l'établi : Dard de scorpion + Fiole + Oeil d'araignée (donne 2).</td></tr>
+            <tr><td><b>Ballon de volley</b></td><td>Fourni par le Terrain de volley pendant un match. Mode créatif seulement sinon.</td></tr>
+            <tr><td><b>Booster de reliques</b></td><td>Offert au début du jeu. Le Wither et l'Ender Dragon en laissent toujours un, et deux lieux de l'Astrelume en cachent.</td></tr>
+            <tr><td><b>Bracelet d'Astérion</b></td><td>Laissé par : Astérion, le Minotaure.</td></tr>
+            <tr><td><b>Braise de forge</b></td><td>Laissé par : Tyran de la Tour.</td></tr>
+            <tr><td><b>Cage Éternelle</b></td><td>À l'établi : 5 × Barreaux de fer + Relique + 2 × Obsidienne + Lanterne des âmes.</td></tr>
+            <tr><td><b>Carte de Totem</b></td><td>Tirée à la roue de votre première connexion, une fois pour la vie.</td></tr>
+            <tr><td><b>Classeur d'échos</b></td><td>Offert au début du jeu. À l'établi : Livre + 2 × Cuir + Éclat d'améthyste + Lingot d'or.</td></tr>
+            <tr><td><b>Cor de l'Aurochs</b></td><td>À l'établi : 3 × Corne d'aurochs + Lingot d'or + Cuir.</td></tr>
+            <tr><td><b>Cuirasse d'Ascension</b></td><td>Donné par les nœuds d'incarnation de l'Ascension.</td></tr>
+            <tr><td><b>Cœur d'Ascension</b></td><td>Donné par les nœuds d'incarnation de l'Ascension.</td></tr>
+            <tr><td><b>Cœur de cristal taillé</b></td><td>À l'établi : Cœur de cristal + Diamant + 2 × Éclat d'améthyste.</td></tr>
+            <tr><td><b>Diamant noir</b></td><td>À l'établi : 9 × Nodule de graphite.</td></tr>
+            <tr><td><b>Essence d'Âme</b></td><td>En fondant une relique au Creuset des Âmes.</td></tr>
+            <tr><td><b>Essence sauvage</b></td><td>15 % des bêtes hostiles des Contrées (raptor, scorpion, yéti, sylvain, rôdeur, golem de cristal, brigands, feu follet), 3 à 5 sur le Minotaure.</td></tr>
+            <tr><td><b>Fil d'Ariane</b></td><td>Laissé par : Astérion, le Minotaure.</td></tr>
+            <tr><td><b>Fil d'Ascension</b></td><td>Donné par les nœuds d'incarnation de l'Ascension.</td></tr>
+            <tr><td><b>Fragment d'âme</b></td><td>Une par créature de Minecraft tuée, 1 à 40 par créature des Contrées (aucune sur l'Astrelume, les planètes, ni des générateurs).</td></tr>
+            <tr><td><b>Fragment de relique</b></td><td>Les 5 tâches quotidiennes, le minerai de l'Astrelume et quelques coffres.</td></tr>
+            <tr><td><b>Grappin</b></td><td>À l'établi : Crochet + Relique + Laisse.</td></tr>
+            <tr><td><b>Guide d'Ebisu</b></td><td>Offert au début du jeu. À l'établi : Livre + Éclat d'améthyste.</td></tr>
+            <tr><td><b>Heaume d'Ascension</b></td><td>Donné par les nœuds d'incarnation de l'Ascension.</td></tr>
+            <tr><td><b>Jambières d'Ascension</b></td><td>Donnés par les nœuds d'incarnation de l'Ascension.</td></tr>
+            <tr><td><b>Lame d'Ascension</b></td><td>Donnée par les nœuds d'incarnation de l'Ascension.</td></tr>
+            <tr><td><b>Lame du Carnage</b></td><td>La Lame liée le devient avec le pouvoir de Carnage de l'Assaillant.</td></tr>
+            <tr><td><b>Lame liée</b></td><td>Apparaît avec le pouvoir de set de l'Assaillant.</td></tr>
+            <tr><td><b>Lyre d'Ascension</b></td><td>Donnée par les nœuds d'incarnation de l'Ascension.</td></tr>
+            <tr><td><b>Nodule de graphite</b></td><td>12 % des monstres tués sous le niveau 0 de l'overworld, générateurs compris.</td></tr>
+            <tr><td><b>Orbe d'âme</b></td><td>Offert au début du jeu, aux paliers du classeur, et la banque change 9 fragments d'âme en un orbe. À l'établi : 9 × Fragment d'âme.</td></tr>
+            <tr><td><b>Os gravé</b></td><td>12 % des squelettes (vagabonds, embourbés, desséchés, wither) et des zombies (momies, noyés, zombies villageois) tués par vous ou votre familier, générateurs compris.</td></tr>
+            <tr><td><b>Pousse de sylvain</b></td><td>À l'établi : Cœur de bois + 2 × Poudre d'os + Pousse de chêne.</td></tr>
+            <tr><td><b>Poussière d'or divin</b></td><td>1 sur chaque créature dorée (une sur 300 naît dorée), et aux paliers du classeur.</td></tr>
+            <tr><td><b>Rafale</b></td><td>À l'établi : Verre + 2 × Bloc de fer + Relique + 2 × Fusée de feu d'artifice + Haut fourneau.</td></tr>
+            <tr><td><b>Relique</b></td><td>Bannières de la Table d'invocation et boosters.</td></tr>
+            <tr><td><b>Relique scellée (ancienne)</b></td><td>Ancien objet, on n'en trouve plus.</td></tr>
+            <tr><td><b>Sac Sans Fond</b></td><td>À l'établi : 2 × Ficelle + 5 × Cuir + Relique + Coffre.</td></tr>
+            <tr><td><b>Sceau d'invocation</b></td><td>La banque de l'inventaire change aussi 9 fragments en un sceau. À l'établi : 9 × Fragment de relique. Laissé par : Gardien de l'Éclipse. Coffres : les ruines de l'Astrelume.</td></tr>
+            <tr><td><b>Sceptre de la Main Invisible</b></td><td>Apparaît avec le pouvoir de la Main Invisible.</td></tr>
+            <tr><td><b>Solerets d'Ascension</b></td><td>Données par les nœuds d'incarnation de l'Ascension.</td></tr>
+            <tr><td><b>Tente enchantée</b></td><td>À l'établi : Lanterne + 2 × Laine blanche + Relique + 2 × Bâton.</td></tr>
+            <tr><td><b>Terrain replié</b></td><td>À l'établi : 3 × Ficelle + 2 × Bâton + Relique + 3 × Sable. Se récolte sur : Poteau d'arbitre.</td></tr>
+            <tr><td><b>Éperons de raptor</b></td><td>À l'établi : 4 × Griffe de raptor + Cuir + Lingot d'or.</td></tr>
+            <tr><td><b>Étoile du chasseur</b></td><td>À l'établi : 4 × Essence sauvage + 2 × Os gravé + 2 × Diamant noir + 1 écho de n'importe quelle créature (à sortir du classeur).</td></tr>
+            <tr><td><b>Œil d'Argus</b></td><td>À l'établi : Œil d'Argos + 2 × Plume d'Argus + Pépite d'or.</td></tr>
+            <tr><td><b>Œuf d'apparition d'aigle royal</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition d'arbalétrier brigand</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition d'Archer des Cimes</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition d'aurochs</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de brigand</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de cerf lumifère</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de colibri</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Colosse éveillé</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de crapaud géant</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de faisan doré</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de fennec</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de feu follet</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de flamant rose</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de garde du village</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Gardien de l'Éclipse</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de golem de cristal</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Grande Ourse</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de grue couronnée</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de harfang</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de huppe fasciée</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de hérisson</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de mammouth laineux</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de martin-pêcheur</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Minotaure</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de panda roux</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de papillon</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Phalène du Vide</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de pèlerin</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de raptor</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Revenant d'Astrelume</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de rôdeur des marais</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de scorpion géant</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de toucan</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de tréant flétri</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Tyran de la Tour</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de yéti</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="les-contrees-102" class="sec">Les Contrées <span class="dim">(102)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Aster fuchsia</b></td><td>Se récolte sur : Aster fuchsia en pot.</td></tr>
+            <tr><td><b>Autel des vœux</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Autel du Colosse</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Barrière en champignon-lanterne</b></td><td>À l'établi : 4 × Planches de champignon-lanterne + 2 × Bâton (donne 3).</td></tr>
+            <tr><td><b>Barrière en glycine</b></td><td>À l'établi : 4 × Planches de glycine + 2 × Bâton (donne 3).</td></tr>
+            <tr><td><b>Bloc d'ambre</b></td><td>Au four : Tourbe. Coffres : les merveilles des Contrées.</td></tr>
+            <tr><td><b>Bois lumifère</b></td><td>Laissé par : Cerf lumifère. Coffres : les merveilles des Contrées.</td></tr>
+            <tr><td><b>Boussole des Merveilles</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Boussole du pèlerin</b></td><td>Coffres : les bâtisses des Contrées.</td></tr>
+            <tr><td><b>Braise de feu follet</b></td><td>Laissé par : Feu follet. Coffres : les bâtisses des Contrées et les merveilles des Contrées.</td></tr>
+            <tr><td><b>Briques d'ambre</b></td><td>À l'établi : 4 × Bloc d'ambre (donne 4).</td></tr>
+            <tr><td><b>Briques de permafrost</b></td><td>À l'établi : 4 × Permafrost (donne 4).</td></tr>
+            <tr><td><b>Briques de Solbrûle</b></td><td>À l'établi : 4 × Terre cuite orange (donne 4).</td></tr>
+            <tr><td><b>Briques de tourbe</b></td><td>À l'établi : 4 × Tourbe (donne 4).</td></tr>
+            <tr><td><b>Briques à glyphes</b></td><td>À l'établi : 4 × Pierre à glyphes (donne 4).</td></tr>
+            <tr><td><b>Briques à glyphes fissurées</b></td><td>Au four : Briques à glyphes. Au tailleur de pierre : Briques à glyphes.</td></tr>
+            <tr><td><b>Briques à glyphes moussues</b></td><td>À l'établi : Briques à glyphes + Lianes.</td></tr>
+            <tr><td><b>Bûche de glycine</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Campanule menthe</b></td><td>Se récolte sur : Campanule menthe en pot.</td></tr>
+            <tr><td><b>Carreaux de Solbrûle</b></td><td>À l'établi : 2 × Briques de Solbrûle + 2 × Terre cuite cyan (donne 4). Au tailleur de pierre : Briques de Solbrûle. Coffres : les merveilles des Contrées.</td></tr>
+            <tr><td><b>Chapeau de champignon-lanterne</b></td><td>À l'établi : 4 × Bois lumifère + Chapeau de champignon-lanterne (donne 4).</td></tr>
+            <tr><td><b>Cor de l'Arène</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Corne d'aurochs</b></td><td>Laissé par : Aurochs. Coffres : les bâtisses des Contrées et les merveilles des Contrées.</td></tr>
+            <tr><td><b>Corne du Minotaure</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Cosmos abricot</b></td><td>Se récolte sur : Cosmos abricot en pot.</td></tr>
+            <tr><td><b>Cristal prismatique</b></td><td>À l'établi : 4 × Éclat prismatique. Coffres : les merveilles des Contrées.</td></tr>
+            <tr><td><b>Crocus améthyste</b></td><td>Se récolte sur : Crocus améthyste en pot.</td></tr>
+            <tr><td><b>Cœur de bois</b></td><td>Laissé par : Tréant flétri. Coffres : les merveilles des Contrées.</td></tr>
+            <tr><td><b>Cœur de cristal</b></td><td>Laissé par : Golem de cristal. Coffres : les bâtisses des Contrées et les merveilles des Contrées.</td></tr>
+            <tr><td><b>Dalle en briques de permafrost</b></td><td>À l'établi : 3 × Briques de permafrost (donne 6). Au tailleur de pierre : Briques de permafrost.</td></tr>
+            <tr><td><b>Dalle en briques de Solbrûle</b></td><td>À l'établi : 3 × Briques de Solbrûle (donne 6). Au tailleur de pierre : Briques de Solbrûle.</td></tr>
+            <tr><td><b>Dalle en briques de tourbe</b></td><td>À l'établi : 3 × Briques de tourbe (donne 6). Au tailleur de pierre : Briques de tourbe.</td></tr>
+            <tr><td><b>Dalle en briques à glyphes</b></td><td>À l'établi : 3 × Briques à glyphes (donne 6). Au tailleur de pierre : Briques à glyphes.</td></tr>
+            <tr><td><b>Dalle en briques à glyphes moussues</b></td><td>À l'établi : 3 × Briques à glyphes moussues (donne 6). Au tailleur de pierre : Briques à glyphes moussues.</td></tr>
+            <tr><td><b>Dalle en champignon-lanterne</b></td><td>À l'établi : 3 × Planches de champignon-lanterne (donne 6).</td></tr>
+            <tr><td><b>Dalle en glycine</b></td><td>À l'établi : 3 × Planches de glycine (donne 6).</td></tr>
+            <tr><td><b>Dard de scorpion</b></td><td>Laissé par : Scorpion géant. Coffres : les bâtisses des Contrées et les merveilles des Contrées.</td></tr>
+            <tr><td><b>Delphinium azur</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Digitale pourpre</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Défense de mammouth</b></td><td>Laissé par : Mammouth laineux. Coffres : les bâtisses des Contrées.</td></tr>
+            <tr><td><b>Escalier en briques de permafrost</b></td><td>À l'établi : 6 × Briques de permafrost (donne 4). Au tailleur de pierre : Briques de permafrost.</td></tr>
+            <tr><td><b>Escalier en briques de Solbrûle</b></td><td>À l'établi : 6 × Briques de Solbrûle (donne 4). Au tailleur de pierre : Briques de Solbrûle.</td></tr>
+            <tr><td><b>Escalier en briques de tourbe</b></td><td>À l'établi : 6 × Briques de tourbe (donne 4). Au tailleur de pierre : Briques de tourbe.</td></tr>
+            <tr><td><b>Escalier en briques à glyphes</b></td><td>À l'établi : 6 × Briques à glyphes (donne 4). Au tailleur de pierre : Briques à glyphes.</td></tr>
+            <tr><td><b>Escalier en briques à glyphes moussues</b></td><td>À l'établi : 6 × Briques à glyphes moussues (donne 4). Au tailleur de pierre : Briques à glyphes moussues.</td></tr>
+            <tr><td><b>Escalier en champignon-lanterne</b></td><td>À l'établi : 6 × Planches de champignon-lanterne (donne 4).</td></tr>
+            <tr><td><b>Escalier en glycine</b></td><td>À l'établi : 6 × Planches de glycine (donne 4).</td></tr>
+            <tr><td><b>Feuilles de glycine</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Feuilles de glycine en fleur</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Fougère luisante</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Fourrure de yéti</b></td><td>Laissé par : Yéti. Coffres : les bâtisses des Contrées et les merveilles des Contrées.</td></tr>
+            <tr><td><b>Glaïeul doré</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Glyphe lumineux</b></td><td>À l'établi : 4 × Briques à glyphes + Braise de feu follet (donne 4). Coffres : les bâtisses des Contrées, les merveilles des Contrées et les épreuves des Contrées.</td></tr>
+            <tr><td><b>Grappe de glycine</b></td><td>Se récolte sur : Grappe de glycine.</td></tr>
+            <tr><td><b>Grappe de glycine blanche</b></td><td>Se récolte sur : Grappe de glycine blanche.</td></tr>
+            <tr><td><b>Grappe de glycine rose</b></td><td>Se récolte sur : Grappe de glycine rose.</td></tr>
+            <tr><td><b>Griffe de raptor</b></td><td>Laissé par : Raptor. Coffres : les bâtisses des Contrées et les merveilles des Contrées.</td></tr>
+            <tr><td><b>Haie du Dédale</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Hellébore citron</b></td><td>Se récolte sur : Hellébore citron en pot.</td></tr>
+            <tr><td><b>Iris de nuit</b></td><td>Se récolte sur : Iris de nuit en pot.</td></tr>
+            <tr><td><b>La Chronique reliée</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Laine de mammouth</b></td><td>Laissé par : Mammouth laineux. Coffres : les bâtisses des Contrées.</td></tr>
+            <tr><td><b>Lanterne des fées</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Laurier du Champion</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Lin des glaciers</b></td><td>Se récolte sur : Lin des glaciers en pot.</td></tr>
+            <tr><td><b>Lotus</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Lupin rose</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Mousse luisante</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Muret en briques de permafrost</b></td><td>À l'établi : 6 × Briques de permafrost (donne 6). Au tailleur de pierre : Briques de permafrost.</td></tr>
+            <tr><td><b>Muret en briques de Solbrûle</b></td><td>À l'établi : 6 × Briques de Solbrûle (donne 6). Au tailleur de pierre : Briques de Solbrûle.</td></tr>
+            <tr><td><b>Muret en briques de tourbe</b></td><td>À l'établi : 6 × Briques de tourbe (donne 6). Au tailleur de pierre : Briques de tourbe.</td></tr>
+            <tr><td><b>Muret en briques à glyphes</b></td><td>À l'établi : 6 × Briques à glyphes (donne 6). Au tailleur de pierre : Briques à glyphes.</td></tr>
+            <tr><td><b>Myosotis</b></td><td>Se récolte sur : Myosotis en pot.</td></tr>
+            <tr><td><b>Page de la Chronique</b></td><td>Coffres : les merveilles des Contrées.</td></tr>
+            <tr><td><b>Permafrost</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Pied de champignon-lanterne</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Pierre de Solbrûle sculptée</b></td><td>À l'établi : 2 × Dalle en briques de Solbrûle. Au tailleur de pierre : Briques de Solbrûle.</td></tr>
+            <tr><td><b>Pierre des vents</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Pierre à glyphes</b></td><td>Coffres : les bâtisses des Contrées.</td></tr>
+            <tr><td><b>Pierre à glyphes sculptée</b></td><td>À l'établi : 2 × Dalle en briques à glyphes. Au tailleur de pierre : Briques à glyphes. Coffres : les épreuves des Contrées.</td></tr>
+            <tr><td><b>Pilier à glyphes</b></td><td>À l'établi : 2 × Briques à glyphes (donne 2). Au tailleur de pierre : Briques à glyphes.</td></tr>
+            <tr><td><b>Pivoine aurore</b></td><td>Se récolte sur : Pivoine aurore en pot.</td></tr>
+            <tr><td><b>Planches de champignon-lanterne</b></td><td>À l'établi : Pied de champignon-lanterne (donne 4).</td></tr>
+            <tr><td><b>Planches de glycine</b></td><td>À l'établi : Bûche de glycine (donne 4).</td></tr>
+            <tr><td><b>Porte en champignon-lanterne</b></td><td>À l'établi : 6 × Planches de champignon-lanterne (donne 3).</td></tr>
+            <tr><td><b>Portillon en champignon-lanterne</b></td><td>À l'établi : 4 × Bâton + 2 × Planches de champignon-lanterne.</td></tr>
+            <tr><td><b>Portillon en glycine</b></td><td>À l'établi : 4 × Bâton + 2 × Planches de glycine.</td></tr>
+            <tr><td><b>Pousse de glycine</b></td><td>Se récolte sur : Pousse de glycine en pot, Feuilles de glycine en fleur et Feuilles de glycine.</td></tr>
+            <tr><td><b>Renoncule corail</b></td><td>Se récolte sur : Renoncule corail en pot.</td></tr>
+            <tr><td><b>Roseau des marais</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Sceau du caveau</b></td><td>Se trouve dans les Contrées de l'overworld.</td></tr>
+            <tr><td><b>Souci d'or</b></td><td>Se récolte sur : Souci d'or en pot.</td></tr>
+            <tr><td><b>Tapisserie des Pèlerins</b></td><td>À l'établi : 2 × Laine rouge + Laine jaune + Laine bleue (donne 4).</td></tr>
+            <tr><td><b>Tourbe</b></td><td>Laissé par : Rôdeur des marais. Coffres : les bâtisses des Contrées et les merveilles des Contrées.</td></tr>
+            <tr><td><b>Trappe en champignon-lanterne</b></td><td>À l'établi : 6 × Planches de champignon-lanterne (donne 2).</td></tr>
+            <tr><td><b>Tulipe braise</b></td><td>Se récolte sur : Tulipe braise en pot.</td></tr>
+            <tr><td><b>Venaison crue</b></td><td>Laissé par : Cerf lumifère. Coffres : les bâtisses des Contrées.</td></tr>
+            <tr><td><b>Venaison rôtie</b></td><td>Au four : Venaison crue. Au feu de camp : Venaison crue. Coffres : les bâtisses des Contrées.</td></tr>
+            <tr><td><b>Verre prismatique</b></td><td>À l'établi : 4 × Verre + Éclat prismatique (donne 4).</td></tr>
+            <tr><td><b>Vitre d'ambre</b></td><td>À l'établi : 6 × Verre d'ambre (donne 16).</td></tr>
+            <tr><td><b>Vitre prismatique</b></td><td>À l'établi : 6 × Verre prismatique (donne 16).</td></tr>
+            <tr><td><b>Éclat prismatique</b></td><td>Laissé par : Golem de cristal. Coffres : les bâtisses des Contrées et les merveilles des Contrées.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="l-astrelume-62" class="sec">L'Astrelume <span class="dim">(62)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Accélérateur Temporel</b></td><td>À l'établi : 4 × Bloc d'améthyste + 4 × Montre + Relique.</td></tr>
+            <tr><td><b>Aimant de Collecte</b></td><td>À l'établi : 6 × Lingot de fer + Entonnoir + Relique + Magnétite.</td></tr>
+            <tr><td><b>Amas de Cristal d'Astrelume</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Amas de Perles</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Arbuste Givré</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Bourgeon de Cristal Moyen</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Briques du Vide</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Bulbe de Lumine</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Cadre d'Astrelume</b></td><td>À l'établi : 4 × Calcite + 3 × Éclat d'améthyste + Fragment de relique + Perle de l'Ender (donne 4). Coffres : les ruines de l'Astrelume.</td></tr>
+            <tr><td><b>Calcite des Cavernes</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Champignon Luisant</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Coffre Scellé</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Colonne Blanchie</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Colonne d'Astrelume</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Colonne de Givre</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Creuset des Âmes</b></td><td>À l'établi : 2 × Torche des âmes + 5 × Pierre noire taillée + Relique.</td></tr>
+            <tr><td><b>Croûte de Givre</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Croûte des Dunes</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Feuilles de Lumine</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Feuilles du Crépuscule</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Fleur de Gel</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Fleur de Poussière</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Fleur à Spores</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Fournaise Jumelle</b></td><td>À l'établi : 5 × Pierre noire + 3 × Haut fourneau + Relique.</td></tr>
+            <tr><td><b>Fulgurite</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Gazon d'Aurore</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Gazon de Lumine</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Gazon du Crépuscule</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Grand Bourgeon de Cristal</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Grès d'Étoiles</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Haute Herbe Luisante</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Herbe Luisante</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Lampe de Glacier</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Lanterne du Vide</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Liane de Lumière</b></td><td>Se récolte sur : Liane de Lumière.</td></tr>
+            <tr><td><b>Minerai d'Astrelume</b></td><td>Coffres : les ruines de l'Astrelume.</td></tr>
+            <tr><td><b>Moellons d'Astrelume</b></td><td>Se récolte sur : Pierre d'Astrelume.</td></tr>
+            <tr><td><b>Mousse de Grotte</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Petit Bourgeon de Cristal</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Phare de Garde</b></td><td>À l'établi : 4 × Bloc de quartz + 3 × Verre + Relique + Obsidienne.</td></tr>
+            <tr><td><b>Pierre d'Astrelume</b></td><td>Au four : Moellons d'Astrelume.</td></tr>
+            <tr><td><b>Pierre de la Tour</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Pierre de Passage</b></td><td>À l'établi : 7 × Pierre sculptée + Perle de l'Ender + Relique (donne 4). À l'établi : 4 × Pierre sculptée + 4 × Perle de l'Ender + Pierre de Passage (donne 2).</td></tr>
+            <tr><td><b>Pierre du Vide</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Pointe d'Éclat</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Pousse de Lumine</b></td><td>Se récolte sur : Feuilles de Lumine.</td></tr>
+            <tr><td><b>Pousse du Crépuscule</b></td><td>Se récolte sur : Feuilles du Crépuscule.</td></tr>
+            <tr><td><b>Rondin de Lumine</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Rondin du Crépuscule</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Roseau des Dunes</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Sable d'Étoiles</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Sable de Cristal</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Seuil de la Tour</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Table d'invocation</b></td><td>À l'établi : 4 × Éclat d'améthyste + 4 × Lingot d'or + Sceau d'invocation.</td></tr>
+            <tr><td><b>Table de Révélation</b></td><td>À l'établi : 2 × Éclat d'améthyste + Fragment de relique + 5 × Ardoise des abîmes polie + Obsidienne.</td></tr>
+            <tr><td><b>Table du Destin</b></td><td>À l'établi : 3 × Laine verte + 2 × Lingot d'or + Relique + 2 × Bûche de chêne noir.</td></tr>
+            <tr><td><b>Terre Cendreuse</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Terre d'Astrelume</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Voile des Marées</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Voile Luisant</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Éclosion de Braise</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+            <tr><td><b>Éclosion Luisante</b></td><td>Se trouve sur l'Astrelume.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="mars-28" class="sec">Mars <span class="dim">(28)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Arésite brute</b></td><td>Laissé par : Sparte et Oiseau du Stymphale. Se récolte sur : Minerai d'arésite.</td></tr>
+            <tr><td><b>Basalte d'Olympus</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Basalte incandescent</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Bloc d'arésite</b></td><td>À l'établi : 9 × Lingot d'arésite.</td></tr>
+            <tr><td><b>Brasier de guerre</b></td><td>À l'établi : 4 × Lingot d'arésite + Basalte incandescent + Roche martienne polie.</td></tr>
+            <tr><td><b>Briques martiennes</b></td><td>À l'établi : 4 × Roche martienne polie (donne 4). Au tailleur de pierre : Roche martienne.</td></tr>
+            <tr><td><b>Casque d'Arès</b></td><td>À l'établi : 5 × Lingot d'arésite.</td></tr>
+            <tr><td><b>Cnémides d'Arès</b></td><td>Laissé par : Sparte (50 %) et Oiseau du Stymphale (50 %).</td></tr>
+            <tr><td><b>Cor de guerre</b></td><td>À l'établi : 5 × Lingot d'arésite + Cuir.</td></tr>
+            <tr><td><b>Cuirasse d'Arès</b></td><td>Laissé par : Sparte (50 %) et Oiseau du Stymphale (50 %).</td></tr>
+            <tr><td><b>Dalle en briques martiennes</b></td><td>À l'établi : 3 × Briques martiennes (donne 6). Au tailleur de pierre : Briques martiennes.</td></tr>
+            <tr><td><b>Escalier en briques martiennes</b></td><td>À l'établi : 6 × Briques martiennes (donne 4). Au tailleur de pierre : Briques martiennes.</td></tr>
+            <tr><td><b>Glace carbonique</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Jambières d'Arès</b></td><td>À l'établi : 7 × Lingot d'arésite.</td></tr>
+            <tr><td><b>Lance d'Arès</b></td><td>À l'établi : 3 × Lingot d'arésite + 2 × Bâton de Blaze.</td></tr>
+            <tr><td><b>Lingot d'arésite</b></td><td>Au haut-fourneau : Minerai d'arésite. Au haut-fourneau : Arésite brute.</td></tr>
+            <tr><td><b>Minerai d'arésite</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Muret en briques martiennes</b></td><td>À l'établi : 6 × Briques martiennes (donne 6). Au tailleur de pierre : Briques martiennes.</td></tr>
+            <tr><td><b>Pilier martien</b></td><td>À l'établi : 2 × Roche martienne polie (donne 2). Au tailleur de pierre : Roche martienne polie.</td></tr>
+            <tr><td><b>Poussière de Mars</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Roche martienne</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Roche martienne polie</b></td><td>À l'établi : 4 × Roche martienne (donne 4). Au tailleur de pierre : Roche martienne.</td></tr>
+            <tr><td><b>Roche martienne sculptée</b></td><td>À l'établi : 4 × Arésite brute + Roche martienne polie.</td></tr>
+            <tr><td><b>Régolithe martien</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Strate d'ombre</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Strate ocre</b></td><td>Se trouve sur Mars.</td></tr>
+            <tr><td><b>Œuf d'apparition d'Oiseau du Stymphale</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Sparte</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="jupiter-33" class="sec">Jupiter <span class="dim">(33)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Bloc de kéraunite</b></td><td>À l'établi : 9 × Éclat de kéraunite.</td></tr>
+            <tr><td><b>Bois de laurier d'or</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Briques de marbre céleste</b></td><td>À l'établi : 4 × Marbre céleste poli (donne 4). Au tailleur de pierre : Marbre céleste.</td></tr>
+            <tr><td><b>Colonne de marbre céleste</b></td><td>À l'établi : 2 × Marbre céleste poli (donne 2). Au tailleur de pierre : Marbre céleste poli.</td></tr>
+            <tr><td><b>Cothurnes du Tonnant</b></td><td>Laissé par : Cyclope (50 %) et Nimbus (50 %).</td></tr>
+            <tr><td><b>Dalle en briques de marbre céleste</b></td><td>À l'établi : 3 × Briques de marbre céleste (donne 6). Au tailleur de pierre : Briques de marbre céleste.</td></tr>
+            <tr><td><b>Escalier en briques de marbre céleste</b></td><td>À l'établi : 6 × Briques de marbre céleste (donne 4). Au tailleur de pierre : Briques de marbre céleste.</td></tr>
+            <tr><td><b>Feuilles de laurier d'or</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Foudre de Jupiter</b></td><td>À l'établi : 2 × Éclat de kéraunite + Bloc de kéraunite.</td></tr>
+            <tr><td><b>Gazon céleste</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Lanterne de foudre</b></td><td>À l'établi : 2 × Marbre veiné d'or + 2 × Verre + Éclat de kéraunite (donne 2).</td></tr>
+            <tr><td><b>Laurier du Tonnant</b></td><td>À l'établi : 3 × Feuilles de laurier d'or + 2 × Éclat de kéraunite.</td></tr>
+            <tr><td><b>Marbre céleste</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Marbre céleste poli</b></td><td>À l'établi : 4 × Marbre céleste (donne 4). Au tailleur de pierre : Marbre céleste.</td></tr>
+            <tr><td><b>Marbre céleste sculpté</b></td><td>À l'établi : 4 × Éclat de kéraunite + Marbre céleste poli.</td></tr>
+            <tr><td><b>Marbre veiné d'or</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Minerai de kéraunite</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Muret en briques de marbre céleste</b></td><td>À l'établi : 6 × Briques de marbre céleste (donne 6). Au tailleur de pierre : Briques de marbre céleste.</td></tr>
+            <tr><td><b>Nuée blanche</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Nuée crème</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Nuée d'orage</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Nuée ocre</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Nuée rousse</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Nuée vermeille</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Pierre d'orage</b></td><td>Se trouve sur Jupiter.</td></tr>
+            <tr><td><b>Planches de laurier d'or</b></td><td>À l'établi : Bois de laurier d'or (donne 4).</td></tr>
+            <tr><td><b>Plume d'Aquila</b></td><td>À l'établi : 2 × Éclat de kéraunite + 2 × Feuilles de laurier d'or + Plume.</td></tr>
+            <tr><td><b>Tassettes du Tonnant</b></td><td>À l'établi : 7 × Éclat de kéraunite.</td></tr>
+            <tr><td><b>Éclat de kéraunite</b></td><td>À l'établi : Bloc de kéraunite (donne 9). Laissé par : Cyclope et Nimbus. Se récolte sur : Minerai de kéraunite.</td></tr>
+            <tr><td><b>Égide du Tonnant</b></td><td>Laissé par : Cyclope (50 %) et Nimbus (50 %).</td></tr>
+            <tr><td><b>Évent de tempête</b></td><td>À l'établi : 4 × Nuée d'orage + Éclat de kéraunite.</td></tr>
+            <tr><td><b>Œuf d'apparition de Cyclope</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Nimbus</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="pluton-32" class="sec">Pluton <span class="dim">(32)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Asphodèle</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Bident d'Hadès</b></td><td>À l'établi : 4 × Stygite trempée + Bloc de stygite + Colonne d'Érèbe.</td></tr>
+            <tr><td><b>Bloc de stygite</b></td><td>À l'établi : 9 × Stygite trempée.</td></tr>
+            <tr><td><b>Bois de grenadier</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Briques d'Érèbe</b></td><td>À l'établi : 4 × Érèbe polie (donne 4). Au tailleur de pierre : Pierre d'Érèbe.</td></tr>
+            <tr><td><b>Colonne d'Érèbe</b></td><td>À l'établi : 2 × Érèbe polie (donne 2). Au tailleur de pierre : Érèbe polie.</td></tr>
+            <tr><td><b>Cryolave</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Cuirasse de l'Invisible</b></td><td>Laissé par : Cerbère (50 %) et Ombre (50 %).</td></tr>
+            <tr><td><b>Cuissards de l'Invisible</b></td><td>À l'établi : 7 × Stygite trempée.</td></tr>
+            <tr><td><b>Dalle en briques d'Érèbe</b></td><td>À l'établi : 3 × Briques d'Érèbe (donne 6). Au tailleur de pierre : Briques d'Érèbe.</td></tr>
+            <tr><td><b>Escalier en briques d'Érèbe</b></td><td>À l'établi : 6 × Briques d'Érèbe (donne 4). Au tailleur de pierre : Briques d'Érèbe.</td></tr>
+            <tr><td><b>Feuilles de grenadier</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Givre ambré</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Givre de méthane</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Glace d'azote</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Glace d'eau</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Grenade</b></td><td>Se récolte sur : Feuilles de grenadier.</td></tr>
+            <tr><td><b>Grenade de Perséphone</b></td><td>À l'établi : 4 × Stygite trempée + Grenade.</td></tr>
+            <tr><td><b>Grèves de l'Invisible</b></td><td>Laissé par : Cerbère (50 %) et Ombre (50 %).</td></tr>
+            <tr><td><b>Kunée de l'Invisible</b></td><td>À l'établi : 5 × Stygite trempée.</td></tr>
+            <tr><td><b>Lanterne de Charon</b></td><td>À l'établi : 2 × Briques d'Érèbe + 2 × Verre + Stygite trempée (donne 2).</td></tr>
+            <tr><td><b>Minerai de stygite</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Muret en briques d'Érèbe</b></td><td>À l'établi : 6 × Briques d'Érèbe (donne 6). Au tailleur de pierre : Briques d'Érèbe.</td></tr>
+            <tr><td><b>Pierre d'Érèbe</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Planches de grenadier</b></td><td>À l'établi : Bois de grenadier (donne 4).</td></tr>
+            <tr><td><b>Stygite brute</b></td><td>Laissé par : Cerbère et Ombre. Se récolte sur : Minerai de stygite.</td></tr>
+            <tr><td><b>Stygite trempée</b></td><td>À l'établi : Bloc de stygite (donne 9).</td></tr>
+            <tr><td><b>Tholine</b></td><td>Se trouve sur Pluton.</td></tr>
+            <tr><td><b>Érèbe polie</b></td><td>À l'établi : 4 × Pierre d'Érèbe (donne 4). Au tailleur de pierre : Pierre d'Érèbe.</td></tr>
+            <tr><td><b>Érèbe sculptée</b></td><td>À l'établi : 4 × Stygite trempée + Érèbe polie.</td></tr>
+            <tr><td><b>Œuf d'apparition d'Ombre</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Cerbère</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="neptune-36" class="sec">Neptune <span class="dim">(36)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Ancre de Neptune</b></td><td>À l'établi : 3 × Thalassite nacrée + Bloc de thalassite + Bloc de nacre.</td></tr>
+            <tr><td><b>Basalte neptunien</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Bloc de nacre</b></td><td>À l'établi : 8 × Pierre d'Atlantide + Thalassite nacrée (donne 8).</td></tr>
+            <tr><td><b>Bloc de thalassite</b></td><td>À l'établi : 9 × Thalassite nacrée.</td></tr>
+            <tr><td><b>Briques d'Atlantide</b></td><td>À l'établi : 4 × Pierre d'Atlantide polie (donne 4). Au tailleur de pierre : Pierre d'Atlantide.</td></tr>
+            <tr><td><b>Bulbe de varech</b></td><td>Laissé par : Hippocampe. Se récolte sur : Couronne de varech.</td></tr>
+            <tr><td><b>Bénitier géant</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Colonne d'Atlantide</b></td><td>À l'établi : 2 × Pierre d'Atlantide polie (donne 2). Au tailleur de pierre : Pierre d'Atlantide polie.</td></tr>
+            <tr><td><b>Corail azur</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Corail rose</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Couronne de varech</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Cuirasse d'écailles de Triton</b></td><td>Laissé par : Hippocampe (50 %) et Léviathan (50 %).</td></tr>
+            <tr><td><b>Dalle en briques d'Atlantide</b></td><td>À l'établi : 3 × Briques d'Atlantide (donne 6). Au tailleur de pierre : Briques d'Atlantide.</td></tr>
+            <tr><td><b>Escalier en briques d'Atlantide</b></td><td>À l'établi : 6 × Briques d'Atlantide (donne 4). Au tailleur de pierre : Briques d'Atlantide.</td></tr>
+            <tr><td><b>Gorgone azur</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Gorgone rose</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Heaume de Triton</b></td><td>À l'établi : 5 × Thalassite nacrée.</td></tr>
+            <tr><td><b>Jambières de Triton</b></td><td>À l'établi : 7 × Thalassite nacrée.</td></tr>
+            <tr><td><b>Lanterne-méduse</b></td><td>À l'établi : 2 × Bloc de nacre + 2 × Verre marin + Bulbe de varech (donne 2).</td></tr>
+            <tr><td><b>Minerai de thalassite</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Muret en briques d'Atlantide</b></td><td>À l'établi : 6 × Briques d'Atlantide (donne 6). Au tailleur de pierre : Briques d'Atlantide.</td></tr>
+            <tr><td><b>Palmes de Triton</b></td><td>Laissé par : Hippocampe (50 %) et Léviathan (50 %).</td></tr>
+            <tr><td><b>Pierre d'Atlantide</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Pierre d'Atlantide polie</b></td><td>À l'établi : 4 × Pierre d'Atlantide (donne 4). Au tailleur de pierre : Pierre d'Atlantide.</td></tr>
+            <tr><td><b>Pierre d'Atlantide sculptée</b></td><td>À l'établi : 4 × Thalassite nacrée + Pierre d'Atlantide polie.</td></tr>
+            <tr><td><b>Porte d'Atlantide</b></td><td>À l'établi : 5 × Bloc de nacre + Thalassite nacrée (donne 3).</td></tr>
+            <tr><td><b>Posidonie</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Roche abyssale</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Sable abyssal</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Thalassite brute</b></td><td>Laissé par : Hippocampe et Léviathan. Se récolte sur : Minerai de thalassite.</td></tr>
+            <tr><td><b>Thalassite nacrée</b></td><td>À l'établi : Bloc de thalassite (donne 9).</td></tr>
+            <tr><td><b>Varech géant</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Verre marin</b></td><td>Au four : Sable abyssal.</td></tr>
+            <tr><td><b>Évent hydrothermal</b></td><td>Se trouve sur Neptune.</td></tr>
+            <tr><td><b>Œuf d'apparition d'Hippocampe</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Léviathan</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="saturne-40" class="sec">Saturne <span class="dim">(40)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Adamas</b></td><td>À l'établi : Bloc d'adamas (donne 9).</td></tr>
+            <tr><td><b>Adamas brut</b></td><td>Laissé par : Moissonneur et Berger des anneaux. Se récolte sur : Minerai d'adamas.</td></tr>
+            <tr><td><b>Bloc d'adamas</b></td><td>À l'établi : 9 × Adamas.</td></tr>
+            <tr><td><b>Briques de chronolithe</b></td><td>À l'établi : 4 × Chronolithe polie (donne 4). Au tailleur de pierre : Chronolithe.</td></tr>
+            <tr><td><b>Brume de Saturne azur</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Brume de Saturne champagne</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Brume de Saturne miel</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Brume de Saturne rose</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Cadran de Kronos</b></td><td>À l'établi : 4 × Adamas + Montre.</td></tr>
+            <tr><td><b>Chronolithe</b></td><td>À l'établi : 8 × Poussière d'anneau + Adamas brut (donne 8).</td></tr>
+            <tr><td><b>Chronolithe polie</b></td><td>À l'établi : 4 × Chronolithe (donne 4). Au tailleur de pierre : Chronolithe.</td></tr>
+            <tr><td><b>Chronolithe sculptée</b></td><td>À l'établi : 4 × Adamas + Chronolithe polie.</td></tr>
+            <tr><td><b>Colonne de chronolithe</b></td><td>À l'établi : 2 × Chronolithe polie (donne 2). Au tailleur de pierre : Chronolithe polie.</td></tr>
+            <tr><td><b>Cryogeyser</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Cuirasse des Éons</b></td><td>Laissé par : Moissonneur (50 %) et Berger des anneaux (50 %).</td></tr>
+            <tr><td><b>Cœur de Saturne</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Dalle en briques de chronolithe</b></td><td>À l'établi : 3 × Briques de chronolithe (donne 6). Au tailleur de pierre : Briques de chronolithe.</td></tr>
+            <tr><td><b>Escalier en briques de chronolithe</b></td><td>À l'établi : 6 × Briques de chronolithe (donne 4). Au tailleur de pierre : Briques de chronolithe.</td></tr>
+            <tr><td><b>Glace crème des anneaux</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Glace crépusculaire des anneaux</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Glace d'Encelade</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Glace des anneaux</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Goudron de Japet</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Harpè de Kronos</b></td><td>À l'établi : 3 × Adamas + Bloc d'adamas + 2 × Colonne de chronolithe.</td></tr>
+            <tr><td><b>Heaume des Éons</b></td><td>À l'établi : 5 × Adamas.</td></tr>
+            <tr><td><b>Jambières des Éons</b></td><td>À l'établi : 7 × Adamas.</td></tr>
+            <tr><td><b>Lac de méthane gelé</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Lanterne-sablier</b></td><td>À l'établi : 2 × Chronolithe polie + 2 × Verre d'ambre + Sable du temps (donne 2).</td></tr>
+            <tr><td><b>Minerai d'adamas</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Muret en briques de chronolithe</b></td><td>À l'établi : 6 × Briques de chronolithe (donne 6). Au tailleur de pierre : Briques de chronolithe.</td></tr>
+            <tr><td><b>Orage de l'Hexagone</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Poussière d'anneau</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Régolithe lunaire</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Sable de Titan</b></td><td>Se trouve sur Saturne.</td></tr>
+            <tr><td><b>Sable du temps</b></td><td>À l'établi : 4 × Poussière d'anneau + Adamas (donne 4).</td></tr>
+            <tr><td><b>Sablier de Kronos</b></td><td>À l'établi : 6 × Adamas + 2 × Verre d'ambre + Sable du temps.</td></tr>
+            <tr><td><b>Solerets des Éons</b></td><td>Laissé par : Moissonneur (50 %) et Berger des anneaux (50 %).</td></tr>
+            <tr><td><b>Verre d'ambre</b></td><td>Au four : Poussière d'anneau.</td></tr>
+            <tr><td><b>Œuf d'apparition de Berger des anneaux</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Moissonneur</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="venus-40" class="sec">Vénus <span class="dim">(40)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Arc d'Éros</b></td><td>À l'établi : 2 × Lingot d'orichalque + 3 × Ficelle + Bloc de perle.</td></tr>
+            <tr><td><b>Basalte de Vénus</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Bloc d'orichalque</b></td><td>À l'établi : 9 × Lingot d'orichalque.</td></tr>
+            <tr><td><b>Bloc de perle</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Briques de marbre de Paphos</b></td><td>À l'établi : 4 × Marbre de Paphos poli (donne 4). Au tailleur de pierre : Marbre de Paphos.</td></tr>
+            <tr><td><b>Bûche de myrte</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Cnémides de Cythère</b></td><td>Laissé par : Sanglier d'Adonis (50 %) et Cygne de Cythère (50 %).</td></tr>
+            <tr><td><b>Colonne de marbre de Paphos</b></td><td>À l'établi : 2 × Marbre de Paphos poli (donne 2). Au tailleur de pierre : Marbre de Paphos poli.</td></tr>
+            <tr><td><b>Corselet de Cythère</b></td><td>Laissé par : Sanglier d'Adonis (50 %) et Cygne de Cythère (50 %).</td></tr>
+            <tr><td><b>Dalle en briques de marbre de Paphos</b></td><td>À l'établi : 3 × Briques de marbre de Paphos (donne 6). Au tailleur de pierre : Briques de marbre de Paphos.</td></tr>
+            <tr><td><b>Diadème de Cythère</b></td><td>À l'établi : 4 × Lingot d'orichalque + Bloc de perle.</td></tr>
+            <tr><td><b>Escalier en briques de marbre de Paphos</b></td><td>À l'établi : 6 × Briques de marbre de Paphos (donne 4). Au tailleur de pierre : Briques de marbre de Paphos.</td></tr>
+            <tr><td><b>Feuilles de myrte</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Fontaine de Cythère</b></td><td>À l'établi : 2 × Lingot d'orichalque + Seau d'eau + 3 × Briques de marbre de Paphos + Colonne de marbre de Paphos.</td></tr>
+            <tr><td><b>Givre d'orichalque</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Haie de roses</b></td><td>À l'établi : 5 × Feuilles de myrte + 4 × Rose d'orichalque (donne 8).</td></tr>
+            <tr><td><b>Lanterne de l'Étoile du Berger</b></td><td>À l'établi : 4 × Lingot d'orichalque + Bloc de perle (donne 4).</td></tr>
+            <tr><td><b>Lingot d'orichalque</b></td><td>À l'établi : 4 × Pétale d'orichalque. À l'établi : Bloc d'orichalque (donne 9).</td></tr>
+            <tr><td><b>Magma rose</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Marbre de Paphos</b></td><td>À l'établi : 8 × Quartz rose + Pétale d'orichalque (donne 8).</td></tr>
+            <tr><td><b>Marbre de Paphos poli</b></td><td>À l'établi : 4 × Marbre de Paphos (donne 4). Au tailleur de pierre : Marbre de Paphos.</td></tr>
+            <tr><td><b>Marbre de Paphos sculpté</b></td><td>À l'établi : 4 × Lingot d'orichalque + Marbre de Paphos poli (donne 4). Au tailleur de pierre : Marbre de Paphos poli.</td></tr>
+            <tr><td><b>Miroir de Vénus</b></td><td>À l'établi : 4 × Lingot d'orichalque + Bloc de perle.</td></tr>
+            <tr><td><b>Mousse de Cythère</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Muret en briques de marbre de Paphos</b></td><td>À l'établi : 6 × Briques de marbre de Paphos (donne 6). Au tailleur de pierre : Briques de marbre de Paphos.</td></tr>
+            <tr><td><b>Nacre de Vénus</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Nacre irisée</b></td><td>À l'établi : 8 × Nacre de Vénus + Bloc de perle (donne 8).</td></tr>
+            <tr><td><b>Nacre rose</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Pierre ardente</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Planches de myrte</b></td><td>À l'établi : Bûche de myrte (donne 4).</td></tr>
+            <tr><td><b>Pétale d'orichalque</b></td><td>Laissé par : Sanglier d'Adonis et Cygne de Cythère. Se récolte sur : Givre d'orichalque et Rose d'orichalque.</td></tr>
+            <tr><td><b>Quartz rose</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Quartz rose veiné</b></td><td>À l'établi : 4 × Pétale d'orichalque + Quartz rose.</td></tr>
+            <tr><td><b>Rose d'orichalque</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Régolithe doré</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Tassettes de Cythère</b></td><td>À l'établi : 7 × Lingot d'orichalque.</td></tr>
+            <tr><td><b>Tessère</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Écume de mer</b></td><td>Se trouve sur Vénus.</td></tr>
+            <tr><td><b>Œuf d'apparition de Cygne de Cythère</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Sanglier d'Adonis</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="mercure-48" class="sec">Mercure <span class="dim">(48)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Athanor</b></td><td>À l'établi : 6 × Briques de cinabre + Verre + Cinabre brut.</td></tr>
+            <tr><td><b>Basalte de Caloris</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Bloc de vermeil</b></td><td>À l'établi : 4 × Lingot d'or + 4 × Lingot de vif-argent fixé + Cinabre brut (donne 2).</td></tr>
+            <tr><td><b>Bloc de vif-argent fixé</b></td><td>À l'établi : 9 × Lingot de vif-argent fixé.</td></tr>
+            <tr><td><b>Briques de cinabre</b></td><td>À l'établi : 5 × Pierre hermienne + 4 × Cinabre brut (donne 8).</td></tr>
+            <tr><td><b>Caducée</b></td><td>À l'établi : 2 × Écaille de vif-argent + Lingot de vif-argent fixé + 2 × Lingot d'or.</td></tr>
+            <tr><td><b>Calcaire de Cyllène</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Calcaire de Cyllène poli</b></td><td>À l'établi : 4 × Calcaire de Cyllène (donne 4). Au tailleur de pierre : Calcaire de Cyllène.</td></tr>
+            <tr><td><b>Calcaire de Cyllène sculpté</b></td><td>À l'établi : 4 × Cinabre brut + Calcaire de Cyllène poli (donne 2).</td></tr>
+            <tr><td><b>Chiton du Messager</b></td><td>À l'établi : 7 × Lingot de vif-argent fixé.</td></tr>
+            <tr><td><b>Chlamyde du Messager</b></td><td>Laissé par : Paon d'Argus (50 %) et Serpent de vif-argent (50 %).</td></tr>
+            <tr><td><b>Cinabre brut</b></td><td>Se récolte sur : Minerai de cinabre.</td></tr>
+            <tr><td><b>Cinabre poli</b></td><td>À l'établi : 4 × Briques de cinabre (donne 4). Au tailleur de pierre : Briques de cinabre.</td></tr>
+            <tr><td><b>Colonne de calcaire de Cyllène</b></td><td>À l'établi : 2 × Calcaire de Cyllène poli (donne 2). Au tailleur de pierre : Calcaire de Cyllène poli.</td></tr>
+            <tr><td><b>Croûte de creux</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Dalle en briques de cinabre</b></td><td>À l'établi : 3 × Briques de cinabre (donne 6). Au tailleur de pierre : Briques de cinabre.</td></tr>
+            <tr><td><b>Dalle en calcaire de Cyllène poli</b></td><td>À l'établi : 3 × Calcaire de Cyllène poli (donne 6). Au tailleur de pierre : Calcaire de Cyllène poli.</td></tr>
+            <tr><td><b>Escalier en briques de cinabre</b></td><td>À l'établi : 6 × Briques de cinabre (donne 4). Au tailleur de pierre : Briques de cinabre.</td></tr>
+            <tr><td><b>Escalier en calcaire de Cyllène poli</b></td><td>À l'établi : 6 × Calcaire de Cyllène poli (donne 4). Au tailleur de pierre : Calcaire de Cyllène poli.</td></tr>
+            <tr><td><b>Fanal du caducée</b></td><td>À l'établi : Vif-argent + 2 × Lingot de vif-argent fixé + Poudre lumineuse + Cinabre poli (donne 4).</td></tr>
+            <tr><td><b>Givre nocturne</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Glace polaire</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Hermès de borne</b></td><td>À l'établi : 2 × Calcaire de Cyllène poli + Cinabre brut.</td></tr>
+            <tr><td><b>Lingot de vif-argent fixé</b></td><td>À l'établi : Bloc de vif-argent fixé (donne 9).</td></tr>
+            <tr><td><b>Minerai de cinabre</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Miroir solaire</b></td><td>À l'établi : 4 × Verre + Vif-argent (donne 2).</td></tr>
+            <tr><td><b>Moly</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Muret en briques de cinabre</b></td><td>À l'établi : 6 × Briques de cinabre (donne 6). Au tailleur de pierre : Briques de cinabre.</td></tr>
+            <tr><td><b>Osselets d'Hermès</b></td><td>À l'établi : 4 × Os + Lingot de vif-argent fixé.</td></tr>
+            <tr><td><b>Pavé du Messager</b></td><td>À l'établi : 8 × Pierre hermienne + Vif-argent (donne 8).</td></tr>
+            <tr><td><b>Pierre d'Argos</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Pierre du cœur de fer</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Pierre hermienne</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Plume d'Argus</b></td><td>Laissé par : Paon d'Argus.</td></tr>
+            <tr><td><b>Pétase ailé du Messager</b></td><td>À l'établi : 2 × Plume d'Argus + 3 × Lingot de vif-argent fixé.</td></tr>
+            <tr><td><b>Racine de moly</b></td><td>Se récolte sur : Moly.</td></tr>
+            <tr><td><b>Roche ombreuse</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Régolithe brûlé</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Régolithe en fusion</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Régolithe nocturne</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Talonnières du Messager</b></td><td>Laissé par : Paon d'Argus (50 %) et Serpent de vif-argent (50 %).</td></tr>
+            <tr><td><b>Vif-argent</b></td><td>Laissé par : Serpent de vif-argent. Se récolte sur : Vif-argent gelé.</td></tr>
+            <tr><td><b>Vif-argent gelé</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Écaille de vif-argent</b></td><td>Laissé par : Serpent de vif-argent.</td></tr>
+            <tr><td><b>Éjecta clair</b></td><td>Se trouve sur Mercure.</td></tr>
+            <tr><td><b>Œil d'Argos</b></td><td>Laissé par : Paon d'Argus.</td></tr>
+            <tr><td><b>Œuf d'apparition de Paon d'Argus</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Serpent de vif-argent</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 id="uranus-38" class="sec">Uranus <span class="dim">(38)</span></h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Objet</th><th scope="col">Comment l'obtenir</th></tr></thead>
+          <tbody>
+            <tr><td><b>Aster de givre</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Bloc d'ouranite</b></td><td>À l'établi : 9 × Ouranite taillée.</td></tr>
+            <tr><td><b>Briques de la Voûte</b></td><td>À l'établi : 4 × Pierre de la Voûte polie (donne 4). Au tailleur de pierre : Pierre de la Voûte polie.</td></tr>
+            <tr><td><b>Colonne de la Voûte</b></td><td>À l'établi : 2 × Pierre de la Voûte polie (donne 2). Au tailleur de pierre : Pierre de la Voûte polie.</td></tr>
+            <tr><td><b>Couronne des Anneaux</b></td><td>À l'établi : 2 × Voile d'aurore + 3 × Ouranite taillée.</td></tr>
+            <tr><td><b>Cristal d'aurore</b></td><td>À l'établi : 4 × Glace de méthane + Voile d'aurore (donne 4).</td></tr>
+            <tr><td><b>Cuirasse du Firmament</b></td><td>Laissé par : Raie d'aurore (50 %) et Hécatonchire (50 %).</td></tr>
+            <tr><td><b>Dalle en briques de la Voûte</b></td><td>À l'établi : 3 × Briques de la Voûte (donne 6). Au tailleur de pierre : Briques de la Voûte.</td></tr>
+            <tr><td><b>Dalle en pierre de la Voûte polie</b></td><td>À l'établi : 3 × Pierre de la Voûte polie (donne 6). Au tailleur de pierre : Pierre de la Voûte polie.</td></tr>
+            <tr><td><b>Escalier en briques de la Voûte</b></td><td>À l'établi : 6 × Briques de la Voûte (donne 4). Au tailleur de pierre : Briques de la Voûte.</td></tr>
+            <tr><td><b>Escalier en pierre de la Voûte polie</b></td><td>À l'établi : 6 × Pierre de la Voûte polie (donne 4). Au tailleur de pierre : Pierre de la Voûte polie.</td></tr>
+            <tr><td><b>Fanal d'Uranus</b></td><td>À l'établi : 3 × Voile d'aurore + Grêlon d'ouranite + Pierre de la Voûte polie (donne 2).</td></tr>
+            <tr><td><b>Fléau des Lunes</b></td><td>À l'établi : 3 × Ouranite taillée + Chaîne en fer + Phalange d'Hécatonchire.</td></tr>
+            <tr><td><b>Glace carbonée</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Glace d'epsilon</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Glace de corona</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Glace de méthane</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Glace superionique</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Grêlon d'ouranite</b></td><td>Laissé par : Raie d'aurore. Se récolte sur : Lit de grêle.</td></tr>
+            <tr><td><b>Lit de grêle</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Lunette d'Herschel</b></td><td>À l'établi : Ouranite taillée + 2 × Lingot de cuivre.</td></tr>
+            <tr><td><b>Muret en briques de la Voûte</b></td><td>À l'établi : 6 × Briques de la Voûte (donne 6). Au tailleur de pierre : Briques de la Voûte.</td></tr>
+            <tr><td><b>Neige d'ammoniac</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Nodule de carbone</b></td><td>Laissé par : Hécatonchire. Se récolte sur : Glace carbonée.</td></tr>
+            <tr><td><b>Ouranite taillée</b></td><td>À l'établi : 4 × Grêlon d'ouranite. À l'établi : Bloc d'ouranite (donne 9).</td></tr>
+            <tr><td><b>Phalange d'Hécatonchire</b></td><td>Laissé par : Hécatonchire.</td></tr>
+            <tr><td><b>Pierre d'Umbriel</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Pierre de la Voûte</b></td><td>À l'établi : 8 × Pierre d'Umbriel + Grêlon d'ouranite (donne 8).</td></tr>
+            <tr><td><b>Pierre de la Voûte gravée</b></td><td>À l'établi : 4 × Pierre de la Voûte polie + Grêlon d'ouranite (donne 4).</td></tr>
+            <tr><td><b>Pierre de la Voûte polie</b></td><td>À l'établi : 4 × Pierre de la Voûte (donne 4). Au tailleur de pierre : Pierre de la Voûte.</td></tr>
+            <tr><td><b>Pierre des anneaux</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Solerets de Grêle</b></td><td>Laissé par : Raie d'aurore (50 %) et Hécatonchire (50 %).</td></tr>
+            <tr><td><b>Strates de Vérone</b></td><td>Se trouve sur Uranus.</td></tr>
+            <tr><td><b>Tassettes d'Aurore</b></td><td>À l'établi : 5 × Ouranite taillée + 2 × Voile d'aurore.</td></tr>
+            <tr><td><b>Voile d'aurore</b></td><td>Laissé par : Raie d'aurore.</td></tr>
+            <tr><td><b>Étoile sertie</b></td><td>À l'établi : 4 × Pierre de la Voûte + 4 × Poudre lumineuse + Grêlon d'ouranite (donne 4).</td></tr>
+            <tr><td><b>Œuf d'apparition d'Hécatonchire</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+            <tr><td><b>Œuf d'apparition de Raie d'aurore</b></td><td>Œuf d'apparition : mode créatif seulement.</td></tr>
+          </tbody>
+        </table></div>
+        <!-- objets:end --></div></article><nav class="pager" aria-label="Chapitres précédent et suivant"><a class="prev" href="chasse.html" rel="prev"><span class="bg" style="background-image:url('img/shots/chasse/classeur.webp')"></span><small><span class="sym" aria-hidden="true">← </span>Précédent</small><b>La Chasse</b><span>Les familiers</span></a><a class="next" href="chainsaw.html" rel="next"><span class="bg" style="background-image:url('img/chainsaw/banniere.webp')"></span><small>Suivant<span class="sym" aria-hidden="true"> →</span></small><b>Chainsaw Man</b><span>Crossover</span></a></nav></main><nav class="onpage" aria-labelledby="onpage-title"><p class="nav-title" id="onpage-title">Sur cette page</p><ul class="plain"><li><a href="#la-chasse-et-les-rituels-81">La Chasse et les rituels (81)</a></li><li><a href="#les-contrees-102">Les Contrées (102)</a></li><li><a href="#l-astrelume-62">L&#x27;Astrelume (62)</a></li><li><a href="#mars-28">Mars (28)</a></li><li><a href="#jupiter-33">Jupiter (33)</a></li><li><a href="#pluton-32">Pluton (32)</a></li><li><a href="#neptune-36">Neptune (36)</a></li><li><a href="#saturne-40">Saturne (40)</a></li><li><a href="#venus-40">Vénus (40)</a></li><li><a href="#mercure-48">Mercure (48)</a></li><li><a href="#uranus-38">Uranus (38)</a></li></ul></nav></div>
+</div>
+<footer class="site-footer"><div class="footer-inner"><div><p class="footer-mark" aria-hidden="true">Ebisu</p><p>Le guide du joueur du mod Ebisu, pour Minecraft 26.3 (Fabric). Tout le contenu visuel est dessiné par du code.</p><p class="footer-actions"><a class="btn" href="releases.html"><span class="sym" aria-hidden="true">⬇</span> Releases</a><a class="btn" href="ticket.html"><svg class="ic-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg> Envoyer un ticket</a></p></div><div><h2 class="foot-title">Les bases</h2><ul class="plain"><li><a href="boucle.html">La boucle de jeu</a></li><li><a href="totems.html">Totems animaux</a></li><li><a href="monnaie.html">Fragments &amp; Sceaux</a></li><li><a href="invocation.html">Autel d'invocation</a></li><li><a href="boosters.html">Boosters</a></li><li><a href="reliquaire.html">Reliquaire</a></li><li><a href="autel.html">Table de Révélation</a></li><li><a href="raretes.html">Raretés</a></li></ul><h2 class="foot-title">Les reliques</h2><ul class="plain"><li><a href="familles.html">Familles &amp; pouvoirs</a></li><li><a href="dieux.html">Les dieux</a></li><li><a href="slots.html">Slots d'équipement</a></li><li><a href="codex.html">Codex</a></li><li><a href="touches.html">Touches (configurables)</a></li><li><a href="commandes.html">Toutes les commandes</a></li></ul><h2 class="foot-title">L&#x27;Ascension</h2><ul class="plain"><li><a href="ascension.html">L'Ascension : trois arbres, neuf ultimes</a></li><li><a href="asc-arme.html">L'Arbre de l'Arme</a></li><li><a href="asc-armure.html">L'Arbre de l'Armure</a></li><li><a href="asc-esprit.html">L'Arbre de l'Esprit</a></li></ul></div><div><h2 class="foot-title">Les familiers</h2><ul class="plain"><li><a href="compagnons.html">Les familiers</a></li><li><a href="bestiaire.html">Le Bestiaire</a></li><li><a href="chasse.html">La Chasse</a></li><li><a href="objets.html">Tous les objets</a></li></ul><h2 class="foot-title">Crossover</h2><ul class="plain"><li><a href="chainsaw.html">Chainsaw Man</a></li></ul><h2 class="foot-title">Les mondes des dieux</h2><ul class="plain"><li><a href="mars.html">Mars, la planète d'Arès</a></li><li><a href="jupiter.html">Jupiter, le royaume du ciel</a></li><li><a href="pluton.html">Pluton, le royaume d'Hadès</a></li><li><a href="neptune.html">Neptune, le royaume de Poséidon</a></li><li><a href="saturne.html">Saturne, le royaume de Kronos</a></li><li><a href="venus.html">Vénus, le jardin d'Aphrodite</a></li><li><a href="mercure.html">Mercure, le monde du Messager</a></li><li><a href="uranus.html">Uranus, le monde couché</a></li><li><a href="ether.html">L'Astrelume</a></li></ul></div><div><h2 class="foot-title">Les créations</h2><ul class="plain"><li><a href="creations.html">Les treize créations</a></li><li><a href="creuset.html">Le Creuset des Âmes</a></li><li><a href="casino.html">La Table du Destin</a></li><li><a href="volley.html">Le terrain de volley</a></li><li><a href="rafale.html">Le Rafale</a></li><li><a href="tente.html">La Tente enchantée</a></li><li><a href="crafts.html">Tous les artisanats</a></li></ul><h2 class="foot-title">L&#x27;Overworld</h2><ul class="plain"><li><a href="contrees.html">Les Contrées</a></li><li><a href="fleurs.html">Les Champs Mille-Fleurs</a></li><li><a href="lieux.html">Lieux & chemins</a></li><li><a href="merveilles.html">Les Merveilles</a></li><li><a href="epreuves.html">Les Épreuves</a></li><li><a href="chronique.html">La Chronique des pèlerins</a></li><li><a href="villages.html">Villages & quêtes</a></li></ul><h2 class="foot-title">Référence</h2><ul class="plain"><li><a href="blocs.html">Les blocs de l'Astrelume</a></li></ul></div></div><div class="footer-bottom"><span>Ebisu 0.37.0-beta · Minecraft 26.3</span><ul class="plain footer-links"><li><a href="accessibilite.html">Accessibilité : partiellement conforme</a></li><li><a href="plan.html">Plan du site</a></li></ul><span><kbd>Ctrl K</kbd> rechercher · <kbd>Alt</kbd> + <kbd>←</kbd> <kbd>→</kbd> chapitre précédent ou suivant</span></div></footer>
+<div class="search" id="search" role="dialog" aria-modal="true" aria-labelledby="search-label" hidden>
+  <div class="search-box" role="search">
+    <label class="sr-only" id="search-label" for="search-input">Rechercher dans le Codex</label>
+    <input id="search-input" type="search" placeholder="Une relique, un dieu, une merveille, une commande…" autocomplete="off" aria-describedby="search-help" aria-controls="search-results">
+    <p class="sr-only" id="search-count" role="status"></p>
+    <ul id="search-results" class="plain" aria-label="Résultats"></ul>
+    <div class="search-foot"><p class="search-help" id="search-help"><kbd>↓</kbd> <kbd>↑</kbd> parcourir les résultats · <kbd>Entrée</kbd> ouvrir · <kbd>Échap</kbd> fermer</p>
+      <button type="button" class="search-close">Fermer</button></div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie" hidden>
+  <button type="button" class="lb-close" aria-label="Fermer l'image"><span aria-hidden="true">×</span></button>
+  <button type="button" class="lb-prev" aria-label="Image précédente"><span aria-hidden="true">‹</span></button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap" aria-hidden="true"></figcaption></figure>
+  <button type="button" class="lb-next" aria-label="Image suivante"><span aria-hidden="true">›</span></button>
+</div>
+<a class="to-top" href="#haut" aria-label="Haut de page"><span aria-hidden="true">↑</span></a>
+<script src="assets/search-index.js?v=9204f2abca"></script>
+<script src="assets/codex.js?v=b063709931"></script>
+
+</body>
+</html>
