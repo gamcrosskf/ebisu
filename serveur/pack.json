@@ -1,5 +1,6 @@
 {
 	"name": "Ebisu",
+	"installer": 2,
 	"minecraft": "26.3",
 	"loader": "0.20.1",
 	"memory": "4G",

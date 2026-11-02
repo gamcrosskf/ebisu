@@ -3,9 +3,10 @@ chcp 65001 >nul
 title Installateur Ebisu
 set "EBISU_BAT=%~f0"
 powershell -NoProfile -ExecutionPolicy Bypass -Command "$t = [IO.File]::ReadAllText($env:EBISU_BAT, [Text.Encoding]::UTF8); $m = '#' + '#PS'; iex $t.Substring($t.IndexOf($m) + $m.Length)"
+set "EBISU_CODE=%errorlevel%"
 echo.
-pause
-exit /b
+if not defined EBISU_NESTED pause
+exit /b %EBISU_CODE%
 
 ##PS
 # Installs or updates the Ebisu server's pack for the official Minecraft launcher: Fabric, a profile
@@ -72,6 +73,20 @@ while (-not $env:EBISU_MC_ROOT -and (Get-Process -Name 'MinecraftLauncher', 'Min
 Say "Lecture du pack…"
 try { $pack = [Text.Encoding]::UTF8.GetString((Fetch $PackUrl)) | ConvertFrom-Json }
 catch { Fail "Impossible de lire le pack ($PackUrl) : vérifie ta connexion internet. $($_.Exception.Message)" }
+
+# A pack written for a newer installer than this copy: the newest one is fetched and run in its place,
+# from a temporary folder (cmd reads a running .bat as it goes, it cannot be overwritten), once.
+$InstallerVersion = 2
+if ($pack.installer -and [int]$pack.installer -gt $InstallerVersion -and -not $env:EBISU_NESTED) {
+	Say "Mise à jour de l'installateur…" 'Yellow'
+	$fresh = Join-Path $env:TEMP 'Installer-Ebisu.bat'
+	try { [IO.File]::WriteAllBytes($fresh, (Fetch ($Base + 'Installer-Ebisu.bat'))) }
+	catch { Fail "Impossible de télécharger le nouvel installateur : retélécharge Installer-Ebisu.bat. $($_.Exception.Message)" }
+	$env:EBISU_NESTED = '1'
+	& cmd.exe /c "`"$fresh`""
+	exit $LASTEXITCODE
+}
+
 # Each file of the pack goes in mods\ or, for a shader pack, in shaderpacks\.
 function Folder($entry) { if ($entry.folder) { return $entry.folder } return 'mods' }
 $entries = @($pack.mods)
