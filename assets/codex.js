@@ -96,14 +96,22 @@
     $('.car-prev', c).addEventListener('click', () => tr.scrollBy({left: -tr.clientWidth * .9, behavior: still ? 'auto' : 'smooth'}));
     $('.car-next', c).addEventListener('click', () => tr.scrollBy({left: tr.clientWidth * .9, behavior: still ? 'auto' : 'smooth'})); });
 
-  // Releases: one button folds or unfolds every version.
+  // Releases: one button folds or unfolds every card and every version in them; each ten's card
+  // has its own for its versions. A ten's picture is one of its versions', drawn again each visit.
+  const label = (b, open) => { b.dataset.open = open ? '1' : '0'; b.textContent = open ? 'Tout replier' : 'Tout déplier'; };
   const all = $('.rel-all');
   if (all) all.addEventListener('click', () => {
     const open = all.dataset.open !== '1';
-    $$('.rel-card').forEach(d => { d.open = open; });
-    all.dataset.open = open ? '1' : '0';
-    all.textContent = open ? 'Tout replier' : 'Tout déplier';
+    $$('.rel-card, .rel-ver details').forEach(d => { d.open = open; });
+    label(all, open);
+    $$('.rv-all').forEach(b => label(b, open));
   });
+  $$('.rv-all').forEach(b => b.addEventListener('click', () => {
+    const open = b.dataset.open !== '1';
+    $$('.rel-ver details', b.closest('.rel-details')).forEach(d => { d.open = open; });
+    label(b, open);
+  }));
+  $$('img.rel-thumb[data-covers]').forEach(img => { const c = img.dataset.covers.split('|'); img.src = c[Math.floor(Math.random() * c.length)]; });
   // A link to a version opens its card, and the version inside it when the .jar holds several.
   const reveal = hash => { const el = hash && hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
     if (!el || !el.closest('.rel-item')) return; const own = $('details', el); if (own) own.open = true;
