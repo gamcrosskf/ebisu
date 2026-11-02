@@ -1,0 +1,31 @@
+{
+	"name": "Ebisu",
+	"minecraft": "26.3",
+	"loader": "0.19.5",
+	"memory": "4G",
+	"server": {
+		"name": "Serveur Ebisu",
+		"address": ""
+	},
+	"ebisu": "0.54.0-beta",
+	"mods": [
+		{
+			"id": "ebisu",
+			"name": "Ebisu",
+			"version": "0.54.0-beta",
+			"file": "ebisu-0.54.0-beta.jar",
+			"url": "https://github.com/gamcrosskf/ebisu/releases/download/v0.54.0-beta/ebisu-0.54.0-beta.jar",
+			"sha256": "eac8de48af89853d309164e7054bfd677125d8a6cb528e76a539b1fab47e994f",
+			"size": 18328153
+		},
+		{
+			"id": "fabric-api",
+			"name": "Fabric API",
+			"version": "0.160.7+26.3",
+			"file": "fabric-api-0.160.7+26.3.jar",
+			"url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/hHj6EvFZ/fabric-api-0.160.7%2B26.3.jar",
+			"sha256": "1720e31ab65c62d4de6e963606d74db4d6063bf58b065f40296cdaa68b25759d",
+			"size": 2593945
+		}
+	]
+}
