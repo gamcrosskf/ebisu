@@ -104,8 +104,13 @@
     all.dataset.open = open ? '1' : '0';
     all.textContent = open ? 'Tout replier' : 'Tout déplier';
   });
-  // A link to a version opens its card.
-  $$('.rel-nav a').forEach(a => a.addEventListener('click', () => { const d = $(a.getAttribute('href') + ' details'); if (d) d.open = true; }));
+  // A link to a version opens its card, and the version inside it when the .jar holds several.
+  const reveal = hash => { const el = hash && hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (!el || !el.closest('.rel-item')) return; const own = $('details', el); if (own) own.open = true;
+    for (let d = el.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) d.open = true; };
+  $$('.rel-nav a').forEach(a => a.addEventListener('click', () => reveal(a.getAttribute('href'))));
+  reveal(location.hash);
+  window.addEventListener('hashchange', () => reveal(location.hash));
   // Lightbox over every picture that can be zoomed.
   const zooms = $$('a.zoom'), lb = $('#lightbox'), lbImg = $('#lb-img'), lbCap = $('#lb-cap'); let zi = 0;
   const show = k => { zi = (k + zooms.length) % zooms.length; const a = zooms[zi]; lbImg.src = a.getAttribute('href');

@@ -586,6 +586,22 @@ td .stat-value{white-space:normal}
 .ni-text{display:block}
 .rel-dlline{margin:18px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;color:var(--dim);font:500 12.5px var(--mono)}
 .rel-dlline .rel-get{margin-left:0}
+.rv-intro{margin:10px 0 4px;color:var(--dim);font-size:13.5px}
+.rv-to{color:var(--dim);font-size:13.5px}
+.rel-vers{display:flex;flex-direction:column;gap:8px;margin:14px 0 0}
+.rel-ver{scroll-margin-top:calc(var(--bar) + 76px)}
+.rel-ver details{border:1px solid var(--edge);border-radius:10px;background:rgba(255,255,255,.02)}
+.rel-ver summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:10px 12px 10px 16px}
+.rel-ver summary::-webkit-details-marker{display:none}
+.rel-ver summary:hover .rv-name{color:var(--gold)}
+.rel-ver .rv-name{font:700 16px var(--sans);color:var(--head);transition:color .15s}
+.rel-ver time{color:var(--dim);font-size:13px}
+.rv-counts{font-size:12.5px;color:var(--dim)}
+.rel-ver .rel-toggle{margin-left:auto;width:28px;height:28px}
+.rel-ver .rel-toggle::before{left:9px;top:7px}
+.rel-ver details[open] .rel-toggle::before{transform:translateY(4px) rotate(-135deg)}
+.rv-body{padding:2px 16px 14px;border-top:1px solid var(--rule)}
+.rv-body .rel-bref{margin-top:10px}
 @media (max-width:760px){.rel-card summary{grid-template-columns:1fr auto}.rel-thumb{grid-column:1/-1;width:100%}.rel-details{padding:4px 16px 18px}}
 .footer-actions{display:flex;flex-wrap:wrap;gap:10px}
 @media (max-width:760px){.rel-latest{grid-template-columns:1fr;padding:24px 20px}.rel-get{margin-left:0}}
