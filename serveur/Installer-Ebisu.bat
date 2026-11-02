@@ -72,7 +72,11 @@ while (-not $env:EBISU_MC_ROOT -and (Get-Process -Name 'MinecraftLauncher', 'Min
 Say "Lecture du pack…"
 try { $pack = [Text.Encoding]::UTF8.GetString((Fetch $PackUrl)) | ConvertFrom-Json }
 catch { Fail "Impossible de lire le pack ($PackUrl) : vérifie ta connexion internet. $($_.Exception.Message)" }
-Say ("Minecraft {0} · Fabric {1} · Ebisu {2} · {3} mods" -f $pack.minecraft, $pack.loader, $pack.ebisu, @($pack.mods).Count) 'White'
+# Each file of the pack goes in mods\ or, for a shader pack, in shaderpacks\.
+function Folder($entry) { if ($entry.folder) { return $entry.folder } return 'mods' }
+$entries = @($pack.mods)
+$shaderCount = @($entries | Where-Object { (Folder $_) -eq 'shaderpacks' }).Count
+Say ("Minecraft {0} · Fabric {1} · Ebisu {2} · {3} mods · {4} shaders" -f $pack.minecraft, $pack.loader, $pack.ebisu, ($entries.Count - $shaderCount), $shaderCount) 'White'
 
 # Fabric: the version the launcher starts, inheriting from vanilla, which it downloads itself.
 $vid = "fabric-loader-$($pack.loader)-$($pack.minecraft)"
@@ -94,14 +98,17 @@ if (-not (Test-Path (Join-Path $Game 'options.txt')) -and (Test-Path (Join-Path 
 	Copy-Item (Join-Path $Mc 'options.txt') (Join-Path $Game 'options.txt')
 }
 
+# What the installer put there last time, as folder/file (a bare name is from before shader packs: mods).
 $stateFile = Join-Path $mods '.ebisu-pack.txt'
-$before = if (Test-Path $stateFile) { @(Get-Content $stateFile -Encoding UTF8) } else { @() }
-$files = @($pack.mods | ForEach-Object { $_.file })
-$ids = @($pack.mods | ForEach-Object { $_.id })
+$before = if (Test-Path $stateFile) { @(Get-Content $stateFile -Encoding UTF8 | ForEach-Object { if ($_ -like '*/*') { $_ } else { "mods/$_" } }) } else { @() }
+$wanted = @($entries | ForEach-Object { "$(Folder $_)/$($_.file)" })
+$ids = @($entries | Where-Object { (Folder $_) -eq 'mods' } | ForEach-Object { $_.id })
 $aside = Join-Path $Game 'mods-mis-de-cote'
 
-foreach ($mod in $pack.mods) {
-	$dest = Join-Path $mods $mod.file
+foreach ($mod in $entries) {
+	$dir = Join-Path $Game (Folder $mod)
+	New-Item -ItemType Directory -Force $dir | Out-Null
+	$dest = Join-Path $dir $mod.file
 	if ((Test-Path $dest) -and ((Sha256 ([IO.File]::ReadAllBytes($dest))) -eq $mod.sha256)) {
 		Say ("  ✔ {0} {1}" -f $mod.name, $mod.version) 'DarkGreen'
 		continue
@@ -114,16 +121,24 @@ foreach ($mod in $pack.mods) {
 }
 
 # What the pack no longer has, and any other copy of one of its mods (an old Ebisu put there by
-# hand would load twice): moved aside, never deleted. The player's own mods stay.
-foreach ($jar in Get-ChildItem $mods -Filter *.jar) {
-	if ($files -contains $jar.Name) { continue }
-	if (($before -contains $jar.Name) -or ($ids -contains (ModId $jar.FullName))) {
-		New-Item -ItemType Directory -Force $aside | Out-Null
-		Move-Item $jar.FullName (Join-Path $aside $jar.Name) -Force
-		Say ("  ✘ {0} mis de côté (ancienne version)" -f $jar.Name) 'DarkYellow'
+# hand would load twice): moved aside, never deleted. The player's own mods and shader packs stay,
+# and so do the copies /ebisushaders makes of a pack for the Astrelume.
+foreach ($folder in @('mods', 'shaderpacks')) {
+	$dir = Join-Path $Game $folder
+	if (-not (Test-Path $dir)) { continue }
+	foreach ($file in Get-ChildItem $dir -File) {
+		$key = "$folder/$($file.Name)"
+		if ($wanted -contains $key) { continue }
+		$copy = ($folder -eq 'mods') -and ($file.Extension -eq '.jar') -and ($ids -contains (ModId $file.FullName))
+		if (($before -contains $key) -or $copy) {
+			$to = if ($folder -eq 'mods') { $aside } else { Join-Path $aside $folder }
+			New-Item -ItemType Directory -Force $to | Out-Null
+			Move-Item $file.FullName (Join-Path $to $file.Name) -Force
+			Say ("  ✘ {0} mis de côté (ancienne version)" -f $file.Name) 'DarkYellow'
+		}
 	}
 }
-[IO.File]::WriteAllLines($stateFile, [string[]]$files, $Utf8)
+[IO.File]::WriteAllLines($stateFile, [string[]]$wanted, $Utf8)
 
 # The launcher profile: Fabric, the pack's folder, the server's picture, enough memory.
 $icon = $null

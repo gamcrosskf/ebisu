@@ -1,7 +1,7 @@
 {
 	"name": "Ebisu",
 	"minecraft": "26.3",
-	"loader": "0.19.5",
+	"loader": "0.20.1",
 	"memory": "4G",
 	"server": {
 		"name": "Serveur Ebisu",
@@ -13,6 +13,7 @@
 			"id": "ebisu",
 			"name": "Ebisu",
 			"version": "0.55.0-beta",
+			"folder": "mods",
 			"file": "ebisu-0.55.0-beta.jar",
 			"url": "https://github.com/gamcrosskf/ebisu/releases/download/v0.55.0-beta/ebisu-0.55.0-beta.jar",
 			"sha256": "6a6c73d9a1a05da4202b0ef6a107f14ed8058feaabf4ddc5e79f33af5feaa3eb",
@@ -22,10 +23,231 @@
 			"id": "fabric-api",
 			"name": "Fabric API",
 			"version": "0.165.0+26.3",
+			"folder": "mods",
 			"file": "fabric-api-0.165.0+26.3.jar",
 			"url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/EQKgpeKu/fabric-api-0.165.0%2B26.3.jar",
 			"sha256": "18442e2ad466d6ef41c37dbb4cb68495e6ca6658b1f1ee9be76143d155ef2c88",
 			"size": 1778588
+		},
+		{
+			"id": "sodium",
+			"name": "Sodium",
+			"version": "0.9.2+mc26.3",
+			"folder": "mods",
+			"file": "sodium-fabric-0.9.2+mc26.3.jar",
+			"url": "https://cdn.modrinth.com/data/AANobbMI/versions/bAZQdGpg/sodium-fabric-0.9.2%2Bmc26.3.jar",
+			"sha256": "87a5bb39f7e6e41106e77f122f82fc93f9d3bc0b6ebcb746b314172a446a287a",
+			"size": 1908068
+		},
+		{
+			"id": "iris",
+			"name": "Iris",
+			"version": "1.11.7+mc26.3",
+			"folder": "mods",
+			"file": "iris-fabric-1.11.7+mc26.3.jar",
+			"url": "https://cdn.modrinth.com/data/YL57xq9U/versions/vTN4NRGW/iris-fabric-1.11.7%2Bmc26.3.jar",
+			"sha256": "83ab4d3013dd56ac05ae503a2f596968911001c4ef3d82c59c5c79e64c34dd98",
+			"size": 2850938
+		},
+		{
+			"id": "sodium-extra",
+			"name": "Sodium Extra",
+			"version": "0.9.5+mc26.3",
+			"folder": "mods",
+			"file": "sodium-extra-fabric-0.9.5+mc26.3.jar",
+			"url": "https://cdn.modrinth.com/data/PtjYWJkn/versions/fs5l9Q1U/sodium-extra-fabric-0.9.5%2Bmc26.3.jar",
+			"sha256": "486d54cd1914e8c8e49c2f02b3e760f1a0d64c0d242ae175870784582b374dc2",
+			"size": 481973
+		},
+		{
+			"id": "reeses-sodium-options",
+			"name": "Reese's Sodium Options",
+			"version": "2.2.5+mc26.3",
+			"folder": "mods",
+			"file": "reeses-sodium-options-fabric-2.2.5+mc26.3.jar",
+			"url": "https://cdn.modrinth.com/data/Bh37bMuy/versions/EfchygKx/reeses-sodium-options-fabric-2.2.5%2Bmc26.3.jar",
+			"sha256": "b692acb0f84d7477deae48e2ba0908e1913c0d87db53daa4d23cbe646e9028f0",
+			"size": 258082
+		},
+		{
+			"id": "entityculling",
+			"name": "EntityCulling",
+			"version": "1.11.3",
+			"folder": "mods",
+			"file": "entityculling-fabric-1.11.3-mc26.3.jar",
+			"url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/X1g3VhTx/entityculling-fabric-1.11.3-mc26.3.jar",
+			"sha256": "d2f80514ee3382b1fa7afda4df762df50743226e3cd320b829ee507357aeafbc",
+			"size": 1508547
+		},
+		{
+			"id": "immediatelyfast",
+			"name": "ImmediatelyFast",
+			"version": "1.17.1+26.3",
+			"folder": "mods",
+			"file": "ImmediatelyFast-Fabric-1.17.1+26.3.jar",
+			"url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/3MP9UR23/ImmediatelyFast-Fabric-1.17.1%2B26.3.jar",
+			"sha256": "4b346661cd0811d98a6df8c9faeb8fafd9326ab88248430e8bec845ef1ff6dca",
+			"size": 99586
+		},
+		{
+			"id": "moreculling",
+			"name": "More Culling",
+			"version": "1.9.1",
+			"folder": "mods",
+			"file": "moreculling-fabric-26.3-1.9.1.jar",
+			"url": "https://cdn.modrinth.com/data/51shyZVL/versions/5jIORlSK/moreculling-fabric-26.3-1.9.1.jar",
+			"sha256": "29dae8871d97b44ea353957a5b758b90753f4a9d8502d004a5308269dcdf5eb2",
+			"size": 297173
+		},
+		{
+			"id": "dynamic_fps",
+			"name": "Dynamic FPS",
+			"version": "3.11.10",
+			"folder": "mods",
+			"file": "dynamic-fps-3.11.10+minecraft-26.3.0-fabric.jar",
+			"url": "https://cdn.modrinth.com/data/LQ3K71Q1/versions/Jwq069rR/dynamic-fps-3.11.10%2Bminecraft-26.3.0-fabric.jar",
+			"sha256": "a186d7cdfa3738935cb8425026d118013916fdcfbc060e4397d22368d0bb6594",
+			"size": 189474
+		},
+		{
+			"id": "lambdynlights",
+			"name": "LambDynamicLights",
+			"version": "4.13.0+26.3",
+			"folder": "mods",
+			"file": "lambdynamiclights-4.13.0+26.3.jar",
+			"url": "https://cdn.modrinth.com/data/yBW8D80W/versions/rylKnJ4M/lambdynamiclights-4.13.0%2B26.3.jar",
+			"sha256": "b7550288423affed86370acd80d064876d7e256f5489461b7ff7941627552ab2",
+			"size": 1345715
+		},
+		{
+			"id": "modmenu",
+			"name": "Mod Menu",
+			"version": "21.0.0",
+			"folder": "mods",
+			"file": "modmenu-21.0.0.jar",
+			"url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/kyy7dbrZ/modmenu-21.0.0.jar",
+			"sha256": "837812c6c98d66141db7b5dcae668f27fb78d557e8f4c0c89912985fc26a5e6f",
+			"size": 856779
+		},
+		{
+			"id": "appleskin",
+			"name": "AppleSkin",
+			"version": "3.0.10+mc26.3",
+			"folder": "mods",
+			"file": "appleskin-fabric-mc26.3-3.0.10.jar",
+			"url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/PHjDtQay/appleskin-fabric-mc26.3-3.0.10.jar",
+			"sha256": "cb05087c39f0d860611aa1fae7cf63560214d1b71378a7c903c18dc370b5c3ce",
+			"size": 180194
+		},
+		{
+			"id": "jade",
+			"name": "Jade",
+			"version": "26.3.5+fabric",
+			"folder": "mods",
+			"file": "Jade-mc26.3-Fabric-26.3.5.jar",
+			"url": "https://cdn.modrinth.com/data/nvQzSEkH/versions/71CTWqdE/Jade-mc26.3-Fabric-26.3.5.jar",
+			"sha256": "4899d6c60afa2af859b3a7e0824d0ef6b404f26458f831e3d877faa36be9af1c",
+			"size": 1092685
+		},
+		{
+			"id": "mousetweaks",
+			"name": "Mouse Tweaks",
+			"version": "2.31",
+			"folder": "mods",
+			"file": "MouseTweaks-fabric-mc26.3-2.31.jar",
+			"url": "https://cdn.modrinth.com/data/aC3cM3Vq/versions/LeMuMhLv/MouseTweaks-fabric-mc26.3-2.31.jar",
+			"sha256": "7fa35df568c870c45fd144dc9a54139459ded823615dda32bc09d9025831e655",
+			"size": 74569
+		},
+		{
+			"id": "zoomify",
+			"name": "Zoomify",
+			"version": "2.17.0+mc26.3",
+			"folder": "mods",
+			"file": "zoomify-2.17.0+mc26.3-universal.jar",
+			"url": "https://cdn.modrinth.com/data/w7ThoJFB/versions/RUBpNu00/zoomify-2.17.0%2Bmc26.3-universal.jar",
+			"sha256": "134edcc2992d2f6c3793746101dec1aba3ef02f046024fd280afb09094593027",
+			"size": 579146
+		},
+		{
+			"id": "complementary-reimagined",
+			"name": "Complementary Shaders - Reimagined",
+			"version": "r5.9.3",
+			"folder": "shaderpacks",
+			"file": "ComplementaryReimagined_r5.9.3.zip",
+			"url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/Bqen1mJX/ComplementaryReimagined_r5.9.3.zip",
+			"sha256": "fed6c879e732cf7fc7bc6570ebb1def43235aa7e96f62859fbdbdbfa0b484b38",
+			"size": 553397
+		},
+		{
+			"id": "complementary-unbound",
+			"name": "Complementary Shaders - Unbound",
+			"version": "r5.9.3",
+			"folder": "shaderpacks",
+			"file": "ComplementaryUnbound_r5.9.3.zip",
+			"url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/B1kyfoUZ/ComplementaryUnbound_r5.9.3.zip",
+			"sha256": "98ac741dee294d2a3c82d153349148c3bb7fb688c30eb3b49c3b9ac37e968c5a",
+			"size": 553400
+		},
+		{
+			"id": "bsl-shaders",
+			"name": "BSL Shaders",
+			"version": "10.1.8",
+			"folder": "shaderpacks",
+			"file": "BSL_v10.1.8.zip",
+			"url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/Y68yiql9/BSL_v10.1.8.zip",
+			"sha256": "36b0a50ff7918bf10e9422c401d93779f9d0088a26acea975b435243f96930b5",
+			"size": 1134153
+		},
+		{
+			"id": "makeup-ultra-fast-shaders",
+			"name": "MakeUp - Ultra Fast",
+			"version": "9.6",
+			"folder": "shaderpacks",
+			"file": "MakeUp-UltraFast-9.6.zip",
+			"url": "https://cdn.modrinth.com/data/izsIPI7a/versions/t4YRxQug/MakeUp-UltraFast-9.6.zip",
+			"sha256": "71319ea5d0ad114143ef1c334890e315dbf1eeb2318d6bc35f3e5021fb3c8ba8",
+			"size": 406830
+		},
+		{
+			"id": "cloth-config",
+			"name": "Cloth Config v26.3",
+			"version": "26.3.159",
+			"folder": "mods",
+			"file": "cloth-config-fabric-26.3.159.jar",
+			"url": "https://cdn.modrinth.com/data/9s6osm5g/versions/fg2uyxOW/cloth-config-fabric-26.3.159.jar",
+			"sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b",
+			"size": 1135009
+		},
+		{
+			"id": "placeholder-api",
+			"name": "Placeholder API",
+			"version": "3.2.0+26.3",
+			"folder": "mods",
+			"file": "placeholder-api-3.2.0+26.3.jar",
+			"url": "https://cdn.modrinth.com/data/eXts2L7r/versions/lXytLqWj/placeholder-api-3.2.0%2B26.3.jar",
+			"sha256": "d9a5351b42a8d79cfc2e7f2a471472f9e4dff3b13874c8d420dbb93600b91a85",
+			"size": 254959
+		},
+		{
+			"id": "fabric-language-kotlin",
+			"name": "Fabric Language Kotlin",
+			"version": "1.14.2+kotlin.2.4.21",
+			"folder": "mods",
+			"file": "fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar",
+			"url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/SKW1BTL3/fabric-language-kotlin-1.14.2%2Bkotlin.2.4.21.jar",
+			"sha256": "fbdbf5286ab9d65fedb49e6e01c15e338ae303eb7b9d8c7423d0a9bcfe526ef9",
+			"size": 8142878
+		},
+		{
+			"id": "yet_another_config_lib_v3",
+			"name": "YetAnotherConfigLib",
+			"version": "3.9.7+26.3-fabric",
+			"folder": "mods",
+			"file": "yet_another_config_lib_v3-3.9.7+26.3-fabric.jar",
+			"url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/s9SjoFu1/yet_another_config_lib_v3-3.9.7%2B26.3-fabric.jar",
+			"sha256": "c52d41d444522d9abba994cd4c4ee2e71a065d7c31010f92a9959b80ccb4b0f5",
+			"size": 1125377
 		}
 	]
 }
