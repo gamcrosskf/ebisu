@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ebisu:item/adonis_boar_spawn_egg"
+  }
+}

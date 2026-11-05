@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "ebisu:block/duskbloom_leaves"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "ebisu:block/mossy_glyph_bricks",
+    "top": "ebisu:block/mossy_glyph_bricks",
+    "side": "ebisu:block/mossy_glyph_bricks"
+  }
+}

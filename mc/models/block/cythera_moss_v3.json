@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ebisu:block/cythera_moss_v3"
+  }
+}

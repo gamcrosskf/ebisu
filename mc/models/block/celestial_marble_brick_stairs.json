@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "ebisu:block/celestial_marble_bricks",
+    "top": "ebisu:block/celestial_marble_bricks",
+    "side": "ebisu:block/celestial_marble_bricks"
+  }
+}

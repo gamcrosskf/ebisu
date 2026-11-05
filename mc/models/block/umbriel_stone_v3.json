@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ebisu:block/umbriel_stone_v3"
+  }
+}

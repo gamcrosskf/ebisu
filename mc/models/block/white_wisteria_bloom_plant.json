@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "ebisu:block/white_wisteria_bloom_plant"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "ebisu:block/lanternshroom_stem_top",
+    "side": "ebisu:block/lanternshroom_stem"
+  }
+}

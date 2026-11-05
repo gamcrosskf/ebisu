@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "ebisu:block/kyllene_limestone_pillar_top",
+    "side": "ebisu:block/kyllene_limestone_pillar"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/lily_pad",
+  "textures": {
+    "particle": "ebisu:block/lotus",
+    "texture": "ebisu:block/lotus"
+  }
+}

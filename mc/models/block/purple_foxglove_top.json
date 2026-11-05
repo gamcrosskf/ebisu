@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "ebisu:block/purple_foxglove_top"
+  }
+}

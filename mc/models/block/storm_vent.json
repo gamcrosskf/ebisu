@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_top",
+  "textures": {
+    "top": "ebisu:block/storm_vent_top",
+    "side": "ebisu:block/jovian_cloud_slate"
+  }
+}

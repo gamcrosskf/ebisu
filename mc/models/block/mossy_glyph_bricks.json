@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ebisu:block/mossy_glyph_bricks"
+  }
+}

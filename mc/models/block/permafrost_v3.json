@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "ebisu:block/permafrost_top_v3",
+    "side": "ebisu:block/permafrost_v3",
+    "bottom": "ebisu:block/permafrost_v3"
+  }
+}

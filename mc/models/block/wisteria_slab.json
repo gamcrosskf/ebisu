@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "ebisu:block/wisteria_planks",
+    "top": "ebisu:block/wisteria_planks",
+    "side": "ebisu:block/wisteria_planks"
+  }
+}

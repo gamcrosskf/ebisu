@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "ebisu:block/paphos_marble_bricks",
+    "top": "ebisu:block/paphos_marble_bricks",
+    "side": "ebisu:block/paphos_marble_bricks"
+  }
+}

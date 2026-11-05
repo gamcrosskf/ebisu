@@ -1,0 +1,12 @@
+{
+ "parent": "minecraft:block/cube",
+ "textures": {
+  "particle": "ebisu:block/tent_canvas",
+  "north": "ebisu:block/tent_canvas",
+  "south": "ebisu:block/tent_flap_top",
+  "east": "ebisu:block/tent_canvas",
+  "west": "ebisu:block/tent_canvas",
+  "up": "ebisu:block/tent_canvas",
+  "down": "ebisu:block/tent_canvas"
+ }
+}

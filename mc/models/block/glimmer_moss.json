@@ -1,0 +1,9 @@
+{
+  "parent": "ebisu:block/turf",
+  "textures": {
+    "top": "ebisu:block/glimmer_moss_top",
+    "bottom": "minecraft:block/dirt",
+    "side": "minecraft:block/dirt",
+    "overlay": "ebisu:block/glimmer_moss_side_overlay"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "ebisu:block/atlantean_door_bottom",
+    "top": "ebisu:block/atlantean_door_top"
+  }
+}

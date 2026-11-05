@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ebisu:item/blighted_treant_spawn_egg"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "ebisu:block/paphos_marble_bricks"
+  }
+}

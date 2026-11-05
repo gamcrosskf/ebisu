@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "ebisu:block/ether_frame_top",
+    "side": "ebisu:block/ether_frame"
+  }
+}

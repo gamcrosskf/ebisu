@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ebisu:item/giant_scorpion_spawn_egg"
+  }
+}

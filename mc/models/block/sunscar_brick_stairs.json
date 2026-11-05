@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "ebisu:block/sunscar_bricks",
+    "top": "ebisu:block/sunscar_bricks",
+    "side": "ebisu:block/sunscar_bricks"
+  }
+}

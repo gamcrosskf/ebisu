@@ -1,0 +1,9 @@
+{
+  "parent": "ebisu:block/turf",
+  "textures": {
+    "top": "ebisu:block/lumine_turf_top",
+    "bottom": "ebisu:block/ether_dirt",
+    "side": "ebisu:block/ether_dirt",
+    "overlay": "ebisu:block/lumine_turf_side_overlay"
+  }
+}

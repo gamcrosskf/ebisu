@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/outer_stairs",
+ "textures": {
+  "bottom": "ebisu:block/tent_roof",
+  "top": "ebisu:block/tent_roof",
+  "side": "ebisu:block/tent_roof"
+ }
+}

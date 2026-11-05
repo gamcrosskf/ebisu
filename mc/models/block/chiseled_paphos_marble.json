@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "ebisu:block/polished_paphos_marble",
+    "side": "ebisu:block/chiseled_paphos_marble"
+  }
+}

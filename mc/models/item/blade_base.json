@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "particle": "minecraft:item/iron_sword"
+  }
+}

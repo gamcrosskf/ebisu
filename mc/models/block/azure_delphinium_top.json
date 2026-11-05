@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "ebisu:block/azure_delphinium_top"
+  }
+}

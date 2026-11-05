@@ -1,0 +1,184 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "ebisu:block/polished_kyllene_limestone",
+    "stone": "ebisu:block/polished_kyllene_limestone",
+    "face": "ebisu:block/herm_face",
+    "hair": "ebisu:block/herm_hair",
+    "band": "ebisu:block/polished_cinnabar"
+  },
+  "elements": [
+    {
+      "from": [
+        4,
+        0,
+        4
+      ],
+      "to": [
+        12,
+        5,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#stone"
+        },
+        "south": {
+          "texture": "#stone"
+        },
+        "west": {
+          "texture": "#stone"
+        },
+        "east": {
+          "texture": "#stone"
+        },
+        "up": {
+          "texture": "#stone"
+        },
+        "down": {
+          "texture": "#stone"
+        }
+      }
+    },
+    {
+      "from": [
+        3.5,
+        5,
+        3.5
+      ],
+      "to": [
+        12.5,
+        6,
+        12.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#band"
+        },
+        "south": {
+          "texture": "#band"
+        },
+        "west": {
+          "texture": "#band"
+        },
+        "east": {
+          "texture": "#band"
+        },
+        "up": {
+          "texture": "#band"
+        },
+        "down": {
+          "texture": "#band"
+        }
+      }
+    },
+    {
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        12,
+        15,
+        12
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            1,
+            16,
+            16
+          ],
+          "texture": "#face"
+        },
+        "south": {
+          "texture": "#hair"
+        },
+        "west": {
+          "texture": "#hair"
+        },
+        "east": {
+          "texture": "#hair"
+        },
+        "up": {
+          "texture": "#hair"
+        },
+        "down": {
+          "texture": "#hair"
+        }
+      }
+    },
+    {
+      "from": [
+        4.5,
+        15,
+        4.5
+      ],
+      "to": [
+        11.5,
+        16,
+        11.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#hair"
+        },
+        "south": {
+          "texture": "#hair"
+        },
+        "west": {
+          "texture": "#hair"
+        },
+        "east": {
+          "texture": "#hair"
+        },
+        "up": {
+          "texture": "#hair"
+        },
+        "down": {
+          "texture": "#hair"
+        }
+      }
+    },
+    {
+      "from": [
+        6.5,
+        7,
+        3.2
+      ],
+      "to": [
+        9.5,
+        10.5,
+        4
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            5,
+            9,
+            11,
+            16
+          ],
+          "texture": "#face"
+        },
+        "south": {
+          "texture": "#stone"
+        },
+        "west": {
+          "texture": "#stone"
+        },
+        "east": {
+          "texture": "#stone"
+        },
+        "up": {
+          "texture": "#stone"
+        },
+        "down": {
+          "texture": "#stone"
+        }
+      }
+    }
+  ]
+}
