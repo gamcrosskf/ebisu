@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ebisu:item/gloom_crawler_spawn_egg"
+  }
+}
