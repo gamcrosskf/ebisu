@@ -8,17 +8,17 @@
 		"name": "Serveur Ebisu",
 		"address": ""
 	},
-	"ebisu": "1.0.6",
+	"ebisu": "1.0.10",
 	"mods": [
 		{
 			"id": "ebisu",
 			"name": "Ebisu",
-			"version": "1.0.6",
+			"version": "1.0.10",
 			"folder": "mods",
-			"file": "ebisu-1.0.6.jar",
-			"url": "https://github.com/gamcrosskf/ebisu/releases/download/v1.0.6/ebisu-1.0.6.jar",
-			"sha256": "8eb24c87c867bba1bcfb9c979d0be4b4abee6540db5742ec433b1205ae6a744c",
-			"size": 18404390
+			"file": "ebisu-1.0.10.jar",
+			"url": "https://github.com/gamcrosskf/ebisu/releases/download/v1.0.10/ebisu-1.0.10.jar",
+			"sha256": "b7f53dac56bac5a76ba70e0a7c120e3526ef6a70b8a92eeb97664d4e989049ee",
+			"size": 18774319
 		},
 		{
 			"id": "fabric-api",
@@ -123,12 +123,12 @@
 		{
 			"id": "moreculling",
 			"name": "More Culling",
-			"version": "1.9.1",
+			"version": "1.9.2",
 			"folder": "mods",
-			"file": "moreculling-fabric-26.3-1.9.1.jar",
-			"url": "https://cdn.modrinth.com/data/51shyZVL/versions/5jIORlSK/moreculling-fabric-26.3-1.9.1.jar",
-			"sha256": "29dae8871d97b44ea353957a5b758b90753f4a9d8502d004a5308269dcdf5eb2",
-			"size": 297173
+			"file": "moreculling-fabric-26.3-1.9.2.jar",
+			"url": "https://cdn.modrinth.com/data/51shyZVL/versions/loquqFkT/moreculling-fabric-26.3-1.9.2.jar",
+			"sha256": "6e5cd977c5c588e26535bc03d898c5d2ebd3c204c8b45e2677ffd40b98d8eb3b",
+			"size": 297119
 		},
 		{
 			"id": "dynamic_fps",
