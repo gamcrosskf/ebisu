@@ -123,12 +123,12 @@
 		{
 			"id": "moreculling",
 			"name": "More Culling",
-			"version": "1.9.2",
+			"version": "1.9.1",
 			"folder": "mods",
-			"file": "moreculling-fabric-26.3-1.9.2.jar",
-			"url": "https://cdn.modrinth.com/data/51shyZVL/versions/loquqFkT/moreculling-fabric-26.3-1.9.2.jar",
-			"sha256": "6e5cd977c5c588e26535bc03d898c5d2ebd3c204c8b45e2677ffd40b98d8eb3b",
-			"size": 297119
+			"file": "moreculling-fabric-26.3-1.9.1.jar",
+			"url": "https://cdn.modrinth.com/data/51shyZVL/versions/5jIORlSK/moreculling-fabric-26.3-1.9.1.jar",
+			"sha256": "29dae8871d97b44ea353957a5b758b90753f4a9d8502d004a5308269dcdf5eb2",
+			"size": 297173
 		},
 		{
 			"id": "dynamic_fps",
