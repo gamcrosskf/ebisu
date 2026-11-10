@@ -8,17 +8,17 @@
 		"name": "Serveur Ebisu",
 		"address": ""
 	},
-	"ebisu": "1.0.21",
+	"ebisu": "1.0.22",
 	"mods": [
 		{
 			"id": "ebisu",
 			"name": "Ebisu",
-			"version": "1.0.21",
+			"version": "1.0.22",
 			"folder": "mods",
-			"file": "ebisu-1.0.21.jar",
-			"url": "https://github.com/gamcrosskf/ebisu/releases/download/v1.0.21/ebisu-1.0.21.jar",
-			"sha256": "4e65a6390e1815fb36f0572c69f9f61394fd5b225f37e2872dcc086ec3a60ce5",
-			"size": 20055509
+			"file": "ebisu-1.0.22.jar",
+			"url": "https://github.com/gamcrosskf/ebisu/releases/download/v1.0.22/ebisu-1.0.22.jar",
+			"sha256": "fe60f118d35c62bcf7898f68e766693e16f8d5663c8d40e00867ee9dfd1bc0aa",
+			"size": 20080829
 		},
 		{
 			"id": "fabric-api",
