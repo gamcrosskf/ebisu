@@ -1,0 +1,124 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "ebisu:block/television_back",
+    "back": "ebisu:block/television_back",
+    "front": "ebisu:block/television_front"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        13.5
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "west": {
+          "texture": "#back"
+        },
+        "east": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#back"
+        },
+        "down": {
+          "texture": "#back"
+        }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        20,
+        200,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.72,
+        0.72,
+        0.72
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        5
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        3,
+        0
+      ],
+      "scale": [
+        0.3,
+        0.3,
+        0.3
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        75,
+        180,
+        0
+      ],
+      "translation": [
+        0,
+        2.5,
+        4
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        200,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        4
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    }
+  }
+}
