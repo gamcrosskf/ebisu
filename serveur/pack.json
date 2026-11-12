@@ -8,17 +8,17 @@
 		"name": "Serveur Ebisu",
 		"address": ""
 	},
-	"ebisu": "1.0.24",
+	"ebisu": "1.1.6",
 	"mods": [
 		{
 			"id": "ebisu",
 			"name": "Ebisu",
-			"version": "1.0.24",
+			"version": "1.1.6",
 			"folder": "mods",
-			"file": "ebisu-1.0.24.jar",
-			"url": "https://github.com/gamcrosskf/ebisu/releases/download/v1.0.24/ebisu-1.0.24.jar",
-			"sha256": "f094becf70d779cac6d582285a31ddaa8ece7502e126a38dea499091b8ee3df4",
-			"size": 20264914
+			"file": "ebisu-1.1.6.jar",
+			"url": "https://github.com/gamcrosskf/ebisu/releases/download/v1.1.6/ebisu-1.1.6.jar",
+			"sha256": "e5f6c28a15c73d1cfd7f8bbe71ace3e0cb413477404ea13897c81ae0bb77b6af",
+			"size": 21601021
 		},
 		{
 			"id": "fabric-api",
@@ -103,12 +103,12 @@
 		{
 			"id": "entityculling",
 			"name": "EntityCulling",
-			"version": "1.11.3",
+			"version": "1.12.0",
 			"folder": "mods",
-			"file": "entityculling-fabric-1.11.3-mc26.3.jar",
-			"url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/X1g3VhTx/entityculling-fabric-1.11.3-mc26.3.jar",
-			"sha256": "d2f80514ee3382b1fa7afda4df762df50743226e3cd320b829ee507357aeafbc",
-			"size": 1508547
+			"file": "entityculling-fabric-1.12.0-mc26.3.jar",
+			"url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/fD6iRzOi/entityculling-fabric-1.12.0-mc26.3.jar",
+			"sha256": "c6275e2b5bf3736d471b9714403b702bdb95cfd8dbf8edbdc2214ca6ba14823f",
+			"size": 1520440
 		},
 		{
 			"id": "immediatelyfast",
@@ -153,12 +153,12 @@
 		{
 			"id": "modmenu",
 			"name": "Mod Menu",
-			"version": "21.0.0",
+			"version": "21.0.1",
 			"folder": "mods",
-			"file": "modmenu-21.0.0.jar",
-			"url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/kyy7dbrZ/modmenu-21.0.0.jar",
-			"sha256": "837812c6c98d66141db7b5dcae668f27fb78d557e8f4c0c89912985fc26a5e6f",
-			"size": 856779
+			"file": "modmenu-21.0.1.jar",
+			"url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/xckkBHD5/modmenu-21.0.1.jar",
+			"sha256": "d7be5d007b1d908ee3c3109e337b208d94e6ef7dd6bd143397237a0e03579005",
+			"size": 862761
 		},
 		{
 			"id": "appleskin",
